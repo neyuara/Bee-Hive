@@ -22,3 +22,50 @@ body {
     margin-top: 40px;
     align-items: flex-start;
 }
+
+/* Боковое меню */
+.sidebar-menu {
+    width: 260px;
+    background: #FFF9E6;
+    box-shadow: 4px 8px 12px rgba(254, 193, 7, 0.45);
+    border-radius: 15px;
+    margin-left: 48px;
+    box-sizing: border-box;
+    padding: 0;         
+    overflow: hidden;    
+}
+
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Линии-разделители */
+.sidebar-menu li {
+    border-bottom: 1px solid #CCC2C2;
+}
+
+.sidebar-menu li:last-child {
+    border-bottom: none; 
+}
+
+/* Базовое состояние ссылок в меню */
+.sidebar-menu a {
+    display: block;      /* Ссылка становится полноценным блоком от края до края */
+    padding: 18px 25px;  /* Теперь высоту и ширину пункта задаем ТОЛЬКО здесь */
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    color: #31302E;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* Состояние при наведении и активный пункт */
+.sidebar-menu li.active a,
+.sidebar-menu a:hover {
+    background: #FFC107;
+    font-weight: 700;
+}
