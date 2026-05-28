@@ -6,68 +6,76 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@400;700&family=Alegreya+Sans+SC:wght@800&family=Alegreya+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/landing.css">
 </head>
 <body>
 
 
     <header>
-    <table border="0" cellpadding="10" cellspacing="0">
+    <!-- ТАБЛИЦА ГЛАВНОГО МЕНЮ -->
+    <table border="0" cellpadding="10" cellspacing="0" width="100%">
         <tr>
             <td><a href="catalog.html">Каталог</a></td>
-            <td><a href="warranty.html">Гарантия</a></td>
-            <td><a href="reviews.html">Отзывы</a></td>
-            <td><a href="contacts.html">Контакты</a></td>
-            <td><a href="gallery.html">Галерея</a></td>
-            <td>&nbsp;<!-- 6 --></td>
-            <td>&nbsp;<!-- 7 --></td>
-            <td>&nbsp;<!-- 8 --></td>
-            <td>&nbsp;<!-- 9 --></td>
-            <td>&nbsp;<!-- 10 --></td>
+            <td><a href="landing.html#warranty">Гарантия</a></td>
+            <td><a href="landing.html#reviews">Отзывы</a></td>
+            <td><a href="#contacts">Контакты</a></td>
+            <td><a href="catalog.html#how-to-choose-honey">Как выбрать мёд?</a></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
         </tr>
     </table>
-
     <hr>
 
-    <table border="0" cellpadding="15">
+    <!-- Логотип + Поиск + Телефон + Корзина -->
+    <table border="0" cellpadding="15" width="100%">
         <tr>
+            <!-- Логотип -->
             <td>
                 <img src="images/logo-placeholder.png" alt="лого" width="80" height="60">
-                ЧАСТНАЯ ПАСИКА<br>ЗПОИС23<br>              
-            </td>
- 
-            <td>
-                <img src="images/search-icon.png" alt="поиск" width="30" height="30">
-                Поиск<br><input type="text" placeholder="...">  <br>           
+                <strong>ЧАСТНАЯ ПАСИКА</strong><br>
+                ЗПОИС23
             </td>
 
+            <!-- Поиск -->
             <td>
-                <img src="images/phone-icon.png" alt="телефон" width="40" height="40">
-                ПРИНИМАЕМ ЗВОНКИ<br>
-                С 8 ДО 16
-                <br>       
+                <img src="images/search-icon.png" alt="поиск" width="30" height="30"><br>
+                <input type="text" placeholder="Поиск...">
             </td>
 
+            <!-- Телефон -->
             <td>
-                1<br>
-                В КОРЗИНУ<br>
-                ПОДЕЛИТЬСЯ
-                <br>
+                <img src="images/phone-icon.png" alt="телефон" width="40" height="40"><br>
+                <strong>+375 (33) 628-86-72</strong><br>
+                Принимаем звонки с 8 до 16
+            </td>
+
+            <!-- Корзина -->
+            <td align="center">
+                <strong>1</strong><br>
+                <a href="#">В КОРЗИНУ</a><br>
+                <a href="#">ПОДЕЛИТЬСЯ</a><br>
                 <img src="images/Market-icon.png" alt="корзина" width="45" height="45">
             </td>
         </tr>
     </table>
+
+    <!-- Хлебные крошки -->
     <table>
         <tr>
-            <td>Главная</td>
-        </tr></table>
-        <table><tr>
-            <td>Натуральный мёд от пчеловода</td>
-            <img align ="right" src="images/Bees_products.png" alt="корзина" width="250" height="250">
+            <td>Главная → Каталог → Пчелиный мёд</td>
         </tr>
     </table>
 
+    <h1>Натуральный мёд от пчеловода</h1>
     </header>
 
+
+    <div class="container">
 
     <div>
         <h1>Натуральный и качественный мёд</h1>
@@ -78,7 +86,9 @@
             ни гормонов
         </p>
 
-        <button>Смотреть каталог</button>
+        <a href="catalog.html">
+            <button>Смотреть каталог</button>
+        </a>
     </div>
 
     <div>
@@ -192,6 +202,7 @@
 
     <hr>
 
+    <div id="reviews">
     <div>
         <img src="images/point.png" style="vertical-align: middle;">
         <span style="vertical-align: middle;">Отзывы покупателей</span>
@@ -223,75 +234,79 @@
         </td>
     </tr>
     </table>
+    </div>
 
     <br>
 
-    </div>
+    <div id="warranty">
+            <div>
+                <img src="images/point.png" style="vertical-align: middle;">
+                <span style="vertical-align: middle;">Гарантии качества</span>
+            </div>
 
-        <div>
-            <img src="images/point.png" style="vertical-align: middle;">
-            <span style="vertical-align: middle;">Гарантии качества</span>
-        </div>
+            <div>
+                <button>←</button>
+                <button>→</button>
+            </div>
 
-        <div>
-            <button>←</button>
-            <button>→</button>
-        </div>
+        <br><br>
 
-    <br><br>
-
-    <table cellpadding="15">
-        <tr>
-             <td align="center">
-                <img src="images/sertifikat.png" alt="Сертификат1" width="200">
-                <br>
-                Сертификат1
-            </td>
-            <td align="center">
-                <img src="images/sertifikat.png" alt="Сертификат2" width="200">
-                <br>
-                Сертификат2
-            </td>
-            <td align="center">
-                <img src="images/sertifikat.png" alt="Сертификат3" width="200">
-                <br>
-                Сертификат3
-            </td>
-        </tr>
-    </table>
-
-
-    <footer>
-        <div class="footer-drops">
-            <img src="images/honey-drops.png" width="100%" height="200" alt="Подтеки меда">
-        </div>
-
-        <table width="100%" border="0" cellpadding="15" cellspacing="0">
+        <table cellpadding="15">
             <tr>
-                
-                <td width="33%" align="center" valign="middle">
-                    <img src="images/logo-placeholder.png" width="80" alt="Лого" align="absmiddle">
-                    <strong style="display: inline-block; text-align: left; margin-left: 10px;">
-                        Частная пасека<br>ЗПОИС23
-                    </strong>
+                <td align="center">
+                    <img src="images/sertifikat.png" alt="Сертификат1" width="200">
+                    <br>
+                    Сертификат1
                 </td>
-
-                <td width="34%" align="center" valign="middle">
-                    <img src="images/mail-icon.png" width="60" alt="Почта" align="absmiddle">
-                    <span style="display: inline-block; text-align: left; margin-left: 10px;">
-                        Адрес электронной почты:<br>
-                        <strong>chastnayapaseka3pois23@gmail.com</strong>
-                    </span>
+                <td align="center">
+                    <img src="images/sertifikat.png" alt="Сертификат2" width="200">
+                    <br>
+                    Сертификат2
                 </td>
-
-                <td width="33%" align="center" valign="middle">
-                    <img src="images/red-phone-icon.png" width="60" alt="Телефон" align="absmiddle">
-                    <strong style="display: inline-block; text-align: left; margin-left: 10px;">
-                        +375 (33) 628-86-72
-                    </strong>
+                <td align="center">
+                    <img src="images/sertifikat.png" alt="Сертификат3" width="200">
+                    <br>
+                    Сертификат3
                 </td>
             </tr>
         </table>
+    </div>
+
+
+    </div>
+
+
+    <footer id="contacts">
+    <div class="footer-drops">
+        <img src="images/honey-drops.png" width="100%" height="200" alt="Подтеки меда">
+    </div>
+
+    <table width="100%" border="0" cellpadding="15" cellspacing="0">
+        <tr>
+                
+            <td width="33%" align="center" valign="middle">
+                <img src="images/logo-placeholder.png" width="80" alt="Лого" align="absmiddle">
+                <strong style="display: inline-block; text-align: left; margin-left: 10px;">
+                    Частная пасека<br>ЗПОИС23
+                </strong>
+            </td>
+
+            <td width="34%" align="center" valign="middle">
+                <img src="images/mail-icon.png" width="60" alt="Почта" align="absmiddle">
+                <span style="display: inline-block; text-align: left; margin-left: 10px;">
+                    Адрес электронной почты:<br>
+                    <strong>chastnayapaseka3pois23@gmail.com</strong>
+                </span>
+            </td>
+
+            <td width="33%" align="center" valign="middle">
+                <img src="images/red-phone-icon.png" width="60" alt="Телефон" align="absmiddle">
+                <strong style="display: inline-block; text-align: left; margin-left: 10px;">
+                    +375 (33) 628-86-72
+                </strong>
+            </td>
+        </tr>
+    </table>        
     </footer>
 </body>
 </html>
