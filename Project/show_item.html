@@ -1,105 +1,174 @@
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сайт конкретного мёда</title>
 </head>
 <body>
-<header>
 
-    <!-- ТАБЛИЦА ГЛАВНОГО МЕНЮ (12 столбцов) -->
-    <table border="0" cellpadding="10" cellspacing="0">
+<header>
+    <!-- ТАБЛИЦА ГЛАВНОГО МЕНЮ -->
+    <table border="0" cellpadding="10" cellspacing="0" width="100%">
         <tr>
-            <!-- 12 столбцов, первые 5 заполнены -->
-            <td><a href="catalog.html">Каталог</a></td>
-            <td><a href="warranty.html">Гарантия</a></td>
-            <td><a href="reviews.html">Отзывы</a></td>
-            <td><a href="contacts.html">Контакты</a></td>
-            <td><a href="gallery.html">Галерея</a></td>
-            <td>&nbsp;<!-- 6 --></td>
-            <td>&nbsp;<!-- 7 --></td>
-            <td>&nbsp;<!-- 8 --></td>
-            <td>&nbsp;<!-- 9 --></td>
-            <td>&nbsp;<!-- 10 --></td>
-            <td>&nbsp;<!-- 11 --></td>
-            <td>&nbsp;<!-- 12 --></td>
+            <td><a href="#">Каталог</a></td>
+            <td><a href="#">Гарантия</a></td>
+            <td><a href="#">Отзывы</a></td>
+            <td><a href="#">Контакты</a></td>
+            <td><a href="#">Галерея</a></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
         </tr>
     </table>
-
     <hr>
 
-
-    <table border="0" cellpadding="15">
+    <!-- Логотип + Поиск + Телефон + Корзина -->
+    <table border="0" cellpadding="15" width="100%">
         <tr>
-            <!-- логотип -->
+            <!-- Логотип -->
             <td>
                 <img src="images/logo-placeholder.png" alt="лого" width="80" height="60">
-                ЧАСТНАЯ ПАСИКА<br>ЗПОИС23<br>              
-            </td>
- 
-            <!--  поиск -->
-            <td>
-                <img src="images/search-icon.png" alt="поиск" width="30" height="30">
-                Поиск<br><input type="text" placeholder="...">  <br>           
+                <strong>ЧАСТНАЯ ПАСИКА</strong><br>
+                ЗПОИС23
             </td>
 
-            <!--  принимаем звонки -->
+            <!-- Поиск -->
             <td>
-                <img src="images/phone-icon.png" alt="телефон" width="40" height="40">
-                ПРИНИМАЕМ ЗВОНКИ<br>
-                С 8 ДО 16
-                <br>       
+                <img src="images/search-icon.png" alt="поиск" width="30" height="30"><br>
+                <input type="text" placeholder="Поиск...">
             </td>
 
-            <!--  корзина и поделиться -->
+            <!-- Телефон -->
             <td>
-                1<br>
-                В КОРЗИНУ<br>
-                ПОДЕЛИТЬСЯ
-                <br>
+                <img src="images/phone-icon.png" alt="телефон" width="40" height="40"><br>
+                <strong>+375 (33) 628-86-72</strong><br>
+                Принимаем звонки с 8 до 16
+            </td>
+
+            <!-- Корзина -->
+            <td align="center">
+                <strong>1</strong><br>
+                <a href="#">В КОРЗИНУ</a><br>
+                <a href="#">ПОДЕЛИТЬСЯ</a><br>
                 <img src="images/Market-icon.png" alt="корзина" width="45" height="45">
             </td>
         </tr>
     </table>
-<table>
-    <tr>
-        <td>Главная</td>
-        <td>&rarr; Каталог</td>
-        <td>&rarr; Пчелиный мёд</td>
-    </tr></table>
-    <table><tr>
-        <td>Натуральный мёд от пчеловода</td>
-        <img align ="right" src="images/Bees_products.png" alt="корзина" width="250" height="250">
-    </tr>
-</table>
 
+    <!-- Хлебные крошки -->
+    <table>
+        <tr>
+            <td>Главная → Каталог → Пчелиный мёд</td>
+        </tr>
+    </table>
+
+    <h1>Натуральный мёд от пчеловода</h1>
 </header>
 
-<div>
+<main>
+    <table border="1" cellpadding="8" cellspacing="0" width="100%">
+        <tr>
+            <!-- Изображение товара (твоё оригинальное) -->
+            <td rowspan="6" width="40%">
+                <img src="images/a jar of honey.png" alt="Банка мёда" width="100%">
+            </td>
 
-</div>
-<table>
-    <tr>
-        <tr>
-        <th><!-- картинка соцсети и т д --><th rowspan="6"><img=></th>
-            <th>Цена</th>
+            <!-- Цена и кнопки -->
+            <td rowspan="6" width="30%" align="center" valign="middle">
+                <h2>ЦЕНА</h2>
+                <p><strong>1700 руб / 3 л</strong></p>
+                
+                <p>
+                    <button>-</button>
+                    <strong>1</strong>
+                    <button>+</button>
+                </p>
+                
+                <button style="padding:10px 20px; font-size:16px;">В КОРЗИНУ</button><br><br>
+                <button>ПОДЕЛИТЬСЯ</button>
+            </td>
+
+            <!-- Правая колонка (категории) -->
+            <td width="30%">
+                <strong>Пчелиный мёд</strong><br>
+                Пчелиный воск<br>
+                Улья<br>
+                Рамки для ульев<br>
+                Прополис
+            </td>
         </tr>
+    </table>
+
+    <!-- Табы -->
+    <table border="0" cellpadding="10" width="100%" style="background:#f5d68c;">
         <tr>
-            <th>&rarr;</th> 
+            <th>Описание</th>
+            <th>Характеристики</th>
+            <th>Вкладка</th>
         </tr>
+    </table>
+
+    <!-- Блок описания -->
+    <div style="min-height: 250px; padding: 20px; background:#fff9e6;">
+        <h3>Текст описания</h3>
+        <p>Здесь будет подробное описание товара...</p>
+    </div>
+
+    <!-- Похожие товары -->
+    <h2>Похожие товары</h2>
+    <table border="1" cellpadding="8" cellspacing="0" width="100%" align="center">
         <tr>
-            <th>1количество, в корзину</th> 
+            <td align="center">
+                <img src="images/catalog/Honey_liquid.jpg" alt="Гречишный мёд 2 л." width="180"><br>
+                Гречишный мёд 2 л.<br>
+                1200 руб<br>
+                <button>Подробнее</button><br>
+                <button>В корзину</button>
+            </td>
+            <td align="center">
+                <img src="images/catalog/Honey_liquid.jpg" alt="Гречишный мёд 1 л." width="180"><br>
+                Гречишный мёд 1 л.<br>
+                700 руб<br>
+                <button>Подробнее</button><br>
+                <button>В корзину</button>
+            </td>
+            <td align="center">
+                <img src="images/catalog/Honey_liquid.jpg" alt="Гречишный мёд 0,5 л." width="180"><br>
+                Гречишный мёд 0,5 л.<br>
+                350 руб<br>
+                <button>Подробнее</button><br>
+                <button>В корзину</button>
+            </td>
         </tr>
+    </table>
+
+    <!-- Бесплатная консультация -->
+    <h2>Бесплатная консультация</h2>
+    <table width="100%">
         <tr>
-            <th>&rarr;</th> 
+            <td width="60%">
+                <p>Отправьте запрос — И мы вам позвоним</p>
+                <input type="text" placeholder="Имя" style="width:80%"><br><br>
+                <input type="tel" placeholder="Телефон" style="width:80%"><br><br>
+                <button>Подробнее</button>
+            </td>
+            <td>
+                <img src="images/beekeeper.jpg" alt="Пчеловод" width="300">
+            </td>
         </tr>
-        <tr>
-            <th>поделиться</th> 
-        </tr>
-        <th><!-- еще категории -->
-            
-        </th>  
-    </tr>
-</table>
+    </table>
+</main>
+
+<footer>
+    <p>Частная пасика ЗПОИС23</p>
+    <p>pochta@gmail.com</p>
+    <p>+375 (33) 628-86-72</p>
+</footer>
+
 </body>
-
-
 </html>
