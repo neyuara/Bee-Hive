@@ -1,0 +1,24 @@
+/* Общие настройки для всей страницы */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    font-family: 'Alegreya Sans', sans-serif;
+    color: #31302E;
+}
+
+/* Контейнер, который держит весь контент по центру (ровно 1200px, как в Фигме) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Главная рабочая область: меню слева, каталог справа */
+.main-layout {
+    display: flex;
+    gap: 20px; /* Отступ между меню и каталогом */
+    margin-top: 40px;
+    align-items: flex-start;
+}
