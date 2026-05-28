@@ -1,71 +1,181 @@
-/* Общие настройки для всей страницы */
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #FFFFFF;
-    font-family: 'Alegreya Sans', sans-serif;
-    color: #31302E;
+/* ==================== HEADER STYLES ==================== */
+
+header {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    width: 100%;
 }
 
-/* Контейнер, который держит весь контент по центру (ровно 1200px, как в Фигме) */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
+/* Верхнее меню */
+header table:first-child {
+    background: #ffaa00;
+    border-bottom: 1px solid #e5d9c0;
 }
 
-/* Главная рабочая область: меню слева, каталог справа */
-.main-layout {
-    display: flex;
-    gap: 20px; /* Отступ между меню и каталогом */
-    margin-top: 40px;
-    align-items: flex-start;
+header table:first-child td {
+    text-align: center;
+    padding: 12px 8px;
+    font-size: 15px;
 }
 
-/* Боковое меню */
-.sidebar-menu {
-    width: 260px;
-    background: #FFF9E6;
-    box-shadow: 4px 8px 12px rgba(254, 193, 7, 0.45);
-    border-radius: 15px;
-    margin-left: 48px;
-    box-sizing: border-box;
-    padding: 0;         
-    overflow: hidden;    
-}
-
-
-.sidebar-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* Линии-разделители */
-.sidebar-menu li {
-    border-bottom: 1px solid #CCC2C2;
-}
-
-.sidebar-menu li:last-child {
-    border-bottom: none; 
-}
-
-/* Базовое состояние ссылок в меню */
-.sidebar-menu a {
-    display: block;      /* Ссылка становится полноценным блоком от края до края */
-    padding: 18px 25px;  /* Теперь высоту и ширину пункта задаем ТОЛЬКО здесь */
-    font-family: 'Alegreya Sans', sans-serif;
-    font-weight: 400;
-    font-size: 26px;
-    color: #31302E;
+header table:first-child a {
+    color: #333;
     text-decoration: none;
-    transition: all 0.2s ease;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
-/* Состояние при наведении и активный пункт */
-.sidebar-menu li.active a,
-.sidebar-menu a:hover {
-    background: #FFC107;
-    font-weight: 700;
+header table:first-child a:hover {
+    color: #d97706;
+}
+
+/* Логотип + Поиск + Телефон + Корзина */
+header table:nth-child(3) {
+    background: #fff;
+    padding: 15px 0;
+}
+
+header table:nth-child(3) td {
+    vertical-align: middle;
+}
+
+/* Логотип */
+.logo-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+}
+
+.logo-block img {
+    width: 65px;
+    height: 65px;
+}
+
+.logo-text {
+    line-height: 1.1;
+}
+
+.logo-text strong {
+    font-size: 18px;
+    color: #333;
+    display: block;
+}
+
+.logo-text span {
+    font-size: 15px;
+    color: #d97706;
+    font-weight: bold;
+}
+
+/* Поиск */
+.search-block {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-block input {
+    width: 280px;
+    padding: 10px 14px;
+    border: 2px solid #f5d38f;
+    border-radius: 25px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-block input:focus {
+    border-color: #d97706;
+}
+
+/* Телефон */
+.phone-block {
+    text-align: center;
+    line-height: 1.3;
+}
+
+.phone-block strong {
+    font-size: 18px;
+    color: #333;
+    display: block;
+}
+
+.phone-block small {
+    color: #666;
+    font-size: 13px;
+}
+
+/* Корзина */
+.cart-block {
+    text-align: center;
+    background: #fff9e6;
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: 2px solid #f5d38f;
+}
+
+.cart-block strong {
+    font-size: 22px;
+    color: #d97706;
+    display: block;
+}
+
+.cart-block a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    margin: 4px 0;
+}
+
+.cart-block a:hover {
+    color: #d97706;
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+    background: #fff;
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.breadcrumbs a {
+    color: #d97706;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+/* Заголовок */
+header h1 {
+    background: linear-gradient(90deg, #f5b800, #ffcc00);
+    color: #333;
+    text-align: center;
+    padding: 25px 20px;
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Адаптив */
+@media (max-width: 992px) {
+    header table:nth-child(3) td {
+        padding: 10px 5px;
+    }
+    
+    .search-block input {
+        width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-block {
+        flex-direction: column;
+        text-align: center;
+    }
 }

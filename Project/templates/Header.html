@@ -1,62 +1,214 @@
-<header>
-    <!-- ТАБЛИЦА ГЛАВНОГО МЕНЮ -->
-    <table border="0" cellpadding="10" cellspacing="0" width="100%">
-        <tr>
-            <td><a href="#">Каталог</a></td>
-            <td><a href="#">Гарантия</a></td>
-            <td><a href="#">Отзывы</a></td>
-            <td><a href="#">Контакты</a></td>
-            <td><a href="#">Галерея</a></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-    </table>
-    <hr>
+<style>
+/* ==================== HEADER STYLES ==================== */
+* {
+    box-sizing: border-box;
+}
 
-    <!-- Логотип + Поиск + Телефон + Корзина -->
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    font-family: 'Arial', sans-serif;
+    width: 100%;
+}
+
+/* 1. Верхнее меню — теперь слева */
+.top-menu {
+    background: #f8f1e3;
+    border-bottom: 1px solid #e5d9c0;
+    width: 100%;
+    padding: 12px 20px;
+}
+
+.top-menu nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.top-menu nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.top-menu nav ul li a:hover {
+    color: #d97706;
+}
+
+/* 2. Основная часть хедера */
+header > table {
+    background: #fff;
+    width: 100% !important;
+    margin: 0;
+    padding: 15px 20px !important;
+}
+
+.logo-block, .search-block, .phone-block, .cart-block {
+    vertical-align: middle;
+}
+
+/* Логотип */
+.logo-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-block img {
+    width: 65px;
+    height: 65px;
+}
+
+.logo-text strong {
+    font-size: 18px;
+    color: #333;
+    display: block;
+}
+
+.logo-text span {
+    font-size: 15px;
+    color: #d97706;
+    font-weight: bold;
+}
+
+/* Поиск */
+.search-block input {
+    width: 280px;
+    padding: 10px 16px;
+    border: 2px solid #f5d38f;
+    border-radius: 30px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-block input:focus {
+    border-color: #d97706;
+}
+
+/* Телефон */
+.phone-block strong {
+    font-size: 18px;
+    color: #333;
+}
+
+.phone-block small {
+    color: #666;
+    font-size: 13px;
+}
+
+/* Корзина */
+.cart-block {
+    background: #fff9e6;
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: 2px solid #f5d38f;
+    text-align: center;
+    min-width: 120px;
+}
+
+.cart-block strong {
+    font-size: 24px;
+    color: #d97706;
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* 3. Жёлтая полоса */
+.header-bar {
+    background: linear-gradient(90deg, #f5b800, #ffcc00);
+    width: 100% !important;
+    margin: 0;
+    padding: 18px 20px;
+    text-align: center;
+}
+
+.breadcrumbs {
+    color: #444;
+    font-size: 15px;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.header-bar h1 {
+    margin: 0;
+    color: #333;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Адаптив */
+@media (max-width: 992px) {
+    .search-block input { width: 220px; }
+    .top-menu nav ul { gap: 20px; }
+}
+
+@media (max-width: 768px) {
+    .logo-block { flex-direction: column; text-align: center; }
+    .top-menu nav ul { flex-wrap: wrap; gap: 15px; justify-content: center; }
+}
+</style>
+
+<header>
+    <!-- Верхнее меню (слева) -->
+    <div class="top-menu">
+        <nav>
+            <ul>
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">Гарантия</a></li>
+                <li><a href="#">Отзывы</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Галерея</a></li>
+                <li><a href="#">Как выбрать мед?</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Основная часть хедера -->
     <table border="0" cellpadding="15" width="100%">
         <tr>
             <!-- Логотип -->
-            <td>
-                <img src="images/logo-placeholder.png" alt="лого" width="80" height="60">
-                <strong>ЧАСТНАЯ ПАСИКА</strong><br>
-                ЗПОИС23
+            <td class="logo-block">
+                <img src="images/logo-placeholder.png" alt="лого">
+                <div class="logo-text">
+                    <strong>ЧАСТНАЯ ПАСИКА</strong>
+                    <span>ЗПОИС23</span>
+                </div>
             </td>
 
             <!-- Поиск -->
-            <td>
-                <img src="images/search-icon.png" alt="поиск" width="30" height="30"><br>
+            <td class="search-block">
                 <input type="text" placeholder="Поиск...">
             </td>
 
             <!-- Телефон -->
-            <td>
-                <img src="images/phone-icon.png" alt="телефон" width="40" height="40"><br>
+            <td class="phone-block">
                 <strong>+375 (33) 628-86-72</strong><br>
-                Принимаем звонки с 8 до 16
+                <small>Принимаем звонки с 8 до 16</small>
             </td>
 
             <!-- Корзина -->
-            <td align="center">
-                <strong>1</strong><br>
-                <a href="#">В КОРЗИНУ</a><br>
-                <a href="#">ПОДЕЛИТЬСЯ</a><br>
-                <img src="images/Market-icon.png" alt="корзина" width="45" height="45">
+            <td class="cart-block">
+                <strong>1</strong>
+                <a href="#">В КОРЗИНУ</a>
+                <a href="#">ПОДЕЛИТЬСЯ</a>
             </td>
         </tr>
     </table>
 
-    <!-- Хлебные крошки -->
-    <table>
-        <tr>
-            <td>Главная → Каталог → Пчелиный мёд</td>
-        </tr>
-    </table>
-
-    <h1>Натуральный мёд от пчеловода</h1>
+    <!-- Жёлтая полоса -->
+    <div class="header-bar">
+        <div class="breadcrumbs">
+            Главная → Каталог → Пчелиный мёд
+        </div>
+        <h1>Натуральный мёд от пчеловода</h1>
+    </div>
 </header>
