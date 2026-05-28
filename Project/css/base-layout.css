@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    font-family: 'Alegreya Sans', sans-serif;
+    width: 100%;
+}
+
+/* 1. Верхнее меню */
+.top-menu {
+    background: #f8f1e3;
+    border-bottom: 1px solid #e5d9c0;
+    width: 100%;
+    padding: 12px 20px 12px 50px;
+}
+
+.top-menu nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.top-menu nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.top-menu nav ul li a:hover {
+    color: #d97706;
+}
+
+/* 2. Основная часть хедера */
+.main-header {
+    background: #fff;
+    width: 100% !important;
+    margin: 0;
+    padding: 15px 20px 15px 50px !important;
+}
+
+/* Поиск с иконкой */
+.search-block {
+    position: relative;
+}
+
+.search-block input {
+    width: 280px;
+    padding: 10px 16px 10px 45px;
+    border: 2px solid #f5d38f;
+    border-radius: 30px;
+    font-size: 15px;
+    outline: none;
+    background: #E1E1E1;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+.search-block input:focus {
+    border-color: #d97706;
+    background: #fff;
+}
+
+.search-block::before {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    background: url('images/search-icon.png') no-repeat center;
+
+    background-size: contain;
+}
+
+/* ==================== КОРЗИНА ==================== */
+.cart-block {
+    background: #E1E1E1;
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: 2px solid #f5d38f;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 160px;
+    text-align: left;
+}
+
+.cart-block img {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+}
+
+.cart-quantity {
+    background: #d97706;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.cart-links {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.cart-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+.cart-links a:hover {
+    color: #d97706;
+}
+
+.logo-block{
+    height: 40;
+}
+/* Логотип — используем более красивый шрифт */
+.logo-text strong {
+    font-family: 'Alegreya SC', serif;
+    font-size: 19px;
+    color: #333;
+    display: block;
+    font-weight: 700;
+}
+
+.logo-text span {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 15px;
+    color: #d97706;
+    font-weight: 800;
+}
+
+/* Телефон */
+.phone-block strong {
+    font-family: 'Alegreya SC', serif;
+    font-size: 18px;
+    color: #333;
+}
+
+.phone-block small {
+    color: #666;
+    font-size: 13px;
+}
+.logo-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* 3. Жёлтая полоса */
+.header-bar {
+    background: linear-gradient(90deg, #f5b800, #ffcc00);
+    width: 100% !important;
+    margin: 0;
+    padding: 18px 20px 18px 50px;
+    text-align: left;
+}
+
+.breadcrumbs {
+    color: #444;
+    font-size: 15px;
+    margin-bottom: 8px;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+.header-bar h1 {
+    margin: 0;
+    color: #333;
+    font-family: 'Alegreya SC', serif;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}

@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сайт конкретного мёда</title>
+    <!-- Подключение шрифтов Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@400;700&family=Alegreya+Sans+SC:wght@800&family=Alegreya+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base-layout.css">
     <link rel="stylesheet" href="css/show_item.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@400;700&family=Alegreya+Sans+SC:wght@800&family=Alegreya+Sans:wght@300;400;700&display=swap" rel="stylesheet">
@@ -12,67 +18,64 @@
 <body>
 
 <header>
-    <!-- ТАБЛИЦА ГЛАВНОГО МЕНЮ -->
-    <table border="0" cellpadding="10" cellspacing="0" width="100%">
-        <tr>
-            <td><a href="#">Каталог</a></td>
-            <td><a href="#">Гарантия</a></td>
-            <td><a href="#">Отзывы</a></td>
-            <td><a href="#">Контакты</a></td>
-            <td><a href="#">Галерея</a></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-    </table>
-    <hr>
-    <a href="" class="menu__title"></a><a href="" class="menu__title"></a><a href="" class="menu__title"></a><a href="" class="menu__title"></a>
+    <!-- Верхнее меню -->
+    <div class="top-menu">
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">Гарантия</a></li>
+                <li><a href="#">Отзывы</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Как выбрать мед?</a></li>
+            </ul>
+        </nav>
+    </div>
 
-    <!-- Логотип + Поиск + Телефон + Корзина -->
-    <table border="0" cellpadding="15" width="100%">
+    <!-- Основная часть хедера -->
+    <table border="0"  width="100%" class="main-header">
         <tr>
             <!-- Логотип -->
-            <td>
-                <img src="images/logo-placeholder.png" alt="лого" width="80" height="60">
-                <strong>ЧАСТНАЯ ПАСИКА</strong><br>
-                ЗПОИС23
+            <td class="logo-block" >
+                <img src="images/logo-placeholder.png" alt="лого" width="65">
+                <div class="logo-text">
+                    <strong>ЧАСТНАЯ ПАСИКА</strong>
+                    <span>ЗПОИС23</span>
+                </div>
             </td>
 
             <!-- Поиск -->
-            <td>
-                <img src="images/search-icon.png" alt="поиск" width="30" height="30"><br>
-                <input type="text" placeholder="Поиск...">
+            <td class="search-block">
+                    <div class="search-block">
+                        <input type="text" placeholder="Поиск...">
+                    </div>
             </td>
 
             <!-- Телефон -->
-            <td>
-                <img src="images/phone-icon.png" alt="телефон" width="40" height="40"><br>
-                <strong>+375 (33) 628-86-72</strong><br>
-                Принимаем звонки с 8 до 16
+            <td class="phone-block">
+                <strong>+375 (33) 628-86-72</strong>
+                <small>Принимаем звонки с 8 до 16</small>
             </td>
 
             <!-- Корзина -->
-            <td align="center">
-                <strong>1</strong><br>
-                <a href="#">В КОРЗИНУ</a><br>
-                <a href="#">ПОДЕЛИТЬСЯ</a><br>
-                <img src="images/Market-icon.png" alt="корзина" width="45" height="45">
+            <td class="cart-block">
+                <img src="images/Market-icon.png" alt="корзина">
+                <div class="cart-quantity">1</div>
+                <div class="cart-links">
+                    <a href="#">В КОРЗИНУ</a>
+                    <a href="#">ПОДЕЛИТЬСЯ</a>
+                </div>
             </td>
         </tr>
     </table>
 
-    <!-- Хлебные крошки -->
-    <table>
-        <tr>
-            <td>Главная → Каталог → Пчелиный мёд</td>
-        </tr>
-    </table>
-
-    <h1>Натуральный мёд от пчеловода</h1>
+    <!-- Жёлтая полоса -->
+    <div class="header-bar">
+        <div class="breadcrumbs">
+            Главная → Каталог → Пчелиный мёд
+        </div>
+        Натуральный мёд от пчеловода
+    </div>
 </header>
 
 <main>
