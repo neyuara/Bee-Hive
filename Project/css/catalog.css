@@ -17,24 +17,31 @@ body {
 
 /* Главная рабочая область: меню слева, каталог справа */
 .main-layout {
+    width: 100%;
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+
+.catalog-wrapper {
     display: flex;
-    gap: 20px; /* Отступ между меню и каталогом */
-    margin-top: 40px;
     align-items: flex-start;
+    width: 100%;
+    margin-bottom: 50px;
 }
 
 /* Боковое меню */
 .sidebar-menu {
     width: 260px;
+    height: 342px;
+    flex-shrink: 0;
+    margin-left: 48px;
     background: #FFF9E6;
     box-shadow: 4px 8px 12px rgba(254, 193, 7, 0.45);
     border-radius: 15px;
-    margin-left: 48px;
     box-sizing: border-box;
-    padding: 0;         
-    overflow: hidden;    
+    padding: 0;          
+    overflow: hidden;   
 }
-
 
 .sidebar-menu ul {
     list-style: none;
@@ -68,4 +75,75 @@ body {
 .sidebar-menu a:hover {
     background: #FFC107;
     font-weight: 700;
+}
+
+/* Сетка для карточек товаров */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-left: 25px;  
+    margin-right: 48px;
+    flex-grow: 1;
+}
+
+/* Сама карточка товара */
+.product-card {
+    width: 260px;
+    height: 342px;
+    background: #FFF9E6;
+    box-shadow: 4px 8px 12px rgba(255, 193, 7, 0.45);
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Картинка товара внутри белой рамки */
+.product-img {
+    width: 213px;
+    height: 213px;
+    object-fit: cover;
+    background: #FFFFFF;
+    border: none;
+}
+
+/* Название товара */
+.product-title {
+    font-family: 'Alegreya SC', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #31302E;
+    text-align: center;
+    margin: 5px 0;
+}
+
+/* Кнопка "В корзину" */
+.btn-add-to-cart {
+    width: 120px;
+    height: 35px;
+    background: #FFC107;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    border: none;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: #000000;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.btn-add-to-cart:active {
+    transform: scale(0.95);
+}
+
+.info-section {
+    clear: both;        /* Запрещает обтекание элемента с любых сторон */
+    width: 100%;        /* Растягиваем блок на всю ширину контейнера (1200px) */
+    display: block;     /* Гарантируем, что это отдельная строка */
+    margin-top: 50px;   /* Красивый отступ сверху от карточек товаров */
 }
