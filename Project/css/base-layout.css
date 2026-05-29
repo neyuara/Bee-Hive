@@ -1,7 +1,9 @@
 * {
-    box-sizing: border-box;
+
     font-family: 'Alegreya Sans', sans-serif;
-}
+    a {
+    text-decoration: none;
+}}
 
 html, body {
     margin: 0;
@@ -12,12 +14,12 @@ html, body {
 header {
     font-family: 'Alegreya Sans', sans-serif;
     width: 100%;
+    text-decoration: none;
 }
 
 /* 1. Верхнее меню */
 .top-menu {
     background: #f8f1e3;
-    border-bottom: 1px solid #e5d9c0;
     width: 100%;
     padding: 12px 20px 12px 50px;
 position: fixed
@@ -26,20 +28,8 @@ position: fixed
 .top-menu nav ul {
     list-style: none;
     margin: 0;
-    padding: 0;
     display: flex;
     gap: 30px;
-}
-
-.top-menu nav ul li a {
-    color: #333;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 15px;
-}
-
-.top-menu nav ul li a:hover {
-    color: #d97706;
 }
 
 /* 2. Основная часть хедера */
@@ -57,7 +47,6 @@ position: fixed
 .search-block input {
     width: 280px;
     padding: 10px 16px 10px 45px;
-    border: 2px solid #f5d38f;
     border-radius: 30px;
     font-size: 15px;
     outline: none;
@@ -77,9 +66,6 @@ position: fixed
     top: 50%;
     width: 22px;
     height: 22px;
-    background: url('images/search-icon.png') no-repeat center;
-
-    background-size: contain;
 }
 
 /* ==================== КОРЗИНА ==================== */
@@ -87,7 +73,6 @@ position: fixed
     background: #E1E1E1;
     padding: 10px 16px;
     border-radius: 12px;
-    border: 2px solid #f5d38f;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -125,17 +110,11 @@ position: fixed
     color: #333;
     text-decoration: none;
     font-size: 14px;
-    white-space: nowrap;
     font-family: 'Alegreya Sans', sans-serif;
-}
-
-.cart-links a:hover {
-    color: #d97706;
 }
 
 .logo-text strong {
     font-family: 'Alegreya SC', serif;
-    font-size: 19px;
     color: #333;
     display: block;
     font-weight: 700;
@@ -152,16 +131,6 @@ position: fixed
 }
 
 /* Телефон */
-.phone-block strong {
-    font-family: 'Alegreya SC', serif;
-    font-size: 18px;
-    color: #333;
-}
-
-.phone-block small {
-    color: #666;
-    font-size: 13px;
-}
 .logo-block {
     display: flex;
     align-items: center;
@@ -170,7 +139,7 @@ position: fixed
 
 .logo-block img {
     display: block;
-    vertical-align: bottom; 
+
 }
 /* 3. Жёлтая полоса */
 .header-bar {
@@ -180,24 +149,10 @@ position: fixed
     padding: 18px 20px 18px 50px;
     text-align: left;
 }
-
-.breadcrumbs {
-    color: #444;
-    font-size: 15px;
-    margin-bottom: 8px;
-    font-family: 'Alegreya Sans', sans-serif;
-}
-#pos4{
-
-    position: sticky; 
-
-}
 .header-bar h1 {
     margin: 0;
     color: #333;
     font-family: 'Alegreya SC', serif;
     font-size: 28px;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }

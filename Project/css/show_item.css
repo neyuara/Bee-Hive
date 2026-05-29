@@ -1,129 +1,248 @@
-/* ==================== HEADER STYLES ==================== */
+/* ===== show_item.css ===== */
 
-header {
+:root {
+    --main: #d97706;
+    --light: #fff9ee;
+    --border: #f5d38f;
+    --border-dark: #e8c46d;
+    --accent-border: #d97706;
+}
 
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 24px 60px;
+}
+
+/* ===================== ЕДИНЫЙ СТИЛЬ КНОПОК ===================== */
+.btn {
+    border-radius: 30px;
+    font-family: 'Alegreya SC', serif;
+    font-weight: 700;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 24px;
+    border: 2px solid transparent;
+}
+
+
+/* Основная кнопка (оранжевая) */
+.btn-primary {
+    background: var(--main);
+    color: white;
+    border-color: var(--main);
+}
+
+
+/* Кнопка с обводкой */
+.btn-outline {
+    background: transparent;
+    color: var(--main);
+    border-color: var(--border-dark);
+}
+
+/* ===================== БЛОК ТОВАРА ===================== */
+.product-section {
+    display: grid;
+    grid-template-columns: 42% 28% 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+    align-items: start;
+}
+
+.product-image-wrap {
+    background: var(--light);
+    border: 3px solid var(--border);
+    border-radius: 22px;
+    padding: 20px;
+}
+
+.product-image-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 520px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.product-buy {
+    background: var(--light);
+    border: 3px solid var(--border);
+    border-radius: 22px;
+    padding: 28px 24px;
+    text-align: center;
+}
+
+/* ===================== КАТЕГОРИИ ===================== */
+.product-categories {
+    background: var(--light);
+    border: 3px solid var(--border);
+    border-radius: 22px;
+    padding: 26px 22px;
+
+    height: 100%;
+}
+
+.product-categories h3 {
+    font-family: 'Alegreya SC', serif;
+    font-size: 15px;
+    color: #999;
+    margin: 0 0 18px 0;
+    text-transform: uppercase;
+}
+
+.product-categories ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.product-categories li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: #444;
+    font-size: 15.5px;
+}
+
+
+/* ===================== ПОХОЖИЕ ТОВАРЫ ===================== */
+.related-section {
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+
+.related-section h2 {
+    margin-bottom: 24px;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+    gap: 26px;
     width: 100%;
 }
 
-/* Верхнее меню */
-header table:first-child {
-
-    border-bottom: 1px solid #e5d9c0;
-}
-
-header table:first-child td {
+.related-card {
+    background: var(--light);
+    border: 3px solid var(--border);
+    border-radius: 20px;
+    padding: 18px 16px;
     text-align: center;
-    padding: 12px 8px;
-    font-size: 15px;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+.related-card img {
+    width: 100%;
+    height: 165px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 2px solid var(--border);
+    margin-bottom: 12px;
 }
 
-header table:first-child a {
+.card-name {
+    font-weight: 600;
+    margin: 8px 0 4px;
     color: #333;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
 }
 
-header table:first-child a:hover {
-    color: #d97706;
+.card-price {
+    font-family: 'Alegreya SC', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--main);
+    margin-bottom: 12px;
 }
 
-/* Логотип + Поиск + Телефон + Корзина */
-header table:nth-child(3) {
-
-    padding: 15px 0;
-}
-
-header table:nth-child(3) td {
-    vertical-align: middle;
-}
-
-/* Логотип */
-.logo-block {
+/* ===================== КОНСУЛЬТАЦИЯ ===================== */
+.consult-section {
     display: flex;
+    gap: 50px;
+    background: var(--light);
+    border: 3px solid var(--border);
+    border-radius: 22px;
+    padding: 45px 40px;
     align-items: center;
-    gap: 12px;
-    white-space: nowrap;
 }
 
-.logo-block img {
-    width: 65px;
-    height: 65px;
+.consult-form-side {
+    flex: 1;
 }
 
-.logo-text {
-    line-height: 1.1;
+.consult-image-side img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
 }
 
-.logo-text strong {
-    font-size: 18px;
-    color: #333;
-    display: block;
+/* ===================== ТАБЫ ===================== */
+.tabs-bar {
+    display: flex;
+    gap: 4px;
+    background: #f0e6d0;
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    padding: 6px;
+    width: fit-content;
+    margin-bottom: 20px;
 }
 
-.logo-text span {
-    font-size: 15px;
-    color: #d97706;
-    font-weight: bold;
-}
-
-
-
-/* Телефон */
-.phone-block {
-    text-align: center;
-    line-height: 1.3;
-}
-
-.phone-block strong {
-    font-size: 18px;
-    color: #333;
-    display: block;
-}
-
-.phone-block small {
-    color: #666;
-    font-size: 13px;
-}
-
-/* Корзина */
-.cart-block {
-    text-align: center;
-
-    padding: 10px 15px;
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 11px 28px;
     border-radius: 12px;
-    border: 2px solid #f5d38f;
+    cursor: pointer;
+    font-size: 15px;
 }
 
-.cart-block strong {
-    font-size: 22px;
-    color: #d97706;
-    display: block;
+.tab-btn.active {
+    background: white;
+    font-weight: 700;
 }
 
-.cart-block a {
+.tab-content {
+    background: var(--light);
+    border: 3px solid var(--border);
+    border-radius: 20px;
+    padding: 32px 30px;
+    margin-bottom: 50px;
+}
+
+/* ===================== МЕЛКИЕ УЛУЧШЕНИЯ ===================== */
+.price-value {
+    font-size: 27px;
+    font-weight: 700;
     color: #333;
-    text-decoration: none;
-    font-size: 14px;
+}
+
+.qty-control {
+    padding: 5px;
+}
+/* ===================== ПОЛЯ ВВОДА (ЕДИНЫЙ СТИЛЬ) ===================== */
+.form-input {
     display: block;
-    margin: 4px 0;
-}
-
-
-.breadcrumbs a:hover {
-    text-decoration: underline;
-}
-
-/* Заголовок */
-header h1 {
-
+    width: 100%;
+    max-width: 340px;
+    padding: 14px 20px;
+    margin-bottom: 14px;
+    background: #fff;
+    border: 2px solid var(--border-dark);
+    border-radius: 30px;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 15px;
     color: #333;
-    text-align: center;
-    padding: 25px 20px;
-    margin: 0;
-    font-size: 28px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
 
+.form-input:focus {
+    border-color: var(--accent-border);
+    outline: none;
+    background: #fffdf5;
 }

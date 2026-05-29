@@ -4,25 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сайт конкретного мёда</title>
-    <!-- Подключение шрифтов Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@400;700&family=Alegreya+Sans+SC:wght@800&family=Alegreya+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@400;700&family=Alegreya+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/show_item.css">
     <link rel="stylesheet" href="css/base-layout.css">
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@400;700&family=Alegreya+Sans+SC:wght@800&family=Alegreya+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
 <header>
-    <!-- Верхнее меню -->
     <div class="top-menu">
         <nav>
-            <ul id="pos4">
+            <ul>
                 <li><a href="#">Главная</a></li>
                 <li><a href="#">Каталог</a></li>
                 <li><a href="#">Гарантия</a></li>
@@ -32,44 +22,32 @@
             </ul>
         </nav>
     </div>
-
-    <!-- Основная часть хедера -->
-    <table border="0"  width="100%" class="main-header">
+    
+    <table class="main-header">
         <tr>
-            <!-- Логотип -->
-            <td class="logo-block" >
+            <td class="logo-block">
                 <img src="images/logo-placeholder.png" alt="лого" width="65">
                 <div class="logo-text">
                     <strong>ЧАСТНАЯ ПАСИКА</strong>
                     <span>ЗПОИС23</span>
                 </div>
             </td>
-
-            <!-- Поиск -->
             <td class="search-block">
-                    <div class="search-block">
-                        <input type="text" placeholder="Поиск...">
-                    </div>
+                <div class="search-wrap">
+                    <input type="text" placeholder="Поиск...">
+                </div>
             </td>
-
-            <!-- Телефон -->
             <td class="phone-block">
                 <table>
                     <tr>
+                        <td><img src="images/phone-icon.png"></td>
                         <td>
-                            <img src = "images/phone-icon.png">
-                        </td>
-                        <td>
-                    <strong>+375 (33) 628-86-72</strong>
-                    <small>Принимаем звонки с 8 до 16</small>
+                            <strong>+375 (33) 628-86-72</strong><br>
+                            <small>Принимаем звонки с 8 до 16</small>
                         </td>
                     </tr>
-
                 </table>
-
             </td>
-
-            <!-- Корзина -->
             <td class="cart-block">
                 <img src="images/Market-icon.png" alt="корзина">
                 <div class="cart-quantity">1</div>
@@ -80,142 +58,129 @@
             </td>
         </tr>
     </table>
-
-    <!-- Жёлтая полоса -->
+    
     <div class="header-bar">
-        <div class="breadcrumbs">
-            Главная → Каталог → Пчелиный мёд
-        </div><h1>
-        Натуральный мёд от пчеловода</h1>
+        <div class="breadcrumbs">Главная → Каталог → Пчелиный мёд</div>
+        <h1>НАТУРАЛЬНЫЙ МЁД ОТ ПЧЕЛОВОДА</h1>
     </div>
 </header>
 
 <main>
-    <table border="1" cellpadding="8" cellspacing="0" width="100%">
-        <tr>
-            <!-- Изображение товара (твоё оригинальное) -->
-            <td rowspan="6" width="40%">
-                <img src="images/a jar of honey.png" alt="Банка мёда" width="100%">
-            </td>
+    <section class="product-section">
+        <div class="product-image-wrap">
+            <img src="images/catalog/Honey_honeycomb.jpg" alt="Банка мёда">
+        </div>
+        <div class="product-buy">
+            <p class="price-label">Цена</p>
+            <p class="price-value">1700 руб / 3 л</p>
+            <div class="qty-control">
+                <button class="btn-outline">−</button>
+                <span>1</span>
+                <button class="btn-primary">+</button>
+            </div>
+            <button class="btn btn-primary btn-cart">В корзину</button>
+            <button class="btn btn-outline btn-share">Поделиться</button>
+        </div>
+        <div class="product-categories">
+            <h3>Категории</h3>
+            <ul>
+                <li class="active"><a href="#">Пчелиный мёд</a></li>
+                <li><a href="#">Пчелиный воск</a></li>
+                <li><a href="#">Улья</a></li>
+                <li><a href="#">Рамки для ульев</a></li>
+                <li><a href="#">Прополис</a></li>
+            </ul>
+        </div>
+    </section>
 
-            <!-- Цена и кнопки -->
-            <td rowspan="6" width="30%" align="center" valign="middle">
-                <h2>ЦЕНА</h2>
-                <p><strong>1700 руб / 3 л</strong></p>
-                
-                <p>
-                    <button>-</button>
-                    <strong>1</strong>
-                    <button>+</button>
-                </p>
-                
-                <button style="padding:10px 20px; font-size:16px;">В КОРЗИНУ</button><br><br>
-                <button>ПОДЕЛИТЬСЯ</button>
-            </td>
-
-            <!-- Правая колонка (категории) -->
-            <td width="30%">
-                <strong>Пчелиный мёд</strong><br>
-                Пчелиный воск<br>
-                Улья<br>
-                Рамки для ульев<br>
-                Прополис
-            </td>
-        </tr>
-    </table>
-
-    <!-- Табы -->
-    <table border="0" cellpadding="10" width="100%" style="background:#f5d68c;">
-        <tr>
-            <th>Описание</th>
-            <th>Характеристики</th>
-            <th>Вкладка</th>
-        </tr>
-    </table>
-
-    <!-- Блок описания -->
-    <div style="min-height: 250px; padding: 20px; background:#fff9e6;">
-        <h3>Текст описания</h3>
-        <p>Здесь будет подробное описание товара...</p>
+    <div class="tabs-bar">
+        <button class="tab-btn active">Описание</button>
+        <button class="tab-btn">Характеристики</button>
+        <button class="tab-btn">Отзывы</button>
     </div>
 
-    <!-- Похожие товары -->
-    <h2>Похожие товары</h2>
-    <table border="1" cellpadding="8" cellspacing="0" width="100%" align="center">
-        <tr>
-            <td align="center">
-                <img src="images/catalog/Honey_liquid.jpg" alt="Гречишный мёд 2 л." width="180"><br>
-                Гречишный мёд 2 л.<br>
-                1200 руб<br>
-                <button>Подробнее</button><br>
-                <button>В корзину</button>
-            </td>
-            <td align="center">
-                <img src="images/catalog/Honey_liquid.jpg" alt="Гречишный мёд 1 л." width="180"><br>
-                Гречишный мёд 1 л.<br>
-                700 руб<br>
-                <button>Подробнее</button><br>
-                <button>В корзину</button>
-            </td>
-            <td align="center">
-                <img src="images/catalog/Honey_liquid.jpg" alt="Гречишный мёд 0,5 л." width="180"><br>
-                Гречишный мёд 0,5 л.<br>
-                350 руб<br>
-                <button>Подробнее</button><br>
-                <button>В корзину</button>
-            </td>
-        </tr>
-    </table>
+    <div class="tab-content">
+        <div class="tab-panel active">
+            <h3>Текст описания</h3>
+            <p>Здесь будет подробное описание товара...</p>
+        </div>
+        <div class="tab-panel">
+            <h3>Характеристики</h3>
+            <table class="chars-table">
+                <tr><td>Срок годности</td><td>24 месяца</td></tr>
+                <tr><td>Страна-производитель</td><td>Республика Беларусь</td></tr>
+                <tr><td>Объём</td><td>3 литра</td></tr>
+                <tr><td>Состав</td><td>Натуральный зрелый гречишный мёд</td></tr>
+                <tr><td>Условия хранения</td><td>Прохладное место, от +5°C до +25°C</td></tr>
+            </table>
+        </div>
+        <div class="tab-panel">
+            <h3>Отзывы покупателей</h3>
+            <p>Здесь будут отзывы...</p>
+        </div>
+    </div>
 
-    <!-- Бесплатная консультация -->
-    <h2>Бесплатная консультация</h2>
-    <table width="100%">
-        <tr>
-            <td width="60%">
-                <p>Отправьте запрос — И мы вам позвоним</p>
-                <input type="text" placeholder="Имя" style="width:80%"><br><br>
-                <input type="tel" placeholder="Телефон" style="width:80%"><br><br>
-                <button>Подробнее</button>
-            </td>
-            <td>
-                <img src="images/beekeeper.jpg" alt="Пчеловод" width="300">
-            </td>
-        </tr>
-    </table>
+    <div class="related-section">
+        <h2><img src="images/point.png"> Похожие товары</h2>
+        <div class="related-grid">
+            <div class="related-card">
+                <img src="images/catalog/Honey_liquid.jpg" alt="Гречишный мёд 2 л.">
+                <div class="card-name">Гречишный мёд 2 л.</div>
+                <div class="card-price">1200 руб</div>
+                <button class="btn btn-outline btn-detail">Подробнее</button>
+                <button class="btn btn-primary btn-cart-sm">В корзину</button>
+            </div>
+            <div class="related-card">
+                <img src="images/catalog/Honey_liquid.jpg" alt="Гречишный мёд 1 л.">
+                <div class="card-name">Гречишный мёд 1 л.</div>
+                <div class="card-price">700 руб</div>
+                <button class="btn btn-outline btn-detail">Подробнее</button>
+                <button class="btn btn-primary btn-cart-sm">В корзину</button>
+            </div>
+            <div class="related-card">
+                <img src="images/catalog/Honey_liquid.jpg" alt="Гречишный мёд 0,5 л.">
+                <div class="card-name">Гречишный мёд 0,5 л.</div>
+                <div class="card-price">350 руб</div>
+                <button class="btn btn-outline btn-detail">Подробнее</button>
+                <button class="btn btn-primary btn-cart-sm">В корзину</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="consult-section">
+        <div class="consult-form-side">
+            <h2><img src="images/point.png"> Бесплатная консультация</h2>
+            <p>Отправьте запрос — и мы вам позвоним</p>
+            <input type="text" class="form-input" placeholder="Имя">
+            <input type="tel" class="form-input" placeholder="Телефон">            
+            <button class="btn btn-primary">Подробнее</button>
+        </div>
+        <div class="consult-image-side">
+            <img src="images/The beekeeper.png" alt="Пчеловод">
+        </div>
+    </section>
 </main>
 
 <footer>
-        <div class="footer-drops">
-            <img src="images/honey-drops.png" width="100%" height="200" alt="Подтеки меда">
-        </div>
-
-        <table width="100%" border="0" cellpadding="15" cellspacing="0">
-            <tr>
-                
-                <td width="33%" align="center" valign="middle">
-                    <img src="images/logo-placeholder.png" width="80" alt="Лого" align="absmiddle">
-                    <strong style="display: inline-block; text-align: left; margin-left: 10px;">
-                        Частная пасека<br>ЗПОИС23
-                    </strong>
-                </td>
-
-                <td width="34%" align="center" valign="middle">
-                    <img src="images/mail-icon.png" width="60" alt="Почта" align="absmiddle">
-                    <span style="display: inline-block; text-align: left; margin-left: 10px;">
-                        Адрес электронной почты:<br>
-                        <strong>chastnayapaseka3pois23@gmail.com</strong>
-                    </span>
-                </td>
-
-                <td width="33%" align="center" valign="middle">
-                    <img src="images/red-phone-icon.png" width="60" alt="Телефон" align="absmiddle">
-                    <strong style="display: inline-block; text-align: left; margin-left: 10px;">
-                        +375 (33) 628-86-72
-                    </strong>
-                </td>
-            </tr>
-        </table>
-    </footer>
-
+    <div class="footer-drops">
+        <img src="images/honey-drops.png" width="100%" height="200" alt="Подтеки меда">
+    </div>
+    <table class="footer-table">
+        <tr>
+            <td align="center">
+                <img src="images/logo-placeholder.png" width="80" alt="Лого">
+                <strong>Частная пасека<br>ЗПОИС23</strong>
+            </td>
+            <td align="center">
+                <img src="images/mail-icon.png" width="60" alt="Почта">
+                <span>Адрес электронной почты:<br><strong>chastnayapaseka3pois23@gmail.com</strong></span>
+            </td>
+            <td align="center">
+                <img src="images/red-phone-icon.png" width="60" alt="Телефон">
+                <strong>+375 (33) 628-86-72</strong>
+            </td>
+        </tr>
+    </table>
+</footer>
 </body>
 </html>
