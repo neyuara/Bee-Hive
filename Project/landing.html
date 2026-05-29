@@ -77,28 +77,29 @@
 
     <div class="container">
 
-    <div>
-        <h1>Натуральный и качественный мёд</h1>
-
-        <p>
-            Абсолютно качественный продукт:<br>
-            ни сахара, ни антибиотиков,<br>
-            ни гормонов
-        </p>
-
-        <a href="catalog.html">
-            <button>Смотреть каталог</button>
-        </a>
+    <!-- =========== HERO SECTION =========== -->
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Натуральный и качественный мёд</h1>
+            <p>
+                Абсолютно качественный продукт:<br>
+                ни сахара, ни антибиотиков,<br>
+                ни гормонов
+            </p>
+            <a href="catalog.html">
+                <button>Смотреть каталог</button>
+            </a>
+        </div>
+        <div class="hero-image">
+            <img src="images/jars of honey.png" alt="мёд" width="500">
+        </div>
     </div>
 
-    <div>
-        <img src="images/jars of honey.png" alt="мёд" width="500">
-    </div>
-
-    <table>
+    <!-- =========== ПРЕИМУЩЕСТВА =========== -->
+    <table class="features">
         <tr>
             <td>
-                <table>
+                <table class="feature-item">
                     <tr>
                         <td><img src="images/honey.png" alt="Мёд" width="40" height="40"></td>
                         <td>Натуральный мёд без добавок</td>
@@ -106,7 +107,7 @@
                 </table>
             </td>
             <td>
-                <table>
+                <table class="feature-item">
                     <tr>
                         <td><img src="images/flower.png" alt="Экология" width="40" height="40"></td>
                         <td>Экологически чистое производство</td>
@@ -114,7 +115,7 @@
                 </table>
             </td>
             <td>
-                <table>
+                <table class="feature-item">
                     <tr>
                         <td><img src="images/auto.png" alt="Доставка" width="40" height="40"></td>
                         <td>Бережная доставка</td>
@@ -124,23 +125,22 @@
         </tr>
     </table>
 
-    <hr>
+    <hr class="divider">
 
-    <div>
-
-       <div>
+    <!-- =========== СПЕЦПРЕДЛОЖЕНИЕ =========== -->
+    <div class="special-offer">
+        <div class="section-title">
             <img src="images/point.png" style="vertical-align: middle;">
             <span style="vertical-align: middle;">Спецпредложение</span>
         </div>
-
         <div style="text-align: center;">
             <img src="images/special offer.png" alt="Спецпредложение" width="600" height="500">
         </div>
-
     </div>
 
-    <div>
-        <div>
+    <!-- =========== О НАС =========== -->
+    <div class="about">
+        <div class="about-text">
             <h2>О нас</h2>
             <p>
                 Пасека - это, без преувеличения, вся моя жизнь. Основа, опора и любимое дело, 
@@ -155,118 +155,119 @@
                 экспертиз подтверждают это документально.
             </p>
         </div>
-
-        <div>
+        <div class="about-image">
             <img src="images/The beekeeper.png" alt="Пасека" width="500">
         </div>
-
     </div>
 
-        <div>
-            <img src="images/point.png" style="vertical-align: middle;">
-            <span style="vertical-align: middle;">Категории каталога</span>
-        </div>
+    <!-- =========== КАТЕГОРИИ =========== -->
+    <div class="section-title">
+        <img src="images/point.png" style="vertical-align: middle;">
+        <span style="vertical-align: middle;">Категории каталога</span>
+    </div>
 
-    <table cellpadding="15">
+    <table class="categories-grid" cellpadding="15">
         <tr>
-             <td align="center">
+             <td align="center" class="category-card">
                 <img src="images/honeyс.png" alt="Пчелиный мёд" width="300">
                 <br>
-                Пчелиный мёд
+                <span>Пчелиный мёд</span>
             </td>
-            <td align="center">
+            <td align="center" class="category-card">
                 <img src="images/waxс.png" alt="Пчелиный воск" width="300">
                 <br>
-                Пчелиный воск
+                <span>Пчелиный воск</span>
             </td>
-            <td align="center">
+            <td align="center" class="category-card">
                 <img src="images/ulyс.png" alt="Улья" width="300">
                 <br>
-                Улья
+                <span>Улья</span>
             </td>
         </tr>
         <tr>
-            <td align="center">
+            <td align="center" class="category-card">
                 <img src="images/frameс.png" alt="Рамки для ульев" width="300">
                 <br>
-                Рамки для ульев
+                <span>Рамки для ульев</span>
             </td>
-            <td align="center">
+            <td align="center" class="category-card">
                 <img src="images/propolisс.png" alt="Прополис" width="300">
                 <br>
-                Прополис
+                <span>Прополис</span>
             </td>
             <td> </td>
         </tr>
     </table>
 
-    <hr>
+    <hr class="divider">
 
-    <div id="reviews">
-    <div>
-        <img src="images/point.png" style="vertical-align: middle;">
-        <span style="vertical-align: middle;">Отзывы покупателей</span>
-    </div>
+    <!-- =========== ОТЗЫВЫ =========== -->
+    <div id="reviews" class="reviews-section">
+        <div class="section-title">
+            <img src="images/point.png" style="vertical-align: middle;">
+            <span style="vertical-align: middle;">Отзывы покупателей</span>
+        </div>
 
-    <div>
-        <button>←</button>
-        <button>→</button>
+        <div class="reviews-controls">
+            <button>←</button>
+            <button>→</button>
+        </div>
+
+        <br>
+
+        <table class="reviews-grid" cellpadding="20">
+        <tr>
+            <td valign="top" class="review-card">
+                <div class="review-date">25.05.2026</div>
+                <p class="review-text">Мед в сотах понравился всем и домашним и гостям, чаепитие с ним совершенно другое. А аромат по всей квартире.</p>
+                <div class="review-author">Олег</div>
+            </td>
+            <td valign="top" class="review-card">
+                <div class="review-date">26.05.2026</div>
+                <p class="review-text">Аромат как будто на лугу. Такое чаепитие надолго запомнится, все довольны.</p>
+                <div class="review-author">Ольга</div>
+            </td>
+            <td valign="top" class="review-card">
+                <div class="review-date">27.05.2026</div>
+                <p class="review-text">Натуральный сотовый мёд. И по вкусу приятен и тает во рту.</p>
+                <div class="review-author">Илья</div>
+            </td>
+        </tr>
+        </table>
     </div>
 
     <br>
 
-    <table cellpadding="20">
-    <tr>
-        <td valign="top" bgcolor="#f5f5f5">
-            25.05.2026
-            <p>Мед в сотах понравился всем и домашним и гостям, чаепитие с ним совершенно другое. А аромат по всей квартире.</p>
-            Олег
-        </td>
-        <td valign="top" bgcolor="#f5f5f5">
-            26.05.2026
-            <p>Аромат как будто на лугу. Такое чаепитие надолго запомнится, все довольны.</p>
-            Ольга
-        </td>
-        <td valign="top" bgcolor="#f5f5f5">
-            27.05.2026
-            <p>Натуральный сотовый мёд. И по вкусу приятен и тает во рту.</p>
-            Илья
-        </td>
-    </tr>
-    </table>
-    </div>
+    <!-- =========== ГАРАНТИИ =========== -->
+    <div id="warranty" class="warranty-section">
+        <div class="section-title">
+            <img src="images/point.png" style="vertical-align: middle;">
+            <span style="vertical-align: middle;">Гарантии качества</span>
+        </div>
 
-    <br>
-
-    <div id="warranty">
-            <div>
-                <img src="images/point.png" style="vertical-align: middle;">
-                <span style="vertical-align: middle;">Гарантии качества</span>
-            </div>
-
-            <div>
-                <button>←</button>
-                <button>→</button>
-            </div>
+        <div class="reviews-controls">
+            <button>←</button>
+            <button>→</button>
+        </div>
 
         <br><br>
 
-        <table cellpadding="15">
+        <table class="warranty-cards" cellpadding="15">
             <tr>
-                <td align="center">
+                <td align="center" class="warranty-card">
                     <img src="images/sertifikat.png" alt="Сертификат1" width="200">
                     <br>
-                    Сертификат1
+                    <span>Сертификат1</span>
                 </td>
-                <td align="center">
+                <td align="center" class="warranty-card">
                     <img src="images/sertifikat.png" alt="Сертификат2" width="200">
                     <br>
-                    Сертификат2
+                    <span>Сертификат2</span>
                 </td>
-                <td align="center">
+                <td align="center" class="warranty-card">
                     <img src="images/sertifikat.png" alt="Сертификат3" width="200">
                     <br>
-                    Сертификат3
+                    <span>Сертификат3</span>
                 </td>
             </tr>
         </table>
