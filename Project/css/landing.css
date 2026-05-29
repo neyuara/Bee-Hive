@@ -28,8 +28,12 @@ h1, h2 {
     align-items: center;
     justify-content: space-between;
     gap: 50px;
-    padding: 60px 0 80px;
-    flex-wrap: wrap;
+    padding: 60px 70px 80px;
+    background: #FFF9E6;
+    border-radius: 15px;
+    max-width: 1200px;
+    margin: 40px auto;
+    min-height: 400px;
 }
 
 .hero-text {
@@ -37,64 +41,38 @@ h1, h2 {
     min-width: 320px;
 }
 
-.hero-text h1 {
-    font-size: 42px;
-    font-weight: 700;
-    margin-bottom: 24px;
-    line-height: 1.2;
-}
-
-.hero-text p {
-    font-size: 19px;
-    margin-bottom: 32px;
-    color: #3E2723;
-}
-
-.hero-text button {
-    background: #FFC107;
-    color: #322F2F;
-    border: none;
-    padding: 16px 36px;
-    font-size: 17px;
-    font-weight: 600;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.hero-text button:hover {
-    background: #e6a900;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.35);
+.hero-text {
+    padding-right: 20px;
 }
 
 .hero-image {
     flex: 1;
-    min-width: 320px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-image img {
     max-width: 100%;
-    border-radius: 24px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    height: auto;
+    border-radius: 10px;
 }
 
 /* ==================== ПРЕИМУЩЕСТВА ==================== */
 .features {
-    width: 100%;
-    margin: 40px 0;
-}
-
-.features td {
-    padding: 15px 20px;
-    vertical-align: top;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin: 40px 0 30px 0;
+    padding: 0 20px;
 }
 
 .feature-item {
     display: flex;
     align-items: center;
     gap: 16px;
+    min-width: 260px;
 }
 
 .feature-item img {
@@ -103,9 +81,17 @@ h1, h2 {
     flex-shrink: 0;
 }
 
-.feature-item td:last-child {
+.feature-item p {
+    margin: 0;
     font-size: 16px;
     font-weight: 500;
+    color: #3E2723;
+}
+
+@media (max-width: 768px) {
+    .features {
+        gap: 40px;
+    }
 }
 
 /* ==================== РАЗДЕЛИТЕЛЬ ==================== */
@@ -121,7 +107,7 @@ h1, h2 {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin: 60px 0 30px;
+    margin: 15px 0 30px;
 }
 
 .section-title img {
@@ -189,34 +175,35 @@ h1, h2 {
 
 /* ==================== КАТЕГОРИИ ==================== */
 .categories-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin: 45px 0;
 }
 
 .category-card {
+    flex: 0 0 340px;
     text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.category-card:hover {
-    transform: translateY(-8px);
 }
 
 .category-card img {
     width: 100%;
-    max-width: 300px;
+    max-width: 340px;
     height: auto;
     border-radius: 27px;
-    margin-bottom: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .category-card span {
-    font-size: 15.5px;
+    font-size: 16.5px;
     font-weight: 600;
     color: #3E2723;
+    display: block;
 }
 
 /* ==================== ОТЗЫВЫ ==================== */
@@ -230,21 +217,6 @@ h1, h2 {
     justify-content: flex-end;
     gap: 12px;
     margin-bottom: 25px;
-}
-
-.reviews-controls button {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: #EDE4D8;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.reviews-controls button:hover {
-    background: #d9c9b0;
 }
 
 .reviews-grid {

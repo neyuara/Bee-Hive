@@ -96,34 +96,20 @@
     </div>
 
     <!-- =========== ПРЕИМУЩЕСТВА =========== -->
-    <table class="features">
-        <tr>
-            <td>
-                <table class="feature-item">
-                    <tr>
-                        <td><img src="images/honey.png" alt="Мёд" width="40" height="40"></td>
-                        <td>Натуральный мёд без добавок</td>
-                    </tr>
-                </table>
-            </td>
-            <td>
-                <table class="feature-item">
-                    <tr>
-                        <td><img src="images/flower.png" alt="Экология" width="40" height="40"></td>
-                        <td>Экологически чистое производство</td>
-                    </tr>
-                </table>
-            </td>
-            <td>
-                <table class="feature-item">
-                    <tr>
-                        <td><img src="images/auto.png" alt="Доставка" width="40" height="40"></td>
-                        <td>Бережная доставка</td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+    <div class="features">
+        <div class="feature-item">
+            <img src="images/honey.png" alt="Мёд" width="52" height="52">
+            <p>Натуральный мёд без добавок</p>
+        </div>
+        <div class="feature-item">
+            <img src="images/flower.png" alt="Экология" width="52" height="52">
+            <p>Экологически чистое производство</p>
+        </div>
+        <div class="feature-item">
+            <img src="images/auto.png" alt="Доставка" width="52" height="52">
+            <p>Бережная доставка</p>
+        </div>
+    </div>
 
     <hr class="divider">
 
@@ -166,74 +152,62 @@
         <span style="vertical-align: middle;">Категории каталога</span>
     </div>
 
-    <table class="categories-grid" cellpadding="15">
-        <tr>
-             <td align="center" class="category-card">
-                <img src="images/honeyс.png" alt="Пчелиный мёд" width="300">
-                <br>
-                <span>Пчелиный мёд</span>
-            </td>
-            <td align="center" class="category-card">
-                <img src="images/waxс.png" alt="Пчелиный воск" width="300">
-                <br>
-                <span>Пчелиный воск</span>
-            </td>
-            <td align="center" class="category-card">
-                <img src="images/ulyс.png" alt="Улья" width="300">
-                <br>
-                <span>Улья</span>
-            </td>
-        </tr>
-        <tr>
-            <td align="center" class="category-card">
-                <img src="images/frameс.png" alt="Рамки для ульев" width="300">
-                <br>
-                <span>Рамки для ульев</span>
-            </td>
-            <td align="center" class="category-card">
-                <img src="images/propolisс.png" alt="Прополис" width="300">
-                <br>
-                <span>Прополис</span>
-            </td>
-            <td> </td>
-        </tr>
-    </table>
+    <div class="categories-grid">
+        <div class="category-card">
+            <img src="images/honeyс.png" alt="Пчелиный мёд">
+            <span>Пчелиный мёд</span>
+        </div>
+        <div class="category-card">
+            <img src="images/waxс.png" alt="Пчелиный воск">
+            <span>Пчелиный воск</span>
+        </div>
+        <div class="category-card">
+            <img src="images/ulyс.png" alt="Улья">
+            <span>Улья</span>
+        </div>
+        <div class="category-card">
+            <img src="images/frameс.png" alt="Рамки для ульев">
+            <span>Рамки для ульев</span>
+        </div>
+        <div class="category-card">
+            <img src="images/propolisс.png" alt="Прополис">
+            <span>Прополис</span>
+        </div>
+    </div>
 
     <hr class="divider">
 
     <!-- =========== ОТЗЫВЫ =========== -->
     <div id="reviews" class="reviews-section">
-        <div class="section-title">
-            <img src="images/point.png" style="vertical-align: middle;">
-            <span style="vertical-align: middle;">Отзывы покупателей</span>
+    <div class="section-title">
+        <img src="images/point.png" style="vertical-align: middle;">
+        <span style="vertical-align: middle;">Отзывы покупателей</span>
+    </div>
+
+    <div class="reviews-controls">
+        <button>←</button>
+        <button>→</button>
+    </div>
+
+    <div class="reviews-grid">
+        <div class="review-card">
+            <div class="review-date">25.05.2026</div>
+            <p class="review-text">Мед в сотах понравился всем и домашним и гостям...</p>
+            <div class="review-author">Олег</div>
         </div>
 
-        <div class="reviews-controls">
-            <button>←</button>
-            <button>→</button>
+        <div class="review-card">
+            <div class="review-date">26.05.2026</div>
+            <p class="review-text">Аромат как будто на лугу...</p>
+            <div class="review-author">Ольга</div>
         </div>
 
-        <br>
-
-        <table class="reviews-grid" cellpadding="20">
-        <tr>
-            <td valign="top" class="review-card">
-                <div class="review-date">25.05.2026</div>
-                <p class="review-text">Мед в сотах понравился всем и домашним и гостям, чаепитие с ним совершенно другое. А аромат по всей квартире.</p>
-                <div class="review-author">Олег</div>
-            </td>
-            <td valign="top" class="review-card">
-                <div class="review-date">26.05.2026</div>
-                <p class="review-text">Аромат как будто на лугу. Такое чаепитие надолго запомнится, все довольны.</p>
-                <div class="review-author">Ольга</div>
-            </td>
-            <td valign="top" class="review-card">
-                <div class="review-date">27.05.2026</div>
-                <p class="review-text">Натуральный сотовый мёд. И по вкусу приятен и тает во рту.</p>
-                <div class="review-author">Илья</div>
-            </td>
-        </tr>
-        </table>
+        <div class="review-card">
+            <div class="review-date">27.05.2026</div>
+            <p class="review-text">Натуральный сотовый мёд...</p>
+            <div class="review-author">Илья</div>
+        </div>
+    </div>
     </div>
 
     <br>
