@@ -1,44 +1,41 @@
-/* ==================== ОБЩИЕ СТИЛИ ==================== */
-* {
-    box-sizing: border-box;
-}
-
+/* Общие настройки для всей страницы */
 body {
     margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
     font-family: 'Alegreya Sans', sans-serif;
-    color: #322F2F;
-    line-height: 1.6;
-    background: #fff;
+    color: #31302E;
 }
 
 h1, h2 {
-    font-family: 'Alegreya SC', serif;
+    font-family: 'Alegreya SC', sans-serif;
 }
 
-/* ==================== КОНТЕЙНЕР ==================== */
+/* Контейнер, который держит весь контент по центру (ровно 1200px, как в Фигме) */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
-/* ==================== HERO ==================== */
+/* hero */
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 50px;
-    padding: 60px 70px 80px;
+    padding: 30px 60px 30px;
     background: #FFF9E6;
     border-radius: 15px;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 15px auto;
     min-height: 400px;
 }
 
 .hero-text {
     flex: 1;
-    min-width: 320px;
+    min-width: 300px;
 }
 
 .hero-text {
@@ -55,16 +52,15 @@ h1, h2 {
 .hero-image img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
 }
 
-/* ==================== ПРЕИМУЩЕСТВА ==================== */
+/* преимущетсва */
 .features {
     display: flex;
     justify-content: center;
     gap: 60px;
     flex-wrap: wrap;
-    margin: 40px 0 30px 0;
+    margin: 10px 0 10px 0;
     padding: 0 20px;
 }
 
@@ -94,20 +90,17 @@ h1, h2 {
     }
 }
 
-/* ==================== РАЗДЕЛИТЕЛЬ ==================== */
+/* разделитель */
 .divider {
-    border: none;
-    height: 1px;
-    background: linear-gradient(to right, transparent, #d4c3b3, transparent);
-    margin: 50px 0;
+    border-bottom: 1px solid #CCC2C2;
 }
 
-/* ==================== ЗАГОЛОВКИ СЕКЦИЙ ==================== */
+/* заголовки секций */
 .section-title {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin: 15px 0 30px;
+    margin: 10px 0 10px;
 }
 
 .section-title img {
@@ -122,10 +115,10 @@ h1, h2 {
     color: #322F2F;
 }
 
-/* ==================== СПЕЦПРЕДЛОЖЕНИЕ ==================== */
+/* спецпредложение */
 .special-offer {
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 .special-offer img {
@@ -134,7 +127,7 @@ h1, h2 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* ==================== О НАС ==================== */
+/* о нас */
 .about {
     display: flex;
     gap: 60px;
@@ -142,7 +135,7 @@ h1, h2 {
     background: #FFF9E6;
     border-radius: 20px;
     padding: 50px;
-    margin: 40px 0;
+    margin: 10px 0;
     flex-wrap: wrap;
 }
 
@@ -153,12 +146,12 @@ h1, h2 {
 
 .about-text h2 {
     font-size: 36px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .about-text p {
     font-size: 18px;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 
 .about-image {
@@ -173,13 +166,14 @@ h1, h2 {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* ==================== КАТЕГОРИИ ==================== */
+/* категории каталога */
 .categories-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 40px;
-    margin: 45px 0;
+    margin: 15px 0;
 }
 
 .category-card {
@@ -191,7 +185,7 @@ h1, h2 {
     width: 100%;
     max-width: 340px;
     height: auto;
-    border-radius: 27px;
+    border-radius: 25px;
     margin-bottom: 16px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     display: block;
@@ -200,23 +194,23 @@ h1, h2 {
 }
 
 .category-card span {
-    font-size: 16.5px;
+    font-size: 16px;
     font-weight: 600;
     color: #3E2723;
     display: block;
 }
 
-/* ==================== ОТЗЫВЫ ==================== */
+/* отзывы */
 .reviews-section,
 .warranty-section {
-    padding: 40px 0;
+    padding: 10px 0;
 }
 
 .reviews-controls {
     display: flex;
     justify-content: flex-end;
     gap: 12px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 .reviews-grid {
@@ -253,15 +247,14 @@ h1, h2 {
     color: #3E2723;
 }
 
-/* ==================== ГАРАНТИИ ==================== */
+/* гарантии */
 .warranty-cards {
     display: flex;
     justify-content: center;
-    gap: 35px;
     flex-wrap: wrap;
     background: #FFF9E6;
     border-radius: 20px;
-    padding: 45px 30px;
+    padding: 24px 24px;
 }
 
 .warranty-card {
@@ -281,7 +274,6 @@ h1, h2 {
     font-weight: 500;
 }
 
-/* ==================== АДАПТИВ ==================== */
 @media (max-width: 992px) {
     .hero {
         padding: 40px 0;
