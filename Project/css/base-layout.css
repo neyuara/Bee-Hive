@@ -6,6 +6,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    
 }
 
 header {
@@ -19,6 +20,7 @@ header {
     border-bottom: 1px solid #e5d9c0;
     width: 100%;
     padding: 12px 20px 12px 50px;
+position: fixed
 }
 
 .top-menu nav ul {
@@ -45,13 +47,12 @@ header {
     background: #fff;
     width: 100% !important;
     margin: 0;
-    padding: 15px 20px 15px 50px !important;
+    padding: 15px 20px 15px  ;
+    padding-top: 45px;
 }
 
 /* Поиск с иконкой */
-.search-block {
-    position: relative;
-}
+
 
 .search-block input {
     width: 280px;
@@ -74,7 +75,6 @@ header {
     position: absolute;
     left: 18px;
     top: 50%;
-    transform: translateY(-50%);
     width: 22px;
     height: 22px;
     background: url('images/search-icon.png') no-repeat center;
@@ -112,7 +112,7 @@ header {
     align-items: center;
     justify-content: center;
     border-radius: 6px;
-    flex-shrink: 0;
+
 }
 
 .cart-links {
@@ -133,16 +133,15 @@ header {
     color: #d97706;
 }
 
-.logo-block{
-    height: 40;
-}
-/* Логотип — используем более красивый шрифт */
 .logo-text strong {
     font-family: 'Alegreya SC', serif;
     font-size: 19px;
     color: #333;
     display: block;
     font-weight: 700;
+}
+.logo-block img {
+    display: block;
 }
 
 .logo-text span {
@@ -168,6 +167,11 @@ header {
     align-items: center;
     gap: 10px;
 }
+
+.logo-block img {
+    display: block;
+    vertical-align: bottom; 
+}
 /* 3. Жёлтая полоса */
 .header-bar {
     background: linear-gradient(90deg, #f5b800, #ffcc00);
@@ -183,7 +187,11 @@ header {
     margin-bottom: 8px;
     font-family: 'Alegreya Sans', sans-serif;
 }
+#pos4{
 
+    position: sticky; 
+
+}
 .header-bar h1 {
     margin: 0;
     color: #333;
