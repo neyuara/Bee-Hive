@@ -1,14 +1,302 @@
+/* Общие настройки для всей страницы */
 body {
     margin: 0;
     padding: 0;
     background-color: #FFFFFF;
     font-family: 'Alegreya Sans', sans-serif;
-    color: #322F2F;
+    color: #31302E;
 }
 
+h1, h2 {
+    font-family: 'Alegreya SC', sans-serif;
+}
+
+/* Контейнер, который держит весь контент по центру (ровно 1200px, как в Фигме) */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
+}
+
+/* hero */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 30px 60px 30px;
+    background: #FFF9E6;
+    border-radius: 15px;
+    max-width: 1200px;
+    margin: 15px auto;
+    min-height: 400px;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-text {
+    padding-right: 20px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* преимущетсва */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin: 10px 0 10px 0;
+    padding: 0 20px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 260px;
+}
+
+.feature-item img {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+}
+
+.feature-item p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #3E2723;
+}
+
+@media (max-width: 768px) {
+    .features {
+        gap: 40px;
+    }
+}
+
+/* разделитель */
+.divider {
+    border-bottom: 1px solid #CCC2C2;
+}
+
+/* заголовки секций */
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 10px 0 10px;
+}
+
+.section-title img {
+    width: 32px;
+    height: 32px;
+}
+
+.section-title span {
+    font-family: 'Alegreya SC', serif;
+    font-size: 34px;
+    font-weight: 800;
+    color: #322F2F;
+}
+
+/* спецпредложение */
+.special-offer {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.special-offer img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* о нас */
+.about {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    background: #FFF9E6;
+    border-radius: 20px;
+    padding: 50px;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* категории каталога */
+.categories-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 15px 0;
+}
+
+.category-card {
+    flex: 0 0 340px;
+    text-align: center;
+}
+
+.category-card img {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    border-radius: 25px;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.category-card span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #3E2723;
+    display: block;
+}
+
+/* отзывы */
+.reviews-section,
+.warranty-section {
+    padding: 10px 0;
+}
+
+.reviews-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.review-card {
+    background: #FFF9E6;
+    border-radius: 18px;
+    padding: 28px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-date {
+    font-size: 13.5px;
+    color: #6B5E4F;
+    margin-bottom: 12px;
+}
+
+.review-text {
+    font-size: 15px;
+    line-height: 1.65;
+    flex: 1;
+    margin-bottom: 16px;
+}
+
+.review-author {
+    font-size: 15px;
+    font-weight: 700;
+    color: #3E2723;
+}
+
+/* гарантии */
+.warranty-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #FFF9E6;
+    border-radius: 20px;
+    padding: 24px 24px;
+    margin-bottom: 15px;
+}
+
+.warranty-card {
+    text-align: center;
+    max-width: 260px;
+}
+
+.warranty-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+.warranty-card span {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+@media (max-width: 992px) {
+    .hero {
+        padding: 40px 0;
+    }
+    
+    .categories-grid,
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .hero-text h1 {
+        font-size: 34px;
+    }
+    
+    .categories-grid,
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about {
+        padding: 35px 25px;
+    }
 }
