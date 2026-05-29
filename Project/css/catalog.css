@@ -83,12 +83,11 @@ body {
 
 /* Сетка для карточек товаров */
 .product-grid {
-    flex: 1 0 70%;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     align-items: center;
-    justify-items: flex-start;    
+    justify-items: flex-end;    
 }
 
 /* Сама карточка товара */
@@ -146,20 +145,20 @@ body {
 }
 
 
-
+/* Секция со статьей */
 .info-section {
     background-color: #FFF9E6; /* Цвет фона как у карточек/меню */
     border-radius: 15px;       /* Закругление углов */
     padding: 30px;             /* Внутренние отступы, чтобы текст не прилипал к краям */
     box-shadow: 4px 8px 12px rgba(254, 193, 7, 0.45); /* Мягкая тень */
     margin-top: 40px;          /* Отступ сверху от каталога товаров */
-   
     box-sizing: border-box;
-    grid-column: 2 / -1;
+    grid-column: 1 / -1;
 }
 
 /* Заголовок внутри блока */
 .info-section h2 {
+    width: 100%;
     background-color: #FFC107; /* Желтая плашка под заголовком */
     margin: -30px -30px 20px -30px; /* Растягиваем плашку на всю ширину блока */
     padding: 20px 30px;        /* Отступы внутри плашки */
