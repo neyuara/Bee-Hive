@@ -7,7 +7,7 @@ header {
 
 /* Верхнее меню */
 header table:first-child {
-    background: #ffaa00;
+
     border-bottom: 1px solid #e5d9c0;
 }
 
@@ -30,7 +30,7 @@ header table:first-child a:hover {
 
 /* Логотип + Поиск + Телефон + Корзина */
 header table:nth-child(3) {
-    background: #fff;
+
     padding: 15px 0;
 }
 
@@ -89,7 +89,7 @@ header table:nth-child(3) td {
 /* Корзина */
 .cart-block {
     text-align: center;
-    background: #fff9e6;
+
     padding: 10px 15px;
     border-radius: 12px;
     border: 2px solid #f5d38f;
@@ -109,17 +109,6 @@ header table:nth-child(3) td {
     margin: 4px 0;
 }
 
-.cart-block a:hover {
-    color: #d97706;
-}
-
-
-
-
-.breadcrumbs a {
-    color: #d97706;
-    text-decoration: none;
-}
 
 .breadcrumbs a:hover {
     text-decoration: underline;
@@ -127,7 +116,7 @@ header table:nth-child(3) td {
 
 /* Заголовок */
 header h1 {
-    background: linear-gradient(90deg, #f5b800, #ffcc00);
+
     color: #333;
     text-align: center;
     padding: 25px 20px;
@@ -136,5 +125,5 @@ header h1 {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
 }
