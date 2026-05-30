@@ -209,6 +209,10 @@ footer {
     color: #F2A359;
     font-size: 20px;
 }
+@keyframes tickerScroll {
+    0%   { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+}
 /* Мобильная шапка — скрыта на десктопе */
 .mobile-header {
     display: none;
