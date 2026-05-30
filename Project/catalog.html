@@ -27,42 +27,31 @@
         </div>
 
         <!-- Основная часть хедера -->
-        <table border="0"  width="100%" class="main-header">
+        <table border="0" width="100%" class="main-header">
             <tr>
-                <!-- Логотип -->
-                <td class="logo-block" >
+                <td class="logo-block">
                     <img src="images/logo-placeholder.png" alt="лого" width="65">
                     <div class="logo-text">
                         <strong>ЧАСТНАЯ ПАСИКА</strong>
                         <span>ЗПОИС23</span>
                     </div>
                 </td>
-
-                <!-- Поиск -->
                 <td class="search-block">
-                        <div class="search-block">
-                            <input type="text" placeholder="Поиск...">
-                        </div>
+                    <div class="search-block">
+                        <input type="text" placeholder="Поиск...">
+                    </div>
                 </td>
-
-                <!-- Телефон -->
                 <td class="phone-block">
                     <table>
                         <tr>
+                            <td><img src="images/phone-icon.png"></td>
                             <td>
-                                <img src = "images/phone-icon.png">
-                            </td>
-                            <td>
-                        <strong>+375 (33) 628-86-72</strong><br>
-                        <small>Принимаем звонки с 8 до 16</small>
+                                <strong>+375 (33) 628-86-72</strong><br>
+                                <small>Принимаем звонки с 8 до 16</small>
                             </td>
                         </tr>
-
                     </table>
-
                 </td>
-
-                <!-- Корзина -->
                 <td class="cart-block">
                     <img src="images/Market-icon.png" alt="корзина">
                     <div class="cart-quantity">1</div>
@@ -78,18 +67,20 @@
         <div class="header-bar">
             <div class="breadcrumbs">
                 Главная → Каталог → Пчелиный мёд
-            </div><h1>
-            Натуральный мёд от пчеловода</h1>
+            </div>
+            <h1>Натуральный мёд от пчеловода</h1>
         </div>
     </header>
-    
+
     <br>
 
     <main class="main-layout">
         <div class="catalog-wrapper">
+
+            <!-- Вертикальное боковое меню (десктоп) -->
             <div class="sidebar-menu">
                 <ul>
-                    <li><a href="#">Пчелиный мед</a></li>
+                    <li class="active"><a href="#">Пчелиный мед</a></li>
                     <li><a href="#">Пчелиный воск</a></li>
                     <li><a href="#">Улья</a></li>
                     <li><a href="#">Рамки для ульев</a></li>
@@ -97,6 +88,16 @@
                 </ul>
             </div>
 
+            <!-- Горизонтальные таблетки-категории (мобильный/планшет) -->
+            <div class="sidebar-tabs">
+                <a href="#" class="active">Пчелиный мед</a>
+                <a href="#">Пчелиный воск</a>
+                <a href="#">Улья</a>
+                <a href="#">Прополис</a>
+                <a href="#">Рамки для ульев</a>
+            </div>
+
+            <!-- Сетка товаров -->
             <div class="product-grid">
 
                 <div class="product-card">
@@ -104,12 +105,13 @@
                     <div class="product-title">Гречишный мед</div>
                     <div class="price-wrapper">
                         <div class="price-text-group">
-                           <span class="price-value">11</span>
-                           <span class="price-currency">BYN </span>
-                           <span class="price-amount">/0.5л</span>
+                            <span class="price-value">11</span>
+                            <span class="price-currency">BYN</span>
+                            <span class="price-amount">/0.5л</span>
                         </div>
                         <button class="btn-add-to-cart">
-                            <img src="images/Market-icon.png" width="32", height="32">
+                            <img src="images/Market-icon.png" width="32" height="32">
+                            <span class="btn-cart-text">В корзину</span>
                         </button>
                     </div>
                 </div>
@@ -119,12 +121,13 @@
                     <div class="product-title">Гречишный мед</div>
                     <div class="price-wrapper">
                         <div class="price-text-group">
-                           <span class="price-value">21</span>
-                           <span class="price-currency">BYN </span>
-                           <span class="price-amount">/ 1л</span>
+                            <span class="price-value">21</span>
+                            <span class="price-currency">BYN</span>
+                            <span class="price-amount">/ 1л</span>
                         </div>
                         <button class="btn-add-to-cart">
-                            <img src="images/Market-icon.png" width="32", height="32">
+                            <img src="images/Market-icon.png" width="32" height="32">
+                            <span class="btn-cart-text">В корзину</span>
                         </button>
                     </div>
                 </div>
@@ -134,12 +137,13 @@
                     <div class="product-title">Гречишный мед</div>
                     <div class="price-wrapper">
                         <div class="price-text-group">
-                           <span class="price-value">39</span>
-                           <span class="price-currency">BYN </span>
-                           <span class="price-amount">/ 2л</span>
+                            <span class="price-value">39</span>
+                            <span class="price-currency">BYN</span>
+                            <span class="price-amount">/ 2л</span>
                         </div>
                         <button class="btn-add-to-cart">
-                            <img src="images/Market-icon.png" width="32", height="32">
+                            <img src="images/Market-icon.png" width="32" height="32">
+                            <span class="btn-cart-text">В корзину</span>
                         </button>
                     </div>
                 </div>
@@ -149,12 +153,13 @@
                     <div class="product-title">Гречишный мед</div>
                     <div class="price-wrapper">
                         <div class="price-text-group">
-                           <span class="price-value">47</span>
-                           <span class="price-currency">BYN </span>
-                           <span class="price-amount">/ 3л</span>
+                            <span class="price-value">47</span>
+                            <span class="price-currency">BYN</span>
+                            <span class="price-amount">/ 3л</span>
                         </div>
                         <button class="btn-add-to-cart">
-                            <img src="images/Market-icon.png" width="32", height="32">
+                            <img src="images/Market-icon.png" width="32" height="32">
+                            <span class="btn-cart-text">В корзину</span>
                         </button>
                     </div>
                 </div>
@@ -164,12 +169,13 @@
                     <div class="product-title">Цветочный мед</div>
                     <div class="price-wrapper">
                         <div class="price-text-group">
-                           <span class="price-value">12</span>
-                           <span class="price-currency">BYN </span>
-                           <span class="price-amount">/0.5л</span>
+                            <span class="price-value">12</span>
+                            <span class="price-currency">BYN</span>
+                            <span class="price-amount">/0.5л</span>
                         </div>
                         <button class="btn-add-to-cart">
-                            <img src="images/Market-icon.png" width="32", height="32">
+                            <img src="images/Market-icon.png" width="32" height="32">
+                            <span class="btn-cart-text">В корзину</span>
                         </button>
                     </div>
                 </div>
@@ -179,12 +185,13 @@
                     <div class="product-title">Цветочный мед</div>
                     <div class="price-wrapper">
                         <div class="price-text-group">
-                           <span class="price-value">23</span>
-                           <span class="price-currency">BYN </span>
-                           <span class="price-amount">/ 1л</span>
+                            <span class="price-value">23</span>
+                            <span class="price-currency">BYN</span>
+                            <span class="price-amount">/ 1л</span>
                         </div>
                         <button class="btn-add-to-cart">
-                            <img src="images/Market-icon.png" width="32", height="32">
+                            <img src="images/Market-icon.png" width="32" height="32">
+                            <span class="btn-cart-text">В корзину</span>
                         </button>
                     </div>
                 </div>
@@ -194,12 +201,13 @@
                     <div class="product-title">Цветочный мед</div>
                     <div class="price-wrapper">
                         <div class="price-text-group">
-                           <span class="price-value">33</span>
-                           <span class="price-currency">BYN </span>
-                           <span class="price-amount">/ 2л</span>
+                            <span class="price-value">33</span>
+                            <span class="price-currency">BYN</span>
+                            <span class="price-amount">/ 2л</span>
                         </div>
                         <button class="btn-add-to-cart">
-                            <img src="images/Market-icon.png" width="32", height="32">
+                            <img src="images/Market-icon.png" width="32" height="32">
+                            <span class="btn-cart-text">В корзину</span>
                         </button>
                     </div>
                 </div>
@@ -209,12 +217,13 @@
                     <div class="product-title">Цветочный мед</div>
                     <div class="price-wrapper">
                         <div class="price-text-group">
-                           <span class="price-value">45</span>
-                           <span class="price-currency">BYN </span>
-                           <span class="price-amount">/ 3л</span>
+                            <span class="price-value">45</span>
+                            <span class="price-currency">BYN</span>
+                            <span class="price-amount">/ 3л</span>
                         </div>
                         <button class="btn-add-to-cart">
-                            <img src="images/Market-icon.png" width="32", height="32">
+                            <img src="images/Market-icon.png" width="32" height="32">
+                            <span class="btn-cart-text">В корзину</span>
                         </button>
                     </div>
                 </div>
@@ -224,12 +233,13 @@
                     <div class="product-title">Дрибинский мед</div>
                     <div class="price-wrapper">
                         <div class="price-text-group">
-                           <span class="price-value">9</span>
-                           <span class="price-currency">BYN </span>
-                           <span class="price-amount">/0.1л</span>
+                            <span class="price-value">9</span>
+                            <span class="price-currency">BYN</span>
+                            <span class="price-amount">/0.1л</span>
                         </div>
                         <button class="btn-add-to-cart">
-                            <img src="images/Market-icon.png" width="32", height="32">
+                            <img src="images/Market-icon.png" width="32" height="32">
+                            <span class="btn-cart-text">В корзину</span>
                         </button>
                     </div>
                 </div>
@@ -239,29 +249,31 @@
                     <div class="product-title">Михеевский мед</div>
                     <div class="price-wrapper">
                         <div class="price-text-group">
-                           <span class="price-value">7</span>
-                           <span class="price-currency">BYN </span>
-                           <span class="price-amount">/ 0.1л</span>
+                            <span class="price-value">7</span>
+                            <span class="price-currency">BYN</span>
+                            <span class="price-amount">/ 0.1л</span>
                         </div>
                         <button class="btn-add-to-cart">
-                            <img src="images/Market-icon.png" width="32", height="32">
+                            <img src="images/Market-icon.png" width="32" height="32">
+                            <span class="btn-cart-text">В корзину</span>
                         </button>
                     </div>
                 </div>
 
-            <section class="info-section" id="how-to-choose-honey">
-                <h2>Как выбрать мед?</h2>
+                <section class="info-section" id="how-to-choose-honey">
+                    <h2>Как выбрать мед?</h2>
+                    <div class="article-text">
+                        <p>Выбор <strong>настоящего мёда</strong> – это несложно, если знать, на что обратить внимание. Несколько ключевых критериев помогут отличить качественный продукт от подделки.</p>
+                        <p><strong>Консистенция</strong> – свежий мёд жидкий, однако со временем натурально кристаллизуется. Если мёд долго остается жидким, то вероятно, он был перегрет или разбавлен.</p>
+                        <p><strong>Аромат</strong> – качественный мёд обладает выраженным цветочным или разнотравным запахом. Слабый или искусственный аромат свидетельствует о фальсификации продукта.</p>
+                        <p><strong>Вкус</strong> – настоящий мёд оставляет легкое першение в горле. Это признак наличия природных ферментов и антиоксидантов. Приторно-сладкий вкус без послевкусия характерен для сахарного сиропа.</p>
+                        <p><strong>Растворимость</strong> – натуральный мёд растворяется в воде равномерно, не оставляя осадка.</p>
+                        <p>Вся продукция <strong>НАШЕЙ ПАСЕКИ</strong> соответствует каждому из перечисленных критериев. Вы можете убедиться в этом самостоятельно при первой же покупке.</p>
+                    </div>
+                </section>
 
-                <div class="article-text">
-                    <p>Выбор <strong>настоящего мёда</strong> – это несложно, если знать, на что обратить внимание. Несколько ключевых критериев помогут отличить качественный продукт от подделки.</p>
-                    <p><strong>Консистенция</strong> – свежий мёд жидкий, однако со временем натурально кристаллизуется. Если мёд долго остается жидким, то вероятно, он был перегрет или разбавлен.</p>
-                    <p><strong>Аромат</strong> – качественный мёд обладает выраженным цветочным или разнотравным запахом. Слабый или искусственный аромат свидетельствует о фальсификации продукта.</p>
-                    <p><strong>Вкус</strong> – настоящий мёд оставляет легкое першение в горле. Это признак наличия природных ферментов и антиоксидантов. Приторно-сладкий вкус без послевкусия характерен для сахарного сиропа.</p>
-                    <p><strong>Растворимость</strong> – натуральный мёд растворяется в воде равномерно, не оставляя осадка.</p>
-                    <p>Вся продукция <strong>НАШЕЙ ПАСЕКИ</strong> соответствует каждому из перечисленных критериев. Вы можете убедиться в этом самостоятельно при первой же покупке.</p>
-                </div>
-            </section>
-        </div>
+            </div><!-- /product-grid -->
+        </div><!-- /catalog-wrapper -->
     </main>
 
     <br><hr><br>
@@ -273,14 +285,12 @@
 
         <table width="100%" border="0" cellpadding="15" cellspacing="0">
             <tr>
-                
                 <td width="33%" align="center" valign="middle">
                     <img src="images/logo-placeholder.png" width="80" alt="Лого" align="absmiddle">
                     <strong style="display: inline-block; text-align: left; margin-left: 10px;">
                         Частная пасека<br>ЗПОИС23
                     </strong>
                 </td>
-
                 <td width="34%" align="center" valign="middle">
                     <img src="images/mail-icon.png" width="60" alt="Почта" align="absmiddle">
                     <span style="display: inline-block; text-align: left; margin-left: 10px;">
@@ -288,7 +298,6 @@
                         <strong>chastnayapaseka3pois23@gmail.com</strong>
                     </span>
                 </td>
-
                 <td width="33%" align="center" valign="middle">
                     <img src="images/red-phone-icon.png" width="60" alt="Телефон" align="absmiddle">
                     <strong style="display: inline-block; text-align: left; margin-left: 10px;">
