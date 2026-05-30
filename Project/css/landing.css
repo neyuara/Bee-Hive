@@ -1,4 +1,4 @@
-/* Общие настройки для всей страницы */
+/* общие стили */
 body {
     margin: 0;
     padding: 0;
@@ -11,7 +11,6 @@ h1, h2 {
     font-family: 'Alegreya SC', sans-serif;
 }
 
-/* Контейнер, который держит весь контент по центру (ровно 1200px, как в Фигме) */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -25,40 +24,33 @@ h1, h2 {
     align-items: center;
     justify-content: space-between;
     gap: 50px;
-    padding: 30px 60px 30px;
+    padding: 30px 60px;
     background: #FFF9E6;
     border-radius: 15px;
-    max-width: 1200px;
     margin: 15px auto;
     min-height: 400px;
     box-shadow: 4px 8px 12px rgba(255, 193, 7, 0.45);
 }
 
-.hero-text {
-    flex: 1;
-    min-width: 300px;
-    padding-right: 20px;
+.hero-text { flex: 1; min-width: 300px; padding-right: 20px; }
+.hero-image { 
+    flex: 1; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
-
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .hero-image img {
     max-width: 100%;
     height: auto;
 }
 
-/* преимущетсва */
+/* преимущества */
 .features {
     display: flex;
     justify-content: center;
     gap: 60px;
     flex-wrap: wrap;
-    margin: 10px 0 10px 0;
+    margin: 10px 0;
     padding: 0 20px;
 }
 
@@ -82,23 +74,12 @@ h1, h2 {
     color: #3E2723;
 }
 
-@media (max-width: 768px) {
-    .features {
-        gap: 40px;
-    }
-}
-
-/* разделитель */
-.divider {
-    border-bottom: 1px solid #CCC2C2;
-}
-
 /* заголовки секций */
 .section-title {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin: 10px 0 10px;
+    margin: 10px 0;
 }
 
 .section-title img {
@@ -138,34 +119,25 @@ h1, h2 {
     box-shadow: 4px 8px 12px rgba(255, 193, 7, 0.45);
 }
 
-.about-text {
-    flex: 1;
-    min-width: 300px;
+.about-text { flex: 1; min-width: 300px; }
+.about-text h2 { font-size: 36px; margin-bottom: 20px; }
+.about-text p { 
+    font-size: 18px; 
+    margin-bottom: 15px; 
 }
 
-.about-text h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
+.about-image { 
+    flex: 1; 
+    min-width: 300px; 
+    text-align: center; 
 }
-
-.about-text p {
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-
-.about-image {
-    flex: 1;
-    min-width: 300px;
-    text-align: center;
-}
-
 .about-image img {
     max-width: 100%;
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* баттон кат */
+/* кнопки */
 .btn-primary {
     width: 145px;
     height: 45px;
@@ -179,15 +151,9 @@ h1, h2 {
     color: #3E2723;
 }
 
-.btn-primary:hover {
-    background: #e6ac00;
-}
+.btn-primary:hover { background: #e6ac00; }
+.btn-primary:active { transform: scale(0.95); }
 
-.btn-primary:active {
-    transform: scale(0.95);
-}
-
-/* баттон стр */
 .btn-arrow {
     width: 40px;
     height: 40px;
@@ -199,20 +165,14 @@ h1, h2 {
     color: #3E2723;
 }
 
-.btn-arrow:hover {
-    background: #e6ac00;
-}
+.btn-arrow:hover { background: #e6ac00; }
+.btn-arrow:active { transform: scale(0.95); }
 
-.btn-arrow:active {
-    transform: scale(0.95);
-}
-
-/* категории каталога */
+/* категории */
 .categories-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
     gap: 40px;
     margin: 15px 0;
 }
@@ -230,8 +190,7 @@ h1, h2 {
     margin-bottom: 16px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .category-card span {
@@ -241,11 +200,9 @@ h1, h2 {
     display: block;
 }
 
-.category-card:hover {
-    transform: scale(1.03);
-}
+.category-card:hover { transform: scale(1.03); }
 
-/* отзывы */
+/* отзывы и гарантии */
 .reviews-section,
 .warranty-section {
     padding: 10px 0;
@@ -268,7 +225,6 @@ h1, h2 {
     background: #FFF9E6;
     border-radius: 18px;
     padding: 28px;
-    height: 100%;
     display: flex;
     flex-direction: column;
     box-shadow: 4px 8px 12px rgba(255, 193, 7, 0.45);
@@ -293,14 +249,13 @@ h1, h2 {
     color: #3E2723;
 }
 
-/* гарантии */
 .warranty-cards {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     background: #FFF9E6;
     border-radius: 20px;
-    padding: 24px 24px;
+    padding: 24px;
     margin-bottom: 15px;
     box-shadow: 4px 8px 12px rgba(255, 193, 7, 0.45);
 }
@@ -322,28 +277,95 @@ h1, h2 {
     font-weight: 500;
 }
 
-@media (max-width: 992px) {
-    .hero {
-        padding: 40px 0;
-    }
-    
-    .categories-grid,
-    .reviews-grid {
-        grid-template-columns: repeat(2, 1fr);
+.warranty-card:hover { transform: scale(1.03); }
+
+/* адаптив */
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 15px;
     }
 }
 
-@media (max-width: 650px) {
-    .hero-text h1 {
-        font-size: 34px;
+@media (max-width: 992px) {
+    .hero {
+        padding: 40px 30px;
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
     }
     
-    .categories-grid,
-    .reviews-grid {
-        grid-template-columns: 1fr;
+    .hero-text {
+        padding-right: 0;
+    }
+    
+    .reviews-grid,
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .about {
+        padding: 40px 30px;
+    }
+    
+    .features {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title span {
+        font-size: 28px;
+    }
+    
+    .hero {
+        padding: 35px 20px;
+        min-height: auto;
     }
     
     .about {
         padding: 35px 25px;
+        gap: 35px;
+    }
+    
+    .categories-grid,
+    .reviews-grid {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 30px 15px;
+    }
+    
+    .hero-text h1 {
+        font-size: 32px;
+    }
+    
+    .reviews-grid,
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 35px; 
+    }
+    
+    .feature-item {
+        min-width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .about {
+        padding: 30px 20px;
+    }
+    
+    .btn-primary {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .reviews-controls {
+        justify-content: center;
     }
 }
