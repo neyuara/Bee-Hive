@@ -24,10 +24,22 @@ body {
     grid-template-columns: 260px 1fr;
     column-gap: 24px;
     margin-bottom: 50px;
+    align-items: start;
 }
 
-.sidebar-menu {
+/* ─── ЛЕВАЯ КОЛОНКА ─── */
+
+.sidebar-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     width: 260px;
+}
+
+/* ─── БОКОВОЕ МЕНЮ ─── */
+
+.sidebar-menu {
+    width: 100%;
     height: fit-content;
     background: #FFF9E6;
     box-shadow: 4px 8px 12px rgba(254, 193, 7, 0.45);
@@ -67,9 +79,138 @@ body {
     font-weight: 700;
 }
 
+/* ─── ВИДЖЕТ ХИТ / СПЕЦПРЕДЛОЖЕНИЕ ─── */
+
+.promo-widget {
+    background: #FFFFFF;
+    border: 2px solid #FFC107;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.promo-block {
+    padding: 14px 14px 16px;
+}
+
+.promo-divider {
+    height: 2px;
+    background: #FFC107;
+    margin: 0;
+}
+
+.promo-heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.promo-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2.5px solid #FFC107;
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+.promo-label {
+    font-family: 'Alegreya SC', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #31302E;
+}
+
+.promo-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.promo-img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+}
+
+.promo-name {
+    font-family: 'Alegreya SC', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #322F2F;
+    text-align: center;
+}
+
+.promo-volume {
+    font-family: 'Alexandria', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    color: #CD9E13;
+}
+
+.promo-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 4px;
+}
+
+.promo-price {
+    font-family: 'Alexandria', sans-serif;
+    font-weight: 500;
+    font-size: 36px;
+    color: #3E2723;
+    line-height: 1;
+}
+
+.promo-currency {
+    font-family: 'Alegreya', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #3E2723;
+}
+
+.promo-special {
+    width: 100%;
+}
+
+.promo-special-img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.promo-divider {
+    height: 2px;
+    background: #FFC107;
+}
+
+/* Мобильная копия виджета — скрыта на десктопе */
+.promo-widget--mobile {
+    display: none;
+}
+
+/* ─── МОБИЛЬНЫЕ ТАБЛЕТКИ ─── */
+
 .sidebar-tabs {
     display: none;
 }
+
+/* ─── ПРАВАЯ КОЛОНКА ─── */
+
+.catalog-right {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    width: 100%;
+}
+
+/* ─── СЕТКА КАРТОЧЕК ─── */
 
 .product-grid {
     display: grid;
@@ -77,6 +218,8 @@ body {
     gap: 28px;
     align-items: start;
 }
+
+/* ─── КАРТОЧКА ТОВАРА ─── */
 
 .product-card {
     background: #FFF9E6;
@@ -179,6 +322,115 @@ body {
     letter-spacing: 0.03em;
 }
 
+/* ─── СЕКЦИЯ-БЛОК (точка + заголовок + контент) ─── */
+
+.section-block {
+    grid-column: 1 / -1;
+    margin-top: 40px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.section-dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 3px solid #FFC107;
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+.section-title {
+    font-family: 'Alegreya SC', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #31302E;
+}
+
+/* ─── КАРТОЧКА ХИТА ─── */
+
+.hit-card {
+    background: #FFF9E6;
+    box-shadow: 4px 8px 12px rgba(255, 193, 7, 0.45);
+    border-radius: 15px;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+.hit-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.hit-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.hit-name {
+    font-family: 'Alegreya SC', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #322F2F;
+}
+
+.hit-volume {
+    font-family: 'Alexandria', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #CD9E13;
+}
+
+.hit-price-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 10px;
+}
+
+.hit-price {
+    font-family: 'Alexandria', sans-serif;
+    font-weight: 500;
+    font-size: 56px;
+    color: #3E2723;
+    line-height: 1;
+}
+
+.hit-currency {
+    font-family: 'Alegreya', sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    color: #3E2723;
+}
+
+/* ─── БАННЕР СПЕЦПРЕДЛОЖЕНИЯ ─── */
+
+.special-banner {
+    border-radius: 15px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.special-img {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+
+
 .info-section {
     background-color: #FFF9E6;
     border-radius: 15px;
@@ -187,6 +439,13 @@ body {
     margin-top: 40px;
     box-sizing: border-box;
     grid-column: 1 / -1;
+}
+
+.catalog-right {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    width: 100%;
 }
 
 .info-section h2 {
@@ -218,6 +477,12 @@ body {
     font-family: 'Alegreya SC', sans-serif;
 }
 
+
+/* ═══════════════════════════════════════
+   АДАПТИВ
+═══════════════════════════════════════ */
+
+/* ─── ПЛАНШЕТ: 900–1199px ─── */
 @media (max-width: 1199px) {
     .main-layout {
         padding-left: 24px;
@@ -229,7 +494,7 @@ body {
         column-gap: 16px;
     }
 
-    .sidebar-menu {
+    .sidebar-col {
         width: 200px;
     }
 
@@ -250,27 +515,67 @@ body {
     .price-currency {
         font-size: 18px;
     }
+
+    .promo-price {
+        font-size: 30px;
+    }
 }
 
+/* ─── МАЛЫЙ ПЛАНШЕТ / ТЕЛЕФОН: до 899px ─── */
 @media (max-width: 899px) {
     .main-layout {
         padding-left: 16px;
         padding-right: 16px;
     }
 
-    /* Меню становится горизонтальным */
     .catalog-wrapper {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
 
-    /* Прячем вертикальный сайдбар */
-    .sidebar-menu {
+    .sidebar-col {
         display: none;
     }
 
-    /* Горизонтальные кнопки */
+    /* Показываем мобильный виджет после карточек */
+    .promo-widget--mobile {
+        display: block;
+        margin-top: 24px;
+        border-radius: 15px;
+    }
+
+    /* Мобильный виджет — горизонтальный хит */
+    .promo-widget--mobile .promo-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .promo-widget--mobile .promo-img {
+        width: 90px;
+        height: 90px;
+        flex-shrink: 0;
+    }
+
+    .promo-widget--mobile .promo-name,
+    .promo-widget--mobile .promo-volume {
+        text-align: left;
+    }
+
+    .promo-widget--mobile .promo-price-row {
+        margin-top: 8px;
+    }
+
+    /* Спецпредложение на мобильном — баннер полной ширины */
+    .promo-widget--mobile .promo-special-img {
+        border-radius: 8px;
+    }
+
+    .catalog-right {
+        width: 100%;
+    }
+
     .sidebar-tabs {
         display: flex;
         flex-wrap: wrap;
@@ -361,8 +666,59 @@ body {
     .article-text {
         font-size: 20px;
     }
+
+    .hit-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .hit-img {
+        width: 100%;
+        height: auto;
+        max-width: 200px;
+        align-self: center;
+    }
+
+    .hit-name {
+        font-size: 24px;
+    }
+
+    .hit-price {
+        font-size: 40px;
+    }
+
+    .btn-add-to-cart-hit{
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 48px;
+    background: #FFC107;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 12px; /* Мягкое красивое скругление */
+    border: none;
+    cursor: pointer;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #3E2723;
+    padding: 0 35px;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+    white-space: nowrap; 
+    }
+
+    .btn-add-to-cart-hit:active {
+        transform: scale(0.97);
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
 }
 
+/* ─── МОБИЛЬНЫЙ: до 599px ─── */
 @media (max-width: 599px) {
     .main-layout {
         padding-left: 12px;
