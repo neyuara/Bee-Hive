@@ -1,16 +1,12 @@
 * {
-
     font-family: 'Alegreya Sans', sans-serif;
     a {
     text-decoration: none;
 }}
-
 html, body {
     margin: 0;
     padding: 0;
-    
 }
-
 header {
     font-family: 'Alegreya Sans', sans-serif;
     width: 100%;
@@ -24,13 +20,14 @@ header {
     padding: 12px 20px 12px 50px;
     position: fixed;
     z-index: 1000;
+    box-sizing: border-box;
 }
-
 .top-menu nav ul {
     list-style: none;
     margin: 0;
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;  /* пункты переносятся если не влезают */
 }
 
 /* 2. Основная часть хедера */
@@ -38,13 +35,12 @@ header {
     background: #fff;
     width: 100% !important;
     margin: 0;
-    padding: 15px 20px 15px  ;
+    padding: 15px 20px;
     padding-top: 45px;
+    box-sizing: border-box;
 }
 
 /* Поиск с иконкой */
-
-
 .search-block input {
     width: 280px;
     padding: 10px 16px 10px 45px;
@@ -54,12 +50,10 @@ header {
     background: #E1E1E1;
     font-family: 'Alegreya Sans', sans-serif;
 }
-
 .search-block input:focus {
     border-color: #d97706;
     background: #fff;
 }
-
 .search-block::before {
     content: '';
     position: absolute;
@@ -80,13 +74,11 @@ header {
     min-width: 160px;
     text-align: left;
 }
-
 .cart-block img {
     width: 42px;
     height: 42px;
     flex-shrink: 0;
 }
-
 .cart-quantity {
     background: #d97706;
     color: white;
@@ -98,22 +90,18 @@ header {
     align-items: center;
     justify-content: center;
     border-radius: 6px;
-
 }
-
 .cart-links {
     display: flex;
     flex-direction: column;
     gap: 2px;
 }
-
 .cart-links a {
     color: #333;
     text-decoration: none;
     font-size: 14px;
     font-family: 'Alegreya Sans', sans-serif;
 }
-
 .logo-text strong {
     font-family: 'Alegreya SC', serif;
     color: #333;
@@ -123,25 +111,18 @@ header {
 .logo-block img {
     display: block;
 }
-
 .logo-text span {
     font-family: 'Alegreya Sans SC', sans-serif;
     font-size: 15px;
     color: #d97706;
     font-weight: 800;
 }
-
-/* Телефон */
 .logo-block {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.logo-block img {
-    display: block;
-
-}
 /* 3. Жёлтая полоса */
 .header-bar {
     background: linear-gradient(90deg, #f5b800, #ffcc00);
@@ -149,6 +130,7 @@ header {
     margin: 0;
     padding: 18px 20px 18px 50px;
     text-align: left;
+    box-sizing: border-box;
 }
 .header-bar h1 {
     margin: 0;
@@ -157,16 +139,17 @@ header {
     font-size: 28px;
     font-weight: 700;
 }
+
+/* ==================== ФУТЕР ==================== */
 footer {
     border-top: 3px solid #f5b800;
 }
-
 .footer-nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background: #f8f1e3;
 }
-
 .footer-col {
     display: flex;
     flex-direction: column;
@@ -176,4 +159,84 @@ footer {
 }
 .footer-drops {
     background: #f8f1e3;
+    line-height: 0;
+}
+
+/* ==================== АДАПТИВ ==================== */
+/* ===== ПЛАНШЕТ (до 900px) ===== */
+@media (max-width: 900px) {
+    .top-menu {
+        padding: 10px 16px;
+    }
+    .top-menu nav ul {
+        gap: 16px;
+        font-size: 14px;
+    }
+    .search-block input {
+        width: 180px;
+    }
+    .header-bar {
+        padding: 14px 20px;
+    }
+    .header-bar h1 {
+        font-size: 22px;
+    }
+
+    /* Консультация — картинка фиксирована */
+    .consult-image-side {
+        flex: 0 0 200px;
+    }
+}
+
+/* ===== МОБИЛЬНЫЙ (до 782px) ===== */
+@media (max-width: 782px) {
+    .top-menu {
+        padding: 8px 12px;
+        position: static;
+    }
+    .top-menu nav ul {
+        gap: 10px;
+        font-size: 13px;
+    }
+    .main-header {
+        display: block !important;
+        padding: 12px;
+    }
+    .main-header tr,
+    .main-header td {
+        display: block;
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+    .search-block input {
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 16px;
+    }
+    .cart-block {
+        min-width: unset;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .header-bar {
+        padding: 12px 16px;
+    }
+    .header-bar h1 {
+        font-size: 18px;
+    }
+    .footer-nav {
+        flex-direction: column;
+        padding: 20px 16px;
+        gap: 24px;
+    }
+
+    /* Консультация — вертикально */
+    .consult-section {
+        flex-direction: column;
+        padding: 24px 16px;
+    }
+    .consult-image-side {
+        flex: none;
+        width: 100%;
+    }
 }

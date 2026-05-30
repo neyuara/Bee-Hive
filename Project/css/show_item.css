@@ -14,6 +14,7 @@ main {
     justify-content: center;
     padding: 14px 24px;
     border: 2px solid transparent;
+    cursor: pointer;  /* добавь */
 }
 
 
@@ -105,42 +106,40 @@ main {
     margin-top: 50px;
     margin-bottom: 70px;
 }
-
 .related-section h2 {
     margin-bottom: 24px;
 }
-
 .related-grid {
     display: flex;
- flex-direction: row; 
+    flex-direction: row;
     gap: 26px;
     width: 100%;
+    align-items: stretch;
 }
-
 .related-card {
     background: #fff9ee;
     border: 3px solid #f5d38f;
     border-radius: 20px;
     padding: 18px 16px;
     text-align: center;
-    height: 100%;
-    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 .related-card img {
     width: 100%;
-    height: 165px;
-    object-fit: cover;
+    height: 200px;
+    object-fit: contain;
     border-radius: 14px;
     border: 2px solid #f5d38f;
     margin-bottom: 12px;
+    background: #fff9ee;
 }
-
 .card-name {
     font-weight: 600;
     margin: 8px 0 4px;
     color: #333;
 }
-
 .card-price {
     font-family: 'Alegreya SC', serif;
     font-size: 19px;
@@ -148,7 +147,6 @@ main {
     color: #d97706;
     margin-bottom: 12px;
 }
-
 /*  КОНСУЛЬТАЦИЯ  */
 .consult-section {
     display: flex;
@@ -165,11 +163,15 @@ main {
     order: 0;   
 }
 
+.consult-image-side {
+    flex: 0 0 300px;
+    overflow: hidden;
+}
+
 .consult-image-side img {
     width: 100%;
     height: auto;
     border-radius: 20px;
-    order: 1;   
 }
 
 /*    */
@@ -228,4 +230,93 @@ main {
     font-size: 15px;
     color: #333;
     transition: all 0.3s ease;
+}
+/* ===================== АДАПТИВ ===================== */
+
+/* ===== ПЛАНШЕТ (до 900px) ===== */
+@media (max-width: 900px) {
+
+    main {
+        padding: 30px 20px 60px;
+    }
+
+    /* Товар: картинка + покупка рядом, категории под ними */
+    .product-section {
+        grid-template-columns: 1fr 1fr;
+    }
+    .product-categories {
+        grid-column: 1 / -1; /* на всю ширину */
+        height: auto;
+    }
+    /* Категории горизонтально как sidebar на мобильном в каталоге */
+    .product-categories ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .product-categories li {
+        border-bottom: none;
+        border-right: 1px solid #CCC2C2;
+    }
+
+    /* Похожие — по два в ряд */
+    .related-grid {
+        flex-wrap: wrap;
+    }
+    .related-card {
+        flex: 1 1 calc(50% - 13px);
+    }
+
+    /* Консультация — картинка уменьшается */
+    .consult-section {
+        gap: 30px;
+        padding: 30px 24px;
+    }
+    .consult-image-side {
+        flex: 0 0 240px;
+    }
+}
+
+/* ===== МОБИЛЬНЫЙ (до 600px) ===== */
+@media (max-width: 400px) {
+
+    main {
+        padding: 16px 12px 40px;
+    }
+
+    /* Всё в одну колонку */
+    .product-section {
+        grid-template-columns: 1fr;
+    }
+    .product-categories {
+        grid-column: auto;
+    }
+
+    /* Табы растягиваются */
+    .tabs-bar {
+        width: 100%;
+        display: flex;
+    }
+    .tab-btn {
+        flex: 1;
+        font-size: 13px;
+        padding: 10px 8px;
+    }
+
+    /* Похожие — по одному */
+    .related-card {
+        flex: 1 1 100%;
+    }
+
+    /* Консультация вертикально */
+    .consult-section {
+        flex-direction: column;
+        padding: 24px 16px;
+    }
+.consult-image-side {
+    flex: 0 0 300px;
+    overflow: hidden;
+}
+    .form-input {
+        max-width: 100%;
+    }
 }
