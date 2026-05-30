@@ -19,11 +19,17 @@
 
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@400;700&family=Alegreya+Sans+SC:wght@800&family=Alegreya+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base-layout.css">
+
+
 <header>
-    <!-- Верхнее меню -->
+    <!-- Десктоп: верхнее меню -->
     <div class="top-menu">
         <nav>
-            <ul id="pos4">
+            <ul>
                 <li><a href="landing.html">Главная</a></li>
                 <li><a href="catalog.html">Каталог</a></li>
                 <li><a href="landing.html#warranty">Гарантия</a></li>
@@ -34,43 +40,32 @@
         </nav>
     </div>
 
-    <!-- Основная часть хедера -->
-    <table border="0"  width="100%" class="main-header">
+    <!-- Десктоп: основная часть -->
+    <table class="main-header">
         <tr>
-            <!-- Логотип -->
-            <td class="logo-block" >
+            <td class="logo-block">
                 <img src="images/logo-placeholder.png" alt="лого" width="65">
                 <div class="logo-text">
                     <strong>ЧАСТНАЯ ПАСИКА</strong>
                     <span>ЗПОИС23</span>
                 </div>
             </td>
-
-            <!-- Поиск -->
             <td class="search-block">
-                    <div class="search-block">
-                        <input type="text" placeholder="Поиск...">
-                    </div>
+                <div class="search-wrap">
+                    <input type="text" placeholder="Поиск...">
+                </div>
             </td>
-
-            <!-- Телефон -->
             <td class="phone-block">
                 <table>
                     <tr>
+                        <td><img src="images/phone-icon.png"></td>
                         <td>
-                            <img src = "images/phone-icon.png">
-                        </td>
-                        <td>
-                    <strong>+375 (33) 628-86-72</strong><br>
-                    <small>Принимаем звонки с 8 до 16</small>
+                            <strong>+375 (33) 628-86-72</strong>
+                            <small>Принимаем звонки с 8 до 16</small>
                         </td>
                     </tr>
-
                 </table>
-
             </td>
-
-            <!-- Корзина -->
             <td class="cart-block">
                 <img src="images/Market-icon.png" alt="корзина">
                 <div class="cart-quantity">1</div>
@@ -82,12 +77,30 @@
         </tr>
     </table>
 
-    <!-- полоса -->
+    <!-- Мобильная шапка -->
+    <div class="mobile-header">
+        <div class="mobile-top">
+            <div class="logo-block">
+                <img src="images/logo-placeholder.png" alt="лого" width="45">
+                <div class="logo-text">
+                    <strong>ЧАСТНАЯ ПАСИКА</strong>
+                    <span>ЗПОИС23</span>
+                </div>
+            </div>
+            <img src="images/Market-icon.png" alt="корзина" class="mobile-cart-icon">
+        </div>
+        <hr class="mobile-divider">
+        <div class="mobile-bottom">
+            <button class="burger">☰</button>
+            <input type="text" class="mobile-search" placeholder="Поиск...">
+            <img src="images/phone-icon.png" class="mobile-phone-icon" alt="Телефон">
+        </div>
+    </div>
+
+    <!-- Общая жёлтая полоса -->
     <div class="header-bar">
-        <div class="breadcrumbs">
-            Главная
-        </div><h1>
-        Натуральный мёд от пчеловода</h1>
+        <div class="breadcrumbs">Главная</div>
+        <h1>НАТУРАЛЬНЫЙ МЁД ОТ ПЧЕЛОВОДА</h1>
     </div>
     </header>
 
@@ -228,7 +241,7 @@
         </div>
     </div>
     </div>
-    
+
     <br>
 
     <!-- гарантии -->
