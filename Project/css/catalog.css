@@ -79,8 +79,6 @@ body {
     font-weight: 700;
 }
 
-/* ─── ВИДЖЕТ ХИТ / СПЕЦПРЕДЛОЖЕНИЕ ─── */
-
 .promo-widget {
     background: #FFFFFF;
     border: 2px solid #FFC107;
@@ -195,7 +193,7 @@ body {
     display: none;
 }
 
-/* ─── МОБИЛЬНЫЕ ТАБЛЕТКИ ─── */
+/* ─── МОБИЛЬНЫЕ КНОПКИ ─── */
 
 .sidebar-tabs {
     display: none;
@@ -322,7 +320,7 @@ body {
     letter-spacing: 0.03em;
 }
 
-/* ─── СЕКЦИЯ-БЛОК (точка + заголовок + контент) ─── */
+/* ─── СЕКЦИЯ-БЛОК  ─── */
 
 .section-block {
     grid-column: 1 / -1;
@@ -430,7 +428,6 @@ body {
 }
 
 
-
 .info-section {
     background-color: #FFF9E6;
     border-radius: 15px;
@@ -478,11 +475,6 @@ body {
 }
 
 
-/* ═══════════════════════════════════════
-   АДАПТИВ
-═══════════════════════════════════════ */
-
-/* ─── ПЛАНШЕТ: 900–1199px ─── */
 @media (max-width: 1199px) {
     .main-layout {
         padding-left: 24px;
@@ -521,7 +513,6 @@ body {
     }
 }
 
-/* ─── МАЛЫЙ ПЛАНШЕТ / ТЕЛЕФОН: до 899px ─── */
 @media (max-width: 899px) {
     .main-layout {
         padding-left: 16px;
@@ -567,7 +558,6 @@ body {
         margin-top: 8px;
     }
 
-    /* Спецпредложение на мобильном — баннер полной ширины */
     .promo-widget--mobile .promo-special-img {
         border-radius: 8px;
     }
@@ -598,10 +588,14 @@ body {
         white-space: nowrap;
     }
 
-    .sidebar-tabs a.active,
-    .sidebar-tabs a:hover {
+    .sidebar-tabs a.active{
         background: #FFC107;
         font-weight: 700;
+    }
+    
+    .sidebar-tabs a:hover {
+        
+        transform: scale(0.97);
     }
 
     .product-grid {
@@ -691,22 +685,22 @@ body {
 
     .btn-add-to-cart-hit{
         display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    height: 48px;
-    background: #FFC107;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
-    border-radius: 12px; /* Мягкое красивое скругление */
-    border: none;
-    cursor: pointer;
-    font-family: 'Alegreya Sans', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    color: #3E2723;
-    padding: 0 35px;
-    transition: transform 0.1s ease, background-color 0.2s ease;
-    white-space: nowrap; 
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        height: 48px;
+        background: #FFC107;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 12px; 
+        border: none;
+        cursor: pointer;
+        font-family: 'Alegreya Sans', sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        color: #3E2723;
+        padding: 0 35px;
+        transition: transform 0.1s ease, background-color 0.2s ease;
+        white-space: nowrap; 
     }
 
     .btn-add-to-cart-hit:active {
@@ -718,7 +712,6 @@ body {
     }
 }
 
-/* ─── МОБИЛЬНЫЙ: до 599px ─── */
 @media (max-width: 599px) {
     .main-layout {
         padding-left: 12px;
