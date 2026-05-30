@@ -7,7 +7,6 @@ body {
     color: #31302E;
 }
 
-/* Контейнер, который держит весь контент по центру (ровно 1200px, как в Фигме) */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -15,10 +14,9 @@ body {
     box-sizing: border-box;
 }
 
-/* Главная рабочая область: меню слева, каталог справа */
+/* ─── ОСНОВНАЯ РАСКЛАДКА ─── */
+
 .main-layout {
-    display: flex;
-    align-items: center;
     position: relative;
     padding-left: 48px;
     padding-right: 48px;
@@ -26,25 +24,21 @@ body {
 
 .catalog-wrapper {
     display: grid;
-    grid-template-columns: 260px auto;
-    column-gap: 20px;
+    grid-template-columns: 260px 1fr;
+    column-gap: 24px;
     margin-bottom: 50px;
 }
 
-.item:nth-child(3){
-    grid-column: 1 / -1;
-}
+/* ─── БОКОВОЕ МЕНЮ (десктоп) ─── */
 
-/* Боковое меню */
 .sidebar-menu {
     width: 260px;
-    height: 342px;
+    height: fit-content;
     background: #FFF9E6;
     box-shadow: 4px 8px 12px rgba(254, 193, 7, 0.45);
     border-radius: 15px;
-    box-sizing: border-box;
-    padding: 0;          
-    overflow: hidden;   
+    overflow: hidden;
+    flex-shrink: 0;
 }
 
 .sidebar-menu ul {
@@ -53,19 +47,17 @@ body {
     margin: 0;
 }
 
-/* Линии-разделители */
 .sidebar-menu li {
     border-bottom: 1px solid #CCC2C2;
 }
 
 .sidebar-menu li:last-child {
-    border-bottom: none; 
+    border-bottom: none;
 }
 
-/* Базовое состояние ссылок в меню */
 .sidebar-menu a {
-    display: block;      /* Ссылка становится полноценным блоком от края до края */
-    padding: 18px 25px;  /* Теперь высоту и ширину пункта задаем ТОЛЬКО здесь */
+    display: block;
+    padding: 18px 25px;
     font-family: 'Alegreya Sans', sans-serif;
     font-weight: 400;
     font-size: 26px;
@@ -74,27 +66,29 @@ body {
     transition: all 0.2s ease;
 }
 
-/* Состояние при наведении и активный пункт */
 .sidebar-menu li.active a,
 .sidebar-menu a:hover {
     background: #FFC107;
     font-weight: 700;
 }
 
-/* Сетка для карточек товаров */
-.product-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    row-gap: 50px;
-    align-items: center;
-    justify-items: center;    
+/* Мобильные таблетки — скрыты на десктопе */
+.sidebar-tabs {
+    display: none;
 }
 
-/* Сама карточка товара */
+/* ─── СЕТКА КАРТОЧЕК ─── */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 28px;
+    align-items: start;
+}
+
+/* ─── КАРТОЧКА ТОВАРА ─── */
+
 .product-card {
-    width: 260px;
-    height: 342px;
     background: #FFF9E6;
     box-shadow: 4px 8px 12px rgba(255, 193, 7, 0.45);
     border-radius: 15px;
@@ -103,67 +97,71 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-  
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Картинка товара внутри белой рамки */
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 4px 12px 20px rgba(255, 193, 7, 0.55);
+}
+
 .product-img {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    max-width: 200px;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     background: #FFFFFF;
     border: none;
 }
 
-/* Название товара */
 .product-title {
     font-family: 'Alegreya SC', sans-serif;
     font-weight: 700;
-    font-size: 28px;
+    font-size: 24px;
     color: #322F2F;
     text-align: center;
-    margin: 5px 0px 15px;
+    margin: 8px 0 12px;
 }
 
-.price-wrapper{
+.price-wrapper {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: space-between;
     width: 100%;
-    padding: 0 10px;
+    padding: 0 6px;
     box-sizing: border-box;
     margin-top: auto;
 }
 
-.price-text-group{
+.price-text-group {
     display: flex;
     align-items: baseline;
-    gap:5px;
-    margin-top: -10px;
+    gap: 4px;
 }
 
-.price-value{
+.price-value {
     font-family: 'Alexandria', sans-serif;
     font-weight: 500;
-    font-size: 50px;
+    font-size: 46px;
     color: #3E2723;
+    line-height: 1;
 }
 
-.price-currency{
-    font-family: 'Alegreya', sand-serif;
+.price-currency {
+    font-family: 'Alegreya', sans-serif;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 22px;
     color: #3E2723;
 }
 
-.price-amount{
+.price-amount {
     font-family: 'Alexandria', sans-serif;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 16px;
     color: #CD9E13;
 }
 
-/* Кнопка "В корзину" */
+/* Кнопка «В корзину» — десктоп (только иконка) */
 .btn-add-to-cart {
     width: 48px;
     height: 48px;
@@ -172,41 +170,50 @@ body {
     border-radius: 8px;
     border: none;
     cursor: pointer;
-    transition: transform 0.1s;
+    transition: transform 0.1s, box-shadow 0.15s;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .btn-add-to-cart:active {
     transform: scale(0.95);
 }
 
+/* Текст кнопки — виден только на мобильном */
+.btn-cart-text {
+    display: none;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #3E2723;
+    letter-spacing: 0.03em;
+}
 
-/* Секция со статьей */
+/* ─── СЕКЦИЯ СТАТЬИ ─── */
+
 .info-section {
-    background-color: #FFF9E6; /* Цвет фона как у карточек/меню */
-    border-radius: 15px;       /* Закругление углов */
-    padding: 30px;             /* Внутренние отступы, чтобы текст не прилипал к краям */
-    box-shadow: 4px 8px 12px rgba(254, 193, 7, 0.45); /* Мягкая тень */
-    margin-top: 40px;          /* Отступ сверху от каталога товаров */
+    background-color: #FFF9E6;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 4px 8px 12px rgba(254, 193, 7, 0.45);
+    margin-top: 40px;
     box-sizing: border-box;
     grid-column: 1 / -1;
 }
 
-/* Заголовок внутри блока */
 .info-section h2 {
-    background-color: #FFC107; /* Желтая плашка под заголовком */
-    margin: -30px -30px 20px -30px; /* Растягиваем плашку на всю ширину блока */
-    padding: 20px 30px;        /* Отступы внутри плашки */
-    border-radius: 15px 15px 0 0; /* Скругляем только верхние углы */
+    background-color: #FFC107;
+    margin: -30px -30px 20px -30px;
+    padding: 20px 30px;
+    border-radius: 15px 15px 0 0;
     font-family: 'Alegreya SC', sans-serif;
     font-size: 32px;
     color: #31302E;
     text-align: center;
 }
 
-/* Стилизация текста статьи */
 .article-text {
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 18px;
@@ -225,26 +232,210 @@ body {
     font-family: 'Alegreya SC', sans-serif;
 }
 
-@media (max-width: 600px) {
-    .product-grid{
-        max-width: 260px;
+
+/* ═══════════════════════════════════════
+   АДАПТИВ
+═══════════════════════════════════════ */
+
+/* ─── ПЛАНШЕТ: ~900–1199px ─── */
+@media (max-width: 1199px) {
+    .main-layout {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .catalog-wrapper {
+        grid-template-columns: 200px 1fr;
+        column-gap: 16px;
+    }
+
+    .sidebar-menu {
+        width: 200px;
+    }
+
+    .sidebar-menu a {
+        font-size: 20px;
+        padding: 14px 18px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 20px;
+    }
+
+    .price-value {
+        font-size: 36px;
+    }
+
+    .price-currency {
+        font-size: 18px;
     }
 }
 
-@media (max-width: 899px) and (min-width: 580px) {
-    .product-grid{
-        max-width: 550px;
+/* ─── МАЛЫЙ ПЛАНШЕТ / БОЛЬШОЙ ТЕЛЕФОН: 600–899px ─── */
+@media (max-width: 899px) {
+    .main-layout {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    /* Переключаем раскладку: меню становится горизонтальным */
+    .catalog-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Прячем вертикальный сайдбар */
+    .sidebar-menu {
+        display: none;
+    }
+
+    /* Показываем горизонтальные таблетки */
+    .sidebar-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 8px;
+    }
+
+    .sidebar-tabs a {
+        display: inline-block;
+        padding: 8px 18px;
+        background: #FFF9E6;
+        border-radius: 20px;
+        font-family: 'Alegreya Sans', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: #31302E;
+        text-decoration: none;
+        box-shadow: 2px 4px 8px rgba(254, 193, 7, 0.4);
+        transition: background 0.2s, font-weight 0.2s;
+        white-space: nowrap;
+    }
+
+    .sidebar-tabs a.active,
+    .sidebar-tabs a:hover {
+        background: #FFC107;
+        font-weight: 700;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    /* На 2 колонки карточки делаем более компактными */
+    .product-card {
+        padding: 12px;
+    }
+
+    .product-img {
+        max-width: 100%;
+    }
+
+    .product-title {
+        font-size: 18px;
+        margin: 6px 0 10px;
+    }
+
+    /* Раскладка цены и кнопки: стек */
+    .price-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .price-value {
+        font-size: 32px;
+    }
+
+    .price-currency {
+        font-size: 16px;
+    }
+
+    .price-amount {
+        font-size: 14px;
+    }
+
+    /* Кнопка — полная ширина с текстом */
+    .btn-add-to-cart {
+        width: 100%;
+        height: 38px;
+        border-radius: 10px;
+        gap: 8px;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+
+    .btn-cart-text {
+        display: block;
+    }
+
+    .btn-add-to-cart img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .info-section h2 {
+        font-size: 24px;
+    }
+
+    .article-text {
+        font-size: 16px;
     }
 }
 
-@media (min-width: 900px) and (max-width: 1199){
-    .product-grid{
-        max-width: 860px;
+/* ─── МОБИЛЬНЫЙ: до 599px ─── */
+@media (max-width: 599px) {
+    .main-layout {
+        padding-left: 12px;
+        padding-right: 12px;
     }
-}
 
-@media (min-width: 1200px){
-    .product-grid{
-        max-width: 1130px;
+    .sidebar-tabs {
+        gap: 8px;
+    }
+
+    .sidebar-tabs a {
+        font-size: 14px;
+        padding: 7px 14px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .product-title {
+        font-size: 16px;
+    }
+
+    .price-value {
+        font-size: 28px;
+    }
+
+    .price-currency {
+        font-size: 14px;
+    }
+
+    .price-amount {
+        font-size: 12px;
+    }
+
+    .info-section {
+        padding: 20px;
+    }
+
+    .info-section h2 {
+        margin: -20px -20px 16px -20px;
+        padding: 16px 20px;
+        font-size: 22px;
+    }
+
+    .article-text {
+        font-size: 15px;
+        line-height: 22px;
     }
 }
