@@ -161,8 +161,13 @@ footer {
     background: #f8f1e3;
     line-height: 0;
 }
+/* Мобильная шапка — скрыта на десктопе */
+.mobile-header {
+    display: none;
+}
 
 /* ==================== АДАПТИВ ==================== */
+
 /* ===== ПЛАНШЕТ (до 900px) ===== */
 @media (max-width: 900px) {
     .top-menu {
@@ -181,8 +186,6 @@ footer {
     .header-bar h1 {
         font-size: 22px;
     }
-
-    /* Консультация — картинка фиксирована */
     .consult-image-side {
         flex: 0 0 200px;
     }
@@ -190,47 +193,92 @@ footer {
 
 /* ===== МОБИЛЬНЫЙ (до 782px) ===== */
 @media (max-width: 782px) {
-    .top-menu {
-        padding: 8px 12px;
-        position: static;
-    }
-    .top-menu nav ul {
-        gap: 10px;
-        font-size: 13px;
-    }
+
+    /* Скрываем десктоп, показываем мобильное */
+    .top-menu,
     .main-header {
-        display: block !important;
-        padding: 12px;
+        display: none !important;
     }
-    .main-header tr,
-    .main-header td {
+    .mobile-header {
         display: block;
-        width: 100% !important;
-        margin-bottom: 10px;
-    }
-    .search-block input {
-        width: 100%;
-        box-sizing: border-box;
-        padding-left: 16px;
-    }
-    .cart-block {
-        min-width: unset;
+        background: #fff;
         width: 100%;
         box-sizing: border-box;
     }
+
+    /* Верхняя строка: лого + корзина */
+    .mobile-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 16px;
+    }
+    .mobile-top .logo-block {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .mobile-cart-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    /* Разделитель */
+    .mobile-divider {
+        border: none;
+        background: #f5b800;
+        height: 3px;
+        margin: 0;
+    }
+
+    /* Нижняя строка: бургер + поиск + телефон */
+    .mobile-bottom {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 16px;
+        background: #f8f1e3;
+    }
+    .burger {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+        flex-shrink: 0;
+    }
+    .mobile-search {
+        flex: 1;
+        padding: 8px 16px;
+        border-radius: 30px;
+        border: none;
+        background: #E1E1E1;
+        font-family: 'Alegreya Sans', sans-serif;
+        font-size: 15px;
+        outline: none;
+    }
+    .mobile-phone-icon {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+    }
+
+    /* Жёлтая полоса */
     .header-bar {
         padding: 12px 16px;
     }
     .header-bar h1 {
         font-size: 18px;
     }
+
+    /* Футер */
     .footer-nav {
         flex-direction: column;
         padding: 20px 16px;
         gap: 24px;
     }
 
-    /* Консультация — вертикально */
+    /* Консультация */
     .consult-section {
         flex-direction: column;
         padding: 24px 16px;

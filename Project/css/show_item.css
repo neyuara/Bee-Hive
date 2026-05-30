@@ -220,6 +220,7 @@ main {
 .form-input {
     display: block;
     width: 100%;
+    box-sizing: border-box;  
     max-width: 340px;
     padding: 14px 20px;
     margin-bottom: 14px;
@@ -248,7 +249,7 @@ main {
         grid-column: 1 / -1; /* на всю ширину */
         height: auto;
     }
-    /* Категории горизонтально как sidebar на мобильном в каталоге */
+    /* Категории горизонтально  */
     .product-categories ul {
         display: flex;
         flex-wrap: wrap;
