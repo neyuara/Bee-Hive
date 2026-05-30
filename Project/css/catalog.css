@@ -86,6 +86,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    row-gap: 50px;
     align-items: center;
     justify-items: flex-end;    
 }
@@ -102,13 +103,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+   /* justify-content: space-between;*/
 }
 
 /* Картинка товара внутри белой рамки */
 .product-img {
-    width: 213px;
-    height: 213px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     background: #FFFFFF;
     border: none;
@@ -118,26 +119,63 @@ body {
 .product-title {
     font-family: 'Alegreya SC', sans-serif;
     font-weight: 700;
-    font-size: 24px;
-    color: #31302E;
+    font-size: 28px;
+    color: #322F2F;
     text-align: center;
-    margin: 5px 0;
+    margin: 5px 0px 15px;
+}
+
+.price-wrapper{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-top: auto;
+}
+
+.price-text-group{
+    display: flex;
+    align-items: baseline;
+    gap:5px;
+    margin-top: -10px;
+}
+
+.price-value{
+    font-family: 'Alexandria', sans-serif;
+    font-weight: 500;
+    font-size: 50px;
+    color: #3E2723;
+}
+
+.price-currency{
+    font-family: 'Alegreya', sand-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #3E2723;
+}
+
+.price-amount{
+    font-family: 'Alexandria', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #CD9E13;
 }
 
 /* Кнопка "В корзину" */
 .btn-add-to-cart {
-    width: 120px;
-    height: 35px;
+    width: 48px;
+    height: 48px;
     background: #FFC107;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     border: none;
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-weight: 800;
-    font-size: 16px;
-    color: #000000;
     cursor: pointer;
     transition: transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-add-to-cart:active {
