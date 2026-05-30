@@ -474,6 +474,55 @@ body {
     font-family: 'Alegreya SC', sans-serif;
 }
 
+.promo-ticker-cat {
+    position: relative;
+    z-index: 5;
+    background: #99B4AA;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 16px 0;
+    border-top: 3px solid #6B6D43;
+    border-bottom: 3px solid #6B6D43;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.promo-ticker__wrapper-cat {
+    display: inline-flex;
+    align-items: center;
+    animation: tickerScroll 25s linear infinite;
+}
+
+.promo-ticker-cat:hover .promo-ticker__wrapper-cat {
+    animation-play-state: paused;
+}
+
+.promo-ticker__line-cat {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-right: 40px;
+    width: 100% !important;
+}
+
+.promo-ticker__text-cat {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 22px;
+    color: #31302E;
+    letter-spacing: 1px;
+}
+
+.promo-ticker__text-cat span {
+    color: #F2DEC7;
+}
+
+.promo-ticker__star-cat {
+    color: #CF7D65;
+    font-size: 30px;
+}
+@keyframes tickerScroll {
+    0%   { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+}
 
 @media (max-width: 1199px) {
     .main-layout {
@@ -592,7 +641,7 @@ body {
         background: #FFC107;
         font-weight: 700;
     }
-    
+
     .sidebar-tabs a:hover {
         
         transform: scale(0.97);
