@@ -88,7 +88,7 @@ body {
     gap: 30px;
     row-gap: 50px;
     align-items: center;
-    justify-items: flex-end;    
+    justify-items: center;    
 }
 
 /* Сама карточка товара */
@@ -103,7 +103,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-   /* justify-content: space-between;*/
+  
 }
 
 /* Картинка товара внутри белой рамки */
@@ -223,4 +223,28 @@ body {
 .article-text strong {
     font-weight: 700;
     font-family: 'Alegreya SC', sans-serif;
+}
+
+@media (max-width: 600px) {
+    .product-grid{
+        max-width: 260px;
+    }
+}
+
+@media (max-width: 899px) and (min-width: 580px) {
+    .product-grid{
+        max-width: 550px;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1199){
+    .product-grid{
+        max-width: 860px;
+    }
+}
+
+@media (min-width: 1200px){
+    .product-grid{
+        max-width: 1130px;
+    }
 }
