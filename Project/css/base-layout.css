@@ -161,6 +161,54 @@ footer {
     background: #f8f1e3;
     line-height: 0;
 }
+/* ══════════════════════════════
+   БЕГУЩАЯ СТРОКА
+══════════════════════════════ */
+.promo-ticker {
+    position: relative;
+    z-index: 5;
+    background: #FFF9E6;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 16px 0;
+    border-top: 3px solid #F2A359;
+    border-bottom: 3px solid #F2A359;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.promo-ticker__wrapper {
+    display: inline-flex;
+    align-items: center;
+    animation: tickerScroll 25s linear infinite;
+}
+
+.promo-ticker:hover .promo-ticker__wrapper {
+    animation-play-state: paused;
+}
+
+.promo-ticker__line {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-right: 40px;
+    width: 100% !important;
+}
+
+.promo-ticker__text {
+    font-family: 'Lobster', cursive;
+    font-size: 26px;
+    color: #3E2723;
+    letter-spacing: 1px;
+}
+
+.promo-ticker__text span {
+    color: #F2A359;
+}
+
+.promo-ticker__star {
+    color: #F2A359;
+    font-size: 20px;
+}
 /* Мобильная шапка — скрыта на десктопе */
 .mobile-header {
     display: none;

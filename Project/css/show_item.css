@@ -232,6 +232,12 @@ main {
     color: #333;
     transition: all 0.3s ease;
 }
+
+
+@keyframes tickerScroll {
+    0%   { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+}
 /* ===================== АДАПТИВ ===================== */
 
 /* ===== ПЛАНШЕТ (до 900px) ===== */
