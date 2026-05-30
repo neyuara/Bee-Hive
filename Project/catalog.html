@@ -12,10 +12,10 @@
 </head>
 <body>
     <header>
-        <!-- Верхнее меню -->
+        <!-- Десктоп -->
         <div class="top-menu">
             <nav>
-                <ul id="pos4">
+                <ul>
                     <li><a href="landing.html">Главная</a></li>
                     <li><a href="catalog.html">Каталог</a></li>
                     <li><a href="landing.html#warranty">Гарантия</a></li>
@@ -26,8 +26,7 @@
             </nav>
         </div>
 
-        <!-- Основная часть хедера -->
-        <table border="0" width="100%" class="main-header">
+        <table class="main-header">
             <tr>
                 <td class="logo-block">
                     <img src="images/logo-placeholder.png" alt="лого" width="65">
@@ -37,7 +36,7 @@
                     </div>
                 </td>
                 <td class="search-block">
-                    <div class="search-block">
+                    <div class="search-wrap">
                         <input type="text" placeholder="Поиск...">
                     </div>
                 </td>
@@ -46,7 +45,7 @@
                         <tr>
                             <td><img src="images/phone-icon.png"></td>
                             <td>
-                                <strong>+375 (33) 628-86-72</strong><br>
+                                <strong>+375 (33) 628-86-72</strong>
                                 <small>Принимаем звонки с 8 до 16</small>
                             </td>
                         </tr>
@@ -63,12 +62,30 @@
             </tr>
         </table>
 
-        <!-- Жёлтая полоса -->
-        <div class="header-bar">
-            <div class="breadcrumbs">
-                Главная → Каталог → Пчелиный мёд
+        <!-- Мобильная шапка -->
+        <div class="mobile-header">
+            <div class="mobile-top">
+                <div class="logo-block">
+                    <img src="images/logo-placeholder.png" alt="лого" width="45">
+                    <div class="logo-text">
+                        <strong>ЧАСТНАЯ ПАСИКА</strong>
+                        <span>ЗПОИС23</span>
+                    </div>
+                </div>
+                <img src="images/Market-icon.png" alt="корзина" class="mobile-cart-icon">
             </div>
-            <h1>Натуральный мёд от пчеловода</h1>
+            <hr class="mobile-divider">
+            <div class="mobile-bottom">
+                <button class="burger">☰</button>
+                <input type="text" class="mobile-search" placeholder="Поиск...">
+                <img src="images/phone-icon.png" class="mobile-phone-icon" alt="Телефон">
+            </div>
+        </div>
+
+        <!-- Общая жёлтая полоса -->
+        <div class="header-bar">
+            <div class="breadcrumbs">Главная → Каталог → Пчелиный мёд</div>
+            <h1>НАТУРАЛЬНЫЙ МЁД ОТ ПЧЕЛОВОДА</h1>
         </div>
     </header>
 
@@ -256,7 +273,7 @@
                         </button>
                     </div>
                 </div>
-                
+
             </div>
             <section class="info-section" id="how-to-choose-honey">
                 <h2>Как выбрать мед?</h2>
