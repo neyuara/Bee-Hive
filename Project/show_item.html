@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сайт конкретного мёда</title>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@400;700&family=Alegreya+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/show_item.css">
+
+    <!-- jQuery + jQuery UI -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+    <!-- Стили сайта -->
     <link rel="stylesheet" href="css/base-layout.css">
+    <link rel="stylesheet" href="css/show_item.css">
+
     <link rel="icon" type="image/png" href="images/logo-placeholder.png">
 </head>
 <body>
+
 <header>
     <!-- Десктоп: верхнее меню -->
     <div class="top-menu">
@@ -43,7 +52,7 @@
             <td class="phone-block">
                 <table>
                     <tr>
-                        <td><img src="images/phone-icon.png"></td>
+                        <td><img src="images/phone-icon.png" alt="тел"></td>
                         <td>
                             <strong>+375 (33) 628-86-72</strong><br>
                             <small>Принимаем звонки с 8 до 16</small>
@@ -82,7 +91,7 @@
         </div>
     </div>
 
-    <!-- Общая жёлтая полоса -->
+    <!-- Жёлтая полоса -->
     <div class="header-bar">
         <div class="breadcrumbs">Главная → Каталог → Пчелиный мёд</div>
         <h1>НАТУРАЛЬНЫЙ МЁД ОТ ПЧЕЛОВОДА</h1>
@@ -90,51 +99,65 @@
 </header>
 
 <main>
+
+    <!-- БЛОК ТОВАРА -->
     <section class="product-section">
-        <div class="related-card img">
+
+        <!-- Картинка -->
+        <div class="panel-box product-image-box">
             <img src="images/catalog/Honey_honeycomb.jpg" alt="Банка мёда">
         </div>
-        <div class="product-buy">
-            <p class="price-value" >Соты в мёдах или мёд в сотах</p>
+
+        <!-- Покупка -->
+        <div class="panel-box product-buy">
+            <p class="price-value">Соты в мёдах или мёд в сотах</p>
             <p class="price-label">Цена</p>
             <p class="price-value">1700 руб / 3 кг</p>
             <div class="qty-control">
-                <button class="btn-outline" style="     border-radius: 5px">−</button>
+                <button class="btn btn-outline" style="border-radius:5px">−</button>
                 <span>1</span>
-                <button class="btn-primary" style="border-radius: 5px">+</button>
+                <button class="btn btn-primary" style="border-radius:5px">+</button>
             </div>
             <button class="btn btn-primary btn-cart">В корзину</button>
-             <a href="https://vk.com/share.php?url=https://yoursite.ru/show_item.html&title=Натуральный%20мёд%20от%20пчеловода%20-%201700%20руб%20за%203%20л" target="_blank" class="btn btn-outline btn-share">Поделиться</a>
-      
-        </div>  
-        <div class="product-categories">
+            <a href="https://vk.com/share.php?url=https://yoursite.ru/show_item.html&title=Натуральный%20мёд%20от%20пчеловода%20-%201700%20руб%20за%203%20л"
+               target="_blank" class="btn btn-outline btn-share">Поделиться</a>
+        </div>
+
+        <!-- Категории -->
+        <div class="panel-box product-categories">
             <h3>Категории</h3>
             <ul>
-                <li class="active"><a href="#">Пчелиный мёд</a></li><br><hr style="border: none; background-color: #d97706; height: 3px; width: 90%;">
-
-                <li><a href="#">Пчелиный воск</a></li><br><hr style="border: none; background-color: #d97706; height: 3px; width: 90%;">
-                
-                <li><a href="#">Улья</a></li><br><hr style="border: none; background-color: #d97706; height: 3px; width: 90%;">
-
-                <li><a href="#">Рамки для ульев</a></li><br><hr style="border: none; background-color: #d97706; height: 3px; width: 90%;">
-
+                <li class="active"><a href="#">Пчелиный мёд</a></li>
+                <hr>
+                <li><a href="#">Пчелиный воск</a></li>
+                <hr>
+                <li><a href="#">Улья</a></li>
+                <hr>
+                <li><a href="#">Рамки для ульев</a></li>
+                <hr>
                 <li><a href="#">Прополис</a></li>
             </ul>
         </div>
+
     </section>
 
-    <div class="tabs-bar">
-        <button class="tab-btn active">Описание</button>
-        <button class="tab-btn">Характеристики</button>
-        <button class="tab-btn">Отзывы</button>
-    </div>
+    <!-- ═══════════════════════════════════════
+         ВИДЖЕТ 1 — jQuery UI Tabs
+         Заменяет оригинальный .tabs-bar + .tab-content
+    ════════════════════════════════════════ -->
+    <div id="product-tabs">
+        <ul>
+            <li><a href="#tab-desc">Описание</a></li>
+            <li><a href="#tab-chars">Характеристики</a></li>
+            <li><a href="#tab-reviews">Отзывы</a></li>
+        </ul>
 
-    <div class="tab-content">
-        <div class="tab-panel active">
-            <h3>Текст описания</h3>
-            <p>ДАнные соты были добыты из пчел из мадрида,</p>
+        <div id="tab-desc">
+            <h3>Описание товара</h3>
+            <p>Данные соты были добыты из пчёл из Мадрида. Натуральный продукт высшего качества — никаких добавок и консервантов. Мёд собирается вручную и расфасовывается в стеклянные банки прямо с пасеки.</p>
         </div>
-        <div class="tab-panel">
+
+        <div id="tab-chars">
             <h3>Характеристики</h3>
             <table class="chars-table">
                 <tr><td>Срок годности</td><td>24 месяца</td></tr>
@@ -144,87 +167,135 @@
                 <tr><td>Условия хранения</td><td>Прохладное место, от +5°C до +25°C</td></tr>
             </table>
         </div>
-        <div class="tab-panel">
+
+        <div id="tab-reviews">
             <h3>Отзывы покупателей</h3>
-            <p>Сергей П. - "Очень вкусно вай мама моя женщина."<p>
+            <div class="review-item">
+                <div class="review-author">Сергей П.</div>
+                <div class="review-stars">★★★★★</div>
+                <p>Очень вкусный мёд, берём уже третий раз. Рекомендую всем!</p>
+            </div>
+            <div class="review-item">
+                <div class="review-author">Елена К.</div>
+                <div class="review-stars">★★★★☆</div>
+                <p>Хороший продукт, упаковка надёжная. Доставка быстрая.</p>
+            </div>
         </div>
     </div>
-<div class="map-section">
-    <h2><img src="images/point.png"> Наша пасека на карте</h2>
-    <div align = "center">
-        <script type="text/javascript" charset="utf-8" async
-            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A17efa16e6b8e44e4e2fc7febe5a5d5d11af5bc6e2d7fc3f32920bd06f407242c&height=400&lang=ru_RU&scroll=true">
-        </script>
+
+    <!-- КАРТА -->
+    <div class="map-section">
+        <h2><img src="images/point.png" alt=""> Наша пасека на карте</h2>
+        <div align="center">
+            <script type="text/javascript" charset="utf-8" async
+                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A17efa16e6b8e44e4e2fc7febe5a5d5d11af5bc6e2d7fc3f32920bd06f407242c&height=400&lang=ru_RU&scroll=true">
+            </script>
+        </div>
     </div>
-</div>
+
+    <!-- ═══════════════════════════════════════
+         ВИДЖЕТ 2 — jQuery UI Accordion (FAQ)
+    ════════════════════════════════════════ -->
+    <div class="faq-section">
+        <h2><img src="images/point.png" alt=""> Часто задаваемые вопросы</h2>
+        <div id="faq-accordion">
+
+            <h3>Как хранить мёд после вскрытия?</h3>
+            <div>
+                <p>Храните мёд в плотно закрытой стеклянной таре при температуре от +5°C до +25°C в тёмном месте. Избегайте попадания влаги — мёд может забродить. При соблюдении условий хранится до 2 лет.</p>
+            </div>
+
+            <h3>Почему мёд засахарился — это нормально?</h3>
+            <div>
+                <p>Да, засахаривание — признак натуральности. Большинство сортов кристаллизуются через 1–6 месяцев. Чтобы вернуть жидкую консистенцию, поставьте банку в тёплую воду (не выше 40°C) на 20–30 минут.</p>
+            </div>
+
+            <h3>Как оформить заказ и получить товар?</h3>
+            <div>
+                <p>Оформите заказ на сайте или позвоните по номеру <strong>+375 (33) 628-86-72</strong>. Доставляем по всей Республике Беларусь почтой или курьером. Возможен самовывоз с пасеки.</p>
+            </div>
+
+            <h3>Есть ли у вас сертификаты качества?</h3>
+            <div>
+                <p>Да, вся продукция имеет ветеринарные справки и соответствует ГОСТ. Документы предоставляются по запросу вместе с каждой партией товара.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ПОХОЖИЕ ТОВАРЫ -->
     <div class="related-section">
-        <h2><img src="images/point.png"> Похожие товары</h2>
+        <h2><img src="images/point.png" alt=""> Похожие товары</h2>
         <div class="related-grid">
             <div class="related-card">
-                <img src="images/catalog/frame_dadan.png" alt="Гречишный мёд 2 л.">
+                <img src="images/catalog/frame_dadan.png" alt="Рамка дадан">
                 <div class="card-name">Рамка дадан, 1шт</div>
                 <div class="card-price">1200 руб</div>
-                <button class="btn btn-outline btn-detail">Подробнее</button>
-                <button class="btn btn-primary btn-cart-sm">В корзину</button>
+                <button class="btn btn-outline">Подробнее</button>
+                <button class="btn btn-primary">В корзину</button>
             </div>
             <div class="related-card">
-                <img src="images/catalog/wax_bleached.jpg">
+                <img src="images/catalog/wax_bleached.jpg" alt="Воск отбеленный">
                 <div class="card-name">Воск отбеленный, 1 кг.</div>
                 <div class="card-price">700 руб</div>
-                <button class="btn btn-outline btn-detail">Подробнее</button>
-                <button class="btn btn-primary btn-cart-sm">В корзину</button>
+                <button class="btn btn-outline">Подробнее</button>
+                <button class="btn btn-primary">В корзину</button>
             </div>
             <div class="related-card">
                 <img src="images/catalog/Honey_liquid.jpg" alt="Гречишный мёд 0,5 л.">
                 <div class="card-name">Гречишный мёд 0,5 л.</div>
                 <div class="card-price">350 руб</div>
-                <button class="btn btn-outline btn-detail">Подробнее</button>
-                <button class="btn btn-primary btn-cart-sm">В корзину</button>
+                <button class="btn btn-outline">Подробнее</button>
+                <button class="btn btn-primary">В корзину</button>
             </div>
         </div>
     </div>
 
-
+    <!-- КОНСУЛЬТАЦИЯ +
+         ═══════════════════════════════════════
+         ВИДЖЕТ 3 — jQuery UI Datepicker
+         Выбор удобной даты для обратного звонка
+    ════════════════════════════════════════ -->
     <section class="consult-section">
         <div class="consult-form-side">
-            <h2><img src="images/point.png"> Бесплатная консультация</h2>
-            <p>Отправьте запрос — и мы вам позвоним</p>
+            <h2><img src="images/point.png" alt=""> Бесплатная консультация</h2>
+            <p>Оставьте заявку — мы перезвоним в удобное время</p>
             <input type="text" class="form-input" placeholder="Имя">
-            <input type="tel" class="form-input" placeholder="Телефон">            
-            <button class="btn btn-primary">Подробнее</button>
+            <input type="tel"  class="form-input" placeholder="Телефон">
+            <div class="datepicker-wrap">
+                <input type="text" id="callback-date" placeholder="Удобная дата звонка" readonly>
+                <span class="dp-icon">📅</span>
+            </div>
+            <button class="btn btn-primary">Отправить заявку</button>
         </div>
         <div class="consult-image-side">
             <img src="images/The beekeeper.png" alt="Пчеловод">
         </div>
     </section>
-    
-
-
 
 </main>
-</main>
 
+<!-- БЕГУЩАЯ СТРОКА -->
 <div class="promo-ticker">
     <div class="promo-ticker__wrapper">
         <div class="promo-ticker__line">
-            <p class="promo-ticker__text">купили мёд? <span>Смажьте им братские булочки<img src ="images/Brothers_buns.jpg" class="promo-ticker__image"></span></p>
+            <p class="promo-ticker__text">купили мёд? <span>Смажьте им братские булочки<img src="images/Brothers_buns.jpg" class="promo-ticker__image" alt=""></span></p>
             <div class="promo-ticker__star">★</div>
             <p class="promo-ticker__text">По вопросам: <span>chastnayapaseka3pois23@gmail.com</span></p>
             <div class="promo-ticker__star">★</div>
-            <p class="promo-ticker__text">Зашли к нам <span>Зайдите в Братские булочки</span><img src ="images/Brothers_buns.jpg" class="promo-ticker__image"></p>
+            <p class="promo-ticker__text">Зашли к нам? <span>Зайдите в Братские булочки<img src="images/Brothers_buns.jpg" class="promo-ticker__image" alt=""></span></p>
             <div class="promo-ticker__star">★</div>
         </div>
         <div class="promo-ticker__line">
-            <p class="promo-ticker__text">купили мёд? <span>Смажьте им братские булочки<img src ="images/Brothers_buns.jpg" class="promo-ticker__image"></span></p>
+            <p class="promo-ticker__text">купили мёд? <span>Смажьте им братские булочки<img src="images/Brothers_buns.jpg" class="promo-ticker__image" alt=""></span></p>
             <div class="promo-ticker__star">★</div>
             <p class="promo-ticker__text">По вопросам: <span>chastnayapaseka3pois23@gmail.com</span></p>
             <div class="promo-ticker__star">★</div>
-            <p class="promo-ticker__text">Зашли к нам <span>Зайдите в Братские булочки<img src ="images/Brothers_buns.jpg" class="promo-ticker__image"></span></p>
+            <p class="promo-ticker__text">Зашли к нам? <span>Зайдите в Братские булочки<img src="images/Brothers_buns.jpg" class="promo-ticker__image" alt=""></span></p>
             <div class="promo-ticker__star">★</div>
         </div>
     </div>
 </div>
-
 
 <footer>
     <div class="footer-drops">
@@ -232,13 +303,17 @@
     </div>
     <div class="footer-nav">
         <div class="footer-col">
-            <a href="landing.html"><img src="images/logo-placeholder.png" width="80" alt="Лого"></a>
+            <a href="landing.html">
+                <img src="images/logo-placeholder.png" width="80" alt="Лого">
+            </a>
             <span class="logo-text">
                 <strong>Частная пасека<br>ЗПОИС23</strong>
             </span>
         </div>
         <div class="footer-col">
-           <a href="mailto:chastnayapaseka3pois23@gmail.com"> <img src="images/mail-icon.png" width="60" alt="Почта"></a>
+            <a href="mailto:chastnayapaseka3pois23@gmail.com">
+                <img src="images/mail-icon.png" width="60" alt="Почта">
+            </a>
             <span class="cart-links">
                 Адрес электронной почты:<br>
                 <a href="mailto:chastnayapaseka3pois23@gmail.com">chastnayapaseka3pois23@gmail.com</a>
@@ -252,5 +327,39 @@
         </div>
     </div>
 </footer>
+
+<script>
+$(document).ready(function () {
+
+    // ВИДЖЕТ 1 — Tabs (вкладки описание/характеристики/отзывы)
+    $("#product-tabs").tabs();
+
+    // ВИДЖЕТ 2 — Accordion (FAQ)
+    $("#faq-accordion").accordion({
+        collapsible: true,
+        active: 0,
+        animate: 250,
+        heightStyle: "content"
+    });
+
+    // ВИДЖЕТ 3 — Datepicker (выбор даты звонка)
+    $("#callback-date").datepicker({
+        dateFormat: "dd.mm.yy",
+        minDate: 0,
+        maxDate: "+3m",
+        showAnim: "slideDown",
+        firstDay: 1,
+        showButtonPanel: true,
+        currentText: "Сегодня",
+        closeText: "Закрыть",
+        monthNames: ["Январь","Февраль","Март","Апрель","Май","Июнь",
+                     "Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"],
+        monthNamesShort: ["Янв","Фев","Мар","Апр","Май","Июн",
+                          "Июл","Авг","Сен","Окт","Ноя","Дек"],
+        dayNamesMin: ["Вс","Пн","Вт","Ср","Чт","Пт","Сб"]
+    });
+
+});
+</script>
 </body>
 </html>

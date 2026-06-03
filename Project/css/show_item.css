@@ -1,39 +1,37 @@
+/* ===================== MAIN ===================== */
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 30px 24px 60px;
 }
 
-/*  ЕДИНЫЙ СТИЛЬ КНОПОК  */
+/* ===================== КНОПКИ ===================== */
 .btn {
     border-radius: 30px;
     font-family: 'Alegreya SC', serif;
     font-weight: 700;
     font-size: 16px;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 14px 24px;
     border: 2px solid transparent;
-    cursor: pointer;  /* добавь */
+    cursor: pointer;
+    transition: opacity .2s;
 }
-
-
-/* Основная кнопка (оранжевая) */
+.btn:hover { opacity: .85; }
 .btn-primary {
     background: #d97706;
     color: white;
     border-color: #d97706;
 }
-
-
-/* Кнопка с обводкой */
 .btn-outline {
     background: transparent;
     color: #d97706;
     border-color: #e8c46d;
 }
 
-/*  БЛОК ТОВАРА  */
+/* ===================== БЛОК ТОВАРА ===================== */
 .product-section {
     display: grid;
     grid-template-columns: 42% 28% 1fr;
@@ -42,41 +40,60 @@ main {
     align-items: stretch;
 }
 
-.product-image-wrap {
+/* Общий стиль карточек-панелей */
+.panel-box {
     background: #fff9ee;
     border: 3px solid #f5d38f;
     border-radius: 22px;
     padding: 20px;
 }
 
-.product-image-wrap img {
+/* Картинка товара */
+.product-image-box img {
     width: 100%;
     height: auto;
+    border-radius: 14px;
+    object-fit: cover;
     display: block;
-    max-height: 520px;
-    object-fit: contain;
-    border-radius: 12px;
 }
 
+/* Блок покупки */
 .product-buy {
-    background: #fff9ee;
-    border: 3px solid #f5d38f;
-    border-radius: 22px;
     padding: 28px 24px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
-.product-buy .btn-share {
-    margin-top: auto;  /* прижимает кнопку "Поделиться" вниз */
+.price-label { margin: 0; color: #999; font-size: 14px; }
+.price-value  { margin: 0; font-size: 24px; font-weight: 700; color: #333; }
+
+.qty-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    font-size: 20px;
+    font-weight: 700;
 }
-/*  КАТЕГОРИИ  */
-.product-categories {
-    background: #fff9ee;
-    border: 3px solid #f5d38f;
-    border-radius: 22px;
-    padding: 26px 22px;
-    height: auto;
+.qty-control button {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
 }
 
+.btn-cart,
+.btn-share {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Категории */
+.product-categories { padding: 26px 22px; }
 .product-categories h3 {
     font-family: 'Alegreya SC', serif;
     font-size: 15px;
@@ -84,39 +101,193 @@ main {
     margin: 0 0 20px 0;
     text-transform: uppercase;
 }
-.product-buy .btn-cart,
-.product-buy .btn-share {
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
-    box-sizing: border-box;
-}
 .product-categories ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    padding: 0; margin: 0;
     display: flex;
     flex-direction: column;
-
 }
-
 .product-categories li a {
     display: flex;
     align-items: center;
     padding: 12px 16px;
     color: #444;
-    font-size: 15.5px;
+    font-size: 15px;
+}
+.product-categories li.active a {
+    color: #d97706;
+    font-weight: 700;
+}
+.product-categories hr {
+    border: none;
+    background: #d97706;
+    height: 3px;
+    width: 90%;
+    margin: 0 auto;
 }
 
-
-/*  ПОХОЖИЕ ТОВАРЫ  */
-.related-section {
-    margin-top: 50px;
-    margin-bottom: 70px;
+/* ===================== ВИДЖЕТ 1: jQuery UI TABS ===================== */
+#product-tabs {
+    margin-bottom: 50px;
 }
+
+#product-tabs.ui-tabs {
+    background: transparent;
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+#product-tabs .ui-tabs-nav {
+    background: #f0e6d0 !important;
+    border: 2px solid #f5d38f !important;
+    border-radius: 16px !important;
+    padding: 6px !important;
+    width: fit-content;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 4px;
+    box-shadow: none !important;
+}
+
+#product-tabs .ui-tabs-nav li {
+    background: none !important;
+    border: none !important;
+    border-radius: 12px !important;
+    margin: 0 !important;
+    float: none !important;
+    padding: 0 !important;
+}
+
+#product-tabs .ui-tabs-nav li a {
+    font-family: 'Alegreya SC', serif;
+    font-size: 15px;
+    color: #555;
+    padding: 11px 28px;
+    display: block;
+    border-radius: 12px;
+}
+
+#product-tabs .ui-tabs-nav li.ui-tabs-active {
+    background: #fff !important;
+    border-radius: 12px !important;
+    padding: 0 !important;
+}
+
+#product-tabs .ui-tabs-nav li.ui-tabs-active a {
+    color: #d97706;
+    font-weight: 700;
+}
+
+/* Убираем дефолтный бордер jQuery UI под навигацией */
+#product-tabs .ui-widget-header {
+    border: none !important;
+}
+
+#product-tabs .ui-tabs-panel {
+    background: #fff9ee;
+    border: 3px solid #f5d38f !important;
+    border-radius: 20px;
+    padding: 32px 30px;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+#product-tabs .ui-tabs-panel h3 {
+    font-family: 'Alegreya SC', serif;
+    color: #d97706;
+    margin-top: 0;
+}
+
+/* Таблица характеристик */
+.chars-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.chars-table tr:nth-child(even) { background: #fef3d0; }
+.chars-table td {
+    padding: 10px 16px;
+    border: 1px solid #f5d38f;
+    font-size: 15px;
+}
+.chars-table td:first-child { color: #888; width: 45%; }
+
+/* Отзывы */
+.review-item {
+    background: #fff;
+    border: 2px solid #f5d38f;
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+}
+.review-item .review-author {
+    font-weight: 700;
+    color: #d97706;
+    font-family: 'Alegreya SC', serif;
+    margin-bottom: 4px;
+}
+.review-stars { color: #d97706; font-size: 18px; margin-bottom: 6px; }
+
+/* ===================== КАРТА ===================== */
+.map-section { margin-bottom: 50px; }
+.map-section h2 {
+    margin-bottom: 16px;
+    font-family: 'Alegreya SC', serif;
+}
+
+/* ===================== ВИДЖЕТ 2: jQuery UI ACCORDION ===================== */
+.faq-section { margin-bottom: 50px; }
+.faq-section h2 {
+    font-family: 'Alegreya SC', serif;
+    margin-bottom: 20px;
+}
+
+#faq-accordion.ui-accordion {
+    background: transparent;
+    border: none;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+#faq-accordion .ui-accordion-header {
+    background: #fff9ee !important;
+    border: 2px solid #f5d38f !important;
+    border-radius: 14px !important;
+    color: #333 !important;
+    font-family: 'Alegreya SC', serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    padding: 14px 20px !important;
+    margin-bottom: 6px !important;
+    cursor: pointer !important;
+    outline: none !important;
+    transition: background .2s !important;
+}
+
+#faq-accordion .ui-accordion-header:hover,
+#faq-accordion .ui-accordion-header.ui-state-active {
+    background: #fef3d0 !important;
+    color: #d97706 !important;
+    border-color: #d97706 !important;
+}
+
+#faq-accordion .ui-accordion-content {
+    background: #fff9ee !important;
+    border: 2px solid #f5d38f !important;
+    border-top: none !important;
+    border-radius: 0 0 14px 14px !important;
+    padding: 20px 24px !important;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 6px;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+/* ===================== ПОХОЖИЕ ТОВАРЫ ===================== */
+.related-section { margin-top: 50px; margin-bottom: 70px; }
 .related-section h2 {
     margin-bottom: 24px;
+    font-family: 'Alegreya SC', serif;
 }
 .related-grid {
     display: flex;
@@ -134,29 +305,24 @@ main {
     flex: 1;
     display: flex;
     flex-direction: column;
+    gap: 8px;
 }
 .related-card img {
     width: 100%;
-    flex: 1;
-    min-height: 150px;   /* минимальная высота чтобы не схлопнулось */
+    min-height: 150px;
     object-fit: cover;
     border-radius: 14px;
     border: 2px solid #f5d38f;
-    margin-bottom: 12px;
 }
-.card-name {
-    font-weight: 600;
-    margin: 8px 0 4px;
-    color: #333;
-}
+.card-name { font-weight: 600; color: #333; }
 .card-price {
     font-family: 'Alegreya SC', serif;
     font-size: 19px;
     font-weight: 700;
     color: #d97706;
-    margin-bottom: 12px;
 }
-/*  КОНСУЛЬТАЦИЯ  */
+
+/* ===================== КОНСУЛЬТАЦИЯ ===================== */
 .consult-section {
     display: flex;
     gap: 50px;
@@ -166,71 +332,19 @@ main {
     padding: 45px 40px;
     align-items: center;
 }
-
-.consult-form-side {
-    flex: 1;
-    order: 0;   
+.consult-form-side { flex: 1; }
+.consult-form-side h2 {
+    font-family: 'Alegreya SC', serif;
+    margin-top: 0;
 }
+.consult-image-side { flex: 0 0 300px; overflow: hidden; }
+.consult-image-side img { width: 100%; height: auto; border-radius: 20px; }
 
-.consult-image-side {
-    flex: 0 0 300px;
-    overflow: hidden;
-}
-
-.consult-image-side img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-}
-
-/*    */
-.tabs-bar {
-    background: #f0e6d0;
-    border: 2px solid #f5d38f;
-    border-radius: 16px;
-    padding: 6px;
-    width: fit-content;
-    margin-bottom: 20px;
-}
-
-.tab-btn {
-    background: none;
-    border: none;
-    padding: 11px 28px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 15px;
-}
-
-.tab-btn.active {
-    background: white;
-    font-weight: 700;
-}
-
-.tab-content {
-    background: #fff9ee;
-    border: 3px solid #f5d38f;
-    border-radius: 20px;
-    padding: 32px 30px;
-    margin-bottom: 50px;
-}
-
-/*  МЕЛКИЕ УЛУЧШЕНИЯ  */
-.price-value {
-    font-size: 27px;
-    font-weight: 700;
-    color: #333;
-}
-
-.qty-control {
-    padding: 5px;
-}
-/*  ПОЛЯ ВВОДА   */
 .form-input {
     display: block;
     width: 100%;
-    box-sizing: border-box;  
     max-width: 340px;
+    box-sizing: border-box;
     padding: 14px 20px;
     margin-bottom: 14px;
     background: #fff;
@@ -239,96 +353,127 @@ main {
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 15px;
     color: #333;
-    transition: all 0.3s ease;
+    outline: none;
+    transition: border-color .3s;
+}
+.form-input:focus { border-color: #d97706; }
+
+/* ===================== ВИДЖЕТ 3: Datepicker ===================== */
+.datepicker-wrap {
+    position: relative;
+    max-width: 340px;
+    margin-bottom: 14px;
+}
+.datepicker-wrap input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 44px 14px 20px;
+    background: #fff;
+    border: 2px solid #e8c46d;
+    border-radius: 30px;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 15px;
+    color: #333;
+    outline: none;
+    cursor: pointer;
+    transition: border-color .3s;
+}
+.datepicker-wrap input:focus { border-color: #d97706; }
+.datepicker-wrap .dp-icon {
+    position: absolute;
+    right: 16px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    pointer-events: none;
 }
 
+/* Календарь jQuery UI */
+.ui-datepicker {
+    border: 2px solid #f5d38f !important;
+    border-radius: 16px !important;
+    background: #fff9ee !important;
+    font-family: 'Alegreya Sans', sans-serif !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.12) !important;
+}
+.ui-datepicker-header {
+    background: #d97706 !important;
+    border: none !important;
+    border-radius: 12px 12px 0 0 !important;
+    color: #fff !important;
+}
+.ui-datepicker-title {
+    color: #fff;
+    font-family: 'Alegreya SC', serif;
+}
+.ui-datepicker th { color: #d97706; }
+.ui-datepicker td span,
+.ui-datepicker td a { border-radius: 8px !important; }
+.ui-datepicker td.ui-datepicker-today a {
+    background: #fef3d0 !important;
+    border-color: #d97706 !important;
+    color: #d97706 !important;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active {
+    background: #d97706 !important;
+    border-color: #d97706 !important;
+    color: #fff !important;
+}
+.ui-datepicker-buttonpane button.ui-state-default {
+    background: #d97706 !important;
+    color: #fff !important;
+    border-color: #d97706 !important;
+    border-radius: 20px !important;
+    font-family: 'Alegreya SC', serif !important;
+}
 
 /* ===================== АДАПТИВ ===================== */
-
-/* ===== ПЛАНШЕТ (до 900px) ===== */
 @media (max-width: 900px) {
-
-    main {
-        padding: 30px 20px 60px;
-    }
-
-    /* Товар: картинка + покупка рядом, категории под ними */
     .product-section {
         grid-template-columns: 1fr 1fr;
     }
     .product-categories {
-        grid-column: 1 / -1; /* на всю ширину */
-        height: auto;
+        grid-column: 1 / -1;
     }
-    /* Категории горизонтально  */
     .product-categories ul {
-        display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
     }
-    .product-categories li {
-        border-bottom: none;
-        border-right: 1px solid #CCC2C2;
-    }
+    .product-categories li { border-right: 1px solid #ccc; }
 
-    /* Похожие — по два в ряд */
-    .related-grid {
-        flex-wrap: wrap;
-    }
-    .related-card {
-        flex: 1 1 calc(50% - 13px);
-    }
-
-    /* Консультация — картинка уменьшается */
-    .consult-section {
-        gap: 30px;
-        padding: 30px 24px;
-    }
-    .consult-image-side {
-        flex: 0 0 240px;
-    }
-}
-
-/* ===== МОБИЛЬНЫЙ (до 600px) ===== */
-@media (max-width: 400px) {
-
-    main {
-        padding: 16px 12px 40px;
-    }
-
-    /* Всё в одну колонку */
-    .product-section {
-        grid-template-columns: 1fr;
-    }
-    .product-categories {
-        grid-column: auto;
-    }
-
-    /* Табы растягиваются */
-    .tabs-bar {
+    #product-tabs .ui-tabs-nav {
         width: 100%;
         display: flex;
     }
-    .tab-btn {
-        flex: 1;
-        font-size: 13px;
-        padding: 10px 8px;
-    }
+    #product-tabs .ui-tabs-nav li { flex: 1; text-align: center; }
 
-    /* Похожие — по одному */
-    .related-card {
-        flex: 1 1 100%;
-    }
+    .related-grid { flex-wrap: wrap; }
+    .related-card { flex: 1 1 calc(50% - 13px); }
 
-    /* Консультация вертикально */
-    .consult-section {
-        flex-direction: column;
-        padding: 24px 16px;
-    }
-.consult-image-side {
-    flex: 0 0 300px;
-    overflow: hidden;
+    .consult-section { gap: 30px; padding: 30px 24px; }
+    .consult-image-side { flex: 0 0 220px; }
 }
-    .form-input {
-        max-width: 100%;
+
+@media (max-width: 500px) {
+    main { padding: 16px 12px 40px; }
+
+    .product-section { grid-template-columns: 1fr; }
+    .product-categories { grid-column: auto; }
+
+    #product-tabs .ui-tabs-nav {
+        width: 100%;
+        display: flex;
     }
+    #product-tabs .ui-tabs-nav li a {
+        padding: 10px 10px;
+        font-size: 13px;
+    }
+
+    .related-card { flex: 1 1 100%; }
+
+    .consult-section { flex-direction: column; padding: 20px 14px; }
+    .consult-image-side { flex: none; width: 100%; }
+    .form-input,
+    .datepicker-wrap { max-width: 100%; }
 }
