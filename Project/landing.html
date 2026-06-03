@@ -2,214 +2,273 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Главная страница</title>
+    <title>Главная страница - Частная пасека</title>
+    
+    <link rel="stylesheet" href="css bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <style>
+        .carousel-inner > .item > img {
+            width: 100%;
+            height: auto;
+        }
+        .carousel-caption {
+            background: rgba(0,0,0,0.5);
+            border-radius: 10px;
+        }
+        .product-card {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+        }
+        .footer-links {
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .carousel-caption h3 {
+                font-size: 14px;
+            }
+            .carousel-caption p {
+                font-size: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <div>
-        <nav>
-            <ul>
-                <li><a href="landing.html">Главная</a></li>
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-main-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img src="images/logo-placeholder.png" alt="лого" width="30" style="display: inline-block;">
+                <span style="vertical-align: middle;">Частная пасека</span>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-main-navbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="landing.html">Главная</a></li>
                 <li><a href="catalog.html">Каталог</a></li>
-                <li><a href="landing.html#warranty">Гарантия</a></li>
-                <li><a href="landing.html#reviews">Отзывы</a></li>
+                <li><a href="#warranty">Гарантия</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
                 <li><a href="#contacts">Контакты</a></li>
                 <li><a href="catalog.html#how-to-choose-honey">Как выбрать мед?</a></li>
             </ul>
-        </nav>
+            <form class="navbar-form navbar-right">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Поиск...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><i class="fa fa-shopping-cart"></i> Корзина <span class="badge">1</span></a></li>
+            </ul>
+        </div>
     </div>
+</nav>
 
-    <table>
-        <tr>
-            <td>
-                <img src="images/logo-placeholder.png" alt="лого" width="65">
-                <div>
-                    <strong>ЧАСТНАЯ ПАСИКА</strong>
-                    <span>ЗПОИС23</span>
-                </div>
-             </td>
-            <td>
-                <div>
-                    <input type="text" placeholder="Поиск...">
-                </div>
-             </td>
-            <td>
-                <table>
-                    <tr>
-                        <td><img src="images/phone-icon.png"></td>
-                        <td>
-                            <strong>+375 (33) 628-86-72</strong>
-                            <small>Принимаем звонки с 8 до 16</small>
-                         </td>
-                     </tr>
-                 </table>
-             </td>
-            <td>
-                <img src="images/Market-icon.png" alt="корзина">
-                <div>1</div>
-                <div>
-                    <a href="#">В КОРЗИНУ</a>
-                    <a href="#">ПОДЕЛИТЬСЯ</a>
-                </div>
-             </td>
-         </tr>
-     </table>
-
-    <div>
-        <div>
+<div class="container-fluid">
+    <div class="row" style="background-color: #f9f9f9; padding: 15px 0; margin-bottom: 20px;">
+        <div class="col-sm-4 text-center">
+            <i class="fa fa-phone fa-2x" style="color: #ffc107;"></i>
+            <strong>+375 (33) 628-86-72</strong>
+            <small class="text-muted"><br>Принимаем звонки с 8 до 16</small>
+        </div>
+        <div class="col-sm-4 text-center">
+            <i class="fa fa-envelope fa-2x" style="color: #ffc107;"></i>
+            <strong>chastnayapaseka3pois23@gmail.com</strong>
+        </div>
+        <div class="col-sm-4 text-center">
+            <i class="fa fa-share-alt fa-2x" style="color: #ffc107;"></i>
             <div>
-                <img src="images/logo-placeholder.png" alt="лого" width="45">
-                <div>
-                    <strong>ЧАСТНАЯ ПАСИКА</strong>
-                    <span>ЗПОИС23</span>
-                </div>
+                <a href="#">В КОРЗИНУ</a> | <a href="#">ПОДЕЛИТЬСЯ</a>
             </div>
-            <img src="images/Market-icon.png" alt="корзина">
         </div>
-        <hr>
-        <div>
-            <button>☰</button>
-            <input type="text" placeholder="Поиск...">
-            <img src="images/phone-icon.png" alt="Телефон">
+    </div>
+</div>
+
+<div class="container-fluid" style="background-color: #ffc107; padding: 15px 0; margin-bottom: 30px;">
+    <div class="container">
+        <ol class="breadcrumb" style="background: none; margin-bottom: 5px; padding-left: 0;">
+            <li class="active">Главная</li>
+        </ol>
+        <h1 class="text-center" style="margin-top: 5px;">НАТУРАЛЬНЫЙ МЁД ОТ ПЧЕЛОВОДА</h1>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- карусель -->
+    <div class="row">
+        <div class="col-md-12">
+            <div id="honeyCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#honeyCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#honeyCarousel" data-slide-to="1"></li>
+                </ol>
+
+                <!-- слайды -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="images/jars of honey.png" alt="Натуральный мёд">
+                        <div class="carousel-caption">
+                            <h3>Натуральный мёд</h3>
+                            <p>Без добавок и консервантов</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="images/The beekeeper.png" alt="Пасечник">
+                        <div class="carousel-caption">
+                            <h3>32 года опыта</h3>
+                            <p>Любимое дело всей жизни</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- стрелки управ-->
+                <a class="left carousel-control" href="#honeyCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#honeyCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
     </div>
 
-    <div>
-        <div>Главная</div>
-        <h1>НАТУРАЛЬНЫЙ МЁД ОТ ПЧЕЛОВОДА</h1>
-    </div>
-</header>
-
-<link rel="icon" type="image/png" href="images/logo-placeholder.png">
-
-<div>
-
-    <div>
-        <div>
-            <h1>Натуральный и качественный мёд</h1>
-            <p>
-                Абсолютно качественный продукт:<br>
-                ни сахара, ни антибиотиков,<br>
-                ни гормонов
-            </p>
-            <a href="catalog.html">
-                <button>Смотреть каталог</button>
-            </a>
+    <!-- плюсы -->
+    <div class="row text-center" style="margin: 40px 0;">
+        <div class="col-sm-4">
+            <i class="fa fa-tint fa-3x" style="color: #ffc107;"></i>
+            <p><strong>Натуральный мёд без добавок</strong></p>
         </div>
-        <div>
-            <img src="images/jars of honey.png" alt="мёд" width="500">
+        <div class="col-sm-4">
+            <i class="fa fa-leaf fa-3x" style="color: #ffc107;"></i>
+            <p><strong>Экологически чистое производство</strong></p>
         </div>
-    </div>
-
-    <div>
-        <div>
-            <img src="images/honey.png" alt="Мёд" width="52" height="52">
-            <p>Натуральный мёд без добавок</p>
-        </div>
-        <div>
-            <img src="images/flower.png" alt="Экология" width="52" height="52">
-            <p>Экологически чистое производство</p>
-        </div>
-        <div>
-            <img src="images/auto.png" alt="Доставка" width="52" height="52">
-            <p>Бережная доставка</p>
+        <div class="col-sm-4">
+            <i class="fa fa-truck fa-3x" style="color: #ffc107;"></i>
+            <p><strong>Бережная доставка</strong></p>
         </div>
     </div>
 
     <hr>
 
-    <div>
-        <div>
-            <img src="images/point.png" style="vertical-align: middle;">
-            <span style="vertical-align: middle;">Спецпредложение</span>
-        </div>
-        <div style="text-align: center;">
-            <img src="images/special offer.png" alt="Спецпредложение" width="600" height="500">
+    <!-- 200л меда -->
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2><i class="fa fa-gift"></i> Спецпредложение</h2>
+            <img src="images/special offer.png" alt="Спецпредложение" class="img-responsive center-block">
         </div>
     </div>
 
-    <div>
-        <div>
-            <h2>О нас</h2>
-            <p>
-                Пасека - это, без преувеличения, вся моя жизнь. Основа, опора и любимое дело, 
-                без которого я уже не могу себя представить. Пчёлами я занимаюсь уже 32 года, 
-                хотя началось всё гораздо раньше.
-            </p>
-            <p>
-                Я счастливый человек, ведь моя работа - это моё любимое дело. И я с удовольствием 
-                делюсь плодами своего труда с вами. Всю зиму вы можете видеть меня на рынке 
-                «Юбилейном», здесь я в любую погоду, каждый день, кроме понедельника. И самое 
-                главное: за качество мёда я отвечаю. Он лучший. А результаты лабораторных 
-                экспертиз подтверждают это документально.
-            </p>
+    <!-- о нас -->
+    <div class="row" style="margin: 40px 0;">
+        <div class="col-md-6">
+            <h2><i class="fa fa-info-circle"></i> О нас</h2>
+            <p>Пасека - это, без преувеличения, вся моя жизнь. Основа, опора и любимое дело, без которого я уже не могу себя представить. Пчёлами я занимаюсь уже 32 года, хотя началось всё гораздо раньше.</p>
+            <p>Я счастливый человек, ведь моя работа - это моё любимое дело. И я с удовольствием делюсь плодами своего труда с вами. Всю зиму вы можете видеть меня на рынке «Юбилейном», здесь я в любую погоду, каждый день, кроме понедельника. И самое главное: за качество мёда я отвечаю. Он лучший. А результаты лабораторных экспертиз подтверждают это документально.</p>
         </div>
-        <div>
-            <img src="images/The beekeeper.png" alt="Пасека" width="500">
+        <div class="col-md-6">
+            <img src="images/The beekeeper.png" alt="Пасека" class="img-responsive">
         </div>
     </div>
 
-    <div>
-        <img src="images/point.png" style="vertical-align: middle;">
-        <span style="vertical-align: middle;">Категории каталога</span>
+    <!-- категории каталога -->
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2><i class="fa fa-th-large"></i> Категории каталога</h2>
+        </div>
     </div>
-
-    <div>
-        <div>
+    
+    <div class="row text-center">
+        <div class="col-sm-6 col-md-2 product-card">
             <a href="catalog.html">
-                <img src="images/honeyс.png" alt="Пчелиный мёд">
+                <img src="images/honeyс.png" alt="Пчелиный мёд" class="img-responsive center-block">
             </a>
             <span>Пчелиный мёд</span>
         </div>
-        <div>
-            <img src="images/waxс.png" alt="Пчелиный воск">
+        <div class="col-sm-6 col-md-2 product-card">
+            <img src="images/waxс.png" alt="Пчелиный воск" class="img-responsive center-block">
             <span>Пчелиный воск</span>
         </div>
-        <div>
-            <img src="images/ulyс.png" alt="Улья">
+        <div class="col-sm-6 col-md-2 product-card">
+            <img src="images/ulyс.png" alt="Улья" class="img-responsive center-block">
             <span>Улья</span>
         </div>
-        <div>
-            <img src="images/frameс.png" alt="Рамки для ульев">
+        <div class="col-sm-6 col-md-2 product-card">
+            <img src="images/frameс.png" alt="Рамки для ульев" class="img-responsive center-block">
             <span>Рамки для ульев</span>
         </div>
-        <div>
-            <img src="images/propolisс.png" alt="Прополис">
+        <div class="col-sm-12 col-md-4 product-card">
+            <img src="images/propolisс.png" alt="Прополис" class="img-responsive center-block">
             <span>Прополис</span>
         </div>
     </div>
 
     <hr>
 
+    <!-- отзывы -->
     <div id="reviews">
-        <div>
-            <img src="images/point.png" style="vertical-align: middle;">
-            <span style="vertical-align: middle;">Отзывы покупателей</span>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2><i class="fa fa-comments"></i> Отзывы покупателей</h2>
+            </div>
+        </div>
+        
+        <div class="row text-center" style="margin: 20px 0;">
+            <div class="col-xs-6">
+                <button class="btn btn-primary btn-block"><i class="fa fa-arrow-left"></i> Назад</button>
+            </div>
+            <div class="col-xs-6">
+                <button class="btn btn-primary btn-block">Вперед <i class="fa fa-arrow-right"></i></button>
+            </div>
         </div>
 
-        <div>
-            <button>←</button>
-            <button>→</button>
-        </div>
-
-        <div>
-            <div>
-                <div>25.05.2026</div>
-                <p>Мед в сотах понравился всем дома, в когда в гости ходил, руки этого пасечника целовал и на руках своих носил</p>
-                <div>Олег</div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">25.05.2026</div>
+                    <div class="panel-body">
+                        <p>Мед в сотах понравился всем дома, в когда в гости ходил, руки этого пасечника целовал и на руках своих носил</p>
+                        <footer class="blockquote-footer">Олег</footer>
+                    </div>
+                </div>
             </div>
-
-            <div>
-                <div>26.05.2026</div>
-                <p>Аромат как будто на лугу, сразу вспомнила детсво, как тырили мед у диких пчел и убегали от них по лугу и полям</p>
-                <div>Ольга</div>
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">26.05.2026</div>
+                    <div class="panel-body">
+                        <p>Аромат как будто на лугу, сразу вспомнила детсво, как тырили мед у диких пчел и убегали от них по лугу и полям</p>
+                        <footer class="blockquote-footer">Ольга</footer>
+                    </div>
+                </div>
             </div>
-
-            <div>
-                <div>27.05.2026</div>
-                <p>Натуральный сотовый мёд, добротный, батька одобрил, всем советую</p>
-                <div>Илья</div>
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">27.05.2026</div>
+                    <div class="panel-body">
+                        <p>Натуральный сотовый мёд, добротный, батька одобрил, всем советую</p>
+                        <footer class="blockquote-footer">Илья</footer>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -217,99 +276,82 @@
     <br>
 
     <div id="warranty">
-        <div>
-            <img src="images/point.png" style="vertical-align: middle;">
-            <span style="vertical-align: middle;">Гарантии качества</span>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2><i class="fa fa-certificate"></i> Гарантии качества</h2>
+            </div>
+        </div>
+        
+        <div class="row text-center" style="margin: 20px 0;">
+            <div class="col-xs-6">
+                <button class="btn btn-success btn-block"><i class="fa fa-arrow-left"></i> Назад</button>
+            </div>
+            <div class="col-xs-6">
+                <button class="btn btn-success btn-block">Вперед <i class="fa fa-arrow-right"></i></button>
+            </div>
         </div>
 
-        <div>
-            <button>←</button>
-            <button>→</button>
+        <div class="row text-center">
+            <div class="col-sm-4">
+                <img src="images/sertifikat.png" alt="Сертификат1" class="img-responsive center-block" style="max-width: 200px;">
+                <br>
+                <span class="label label-info">Сертификат1</span>
+            </div>
+            <div class="col-sm-4">
+                <img src="images/sertifikat.png" alt="Сертификат2" class="img-responsive center-block" style="max-width: 200px;">
+                <br>
+                <span class="label label-info">Сертификат2</span>
+            </div>
+            <div class="col-sm-4">
+                <img src="images/sertifikat.png" alt="Сертификат3" class="img-responsive center-block" style="max-width: 200px;">
+                <br>
+                <span class="label label-info">Сертификат3</span>
+            </div>
         </div>
-
-        <table cellpadding="15">
-            <tr>
-                <td align="center">
-                    <img src="images/sertifikat.png" alt="Сертификат1" width="200">
-                    <br>
-                    <span>Сертификат1</span>
-                 </td>
-                <td align="center">
-                    <img src="images/sertifikat.png" alt="Сертификат2" width="200">
-                    <br>
-                    <span>Сертификат2</span>
-                 </td>
-                <td align="center">
-                    <img src="images/sertifikat.png" alt="Сертификат3" width="200">
-                    <br>
-                    <span>Сертификат3</span>
-                 </td>
-             </tr>
-         </table>
     </div>
 
 </div>
 
-<div>
-    <div>
-        <div>
-            <p>купили мёд? <span>Смажьте им братские булочки</span></p>
-            <div>★</div>
-            <p>По вопросам: <span>chastnayapaseka3pois23@gmail.com</span></p>
-            <div>★</div>
-            <p>Зашли к нам <span>Зайдите в Братские булочки</span></p>
-            <div>★</div>
-        </div>
-        <div>
-            <p>купили мёд? <span>Смажьте им братские булочки</span></p>
-            <div>★</div>
-            <p>По вопросам: <span>chastnayapaseka3pois23@gmail.com</span></p>
-            <div>★</div>
-            <p>Зашли к нам <span>Зайдите в Братские булочки</span></p>
-            <div>★</div>
-        </div>
-        <div>
-            <p>мёд не помог? <span>Lab of Health добьёт</span></p>
-            <div>★</div>
-            <p>По вопросам: <span>chastnayapaseka3pois23@gmail.com</span></p>
-            <div>★</div>
-            <p>Lab of Health лечит то, <span>что не намажешь мёдом</span></p>
-            <div>★</div>
-        </div>
-        <div>
-            <p>мёд не помог? <span>Lab of Health добьёт</span></p>
-            <div>★</div>
-            <p>По вопросам: <span>chastnayapaseka3pois23@gmail.com</span></p>
-            <div>★</div>
-            <p>Lab of Health лечит то, <span>что не намажешь мёдом</span></p>
-            <div>★</div>
-        </div>
+<!-- реклама (промо тикер использ) -->
+<div class="container-fluid" style="background-color: #333; color: #fff; padding: 10px 0; margin: 40px 0 0 0;">
+    <div class="text-center">
+        <marquee behavior="scroll" direction="left" scrollamount="5">
+            <i class="fa fa-star"></i> купили мёд? Смажьте им братские булочки &nbsp;&nbsp;&nbsp;
+            <i class="fa fa-star"></i> По вопросам: chastnayapaseka3pois23@gmail.com &nbsp;&nbsp;&nbsp;
+            <i class="fa fa-star"></i> Зашли к нам Зайдите в Братские булочки &nbsp;&nbsp;&nbsp;
+            <i class="fa fa-star"></i> мёд не помог? Lab of Health добьёт &nbsp;&nbsp;&nbsp;
+            <i class="fa fa-star"></i> Lab of Health лечит то, что не намажешь мёдом
+        </marquee>
     </div>
 </div>
 
-<footer>
+<footer id="contacts">
     <div>
         <img src="images/honey-drops.png" width="100%" height="200" alt="Подтеки меда">
     </div>
-    <div>
-        <div>
-            <img src="images/logo-placeholder.png" width="80" alt="Лого">
-            <span>
-                <strong>Частная пасека<br>ЗПОИС23</strong>
-            </span>
-        </div>
-        <div>
-            <img src="images/mail-icon.png" width="60" alt="Почта">
-            <span>
-                Адрес электронной почты:<br>
-                <a href="mailto:chastnayapaseka3pois23@gmail.com">chastnayapaseka3pois23@gmail.com</a>
-            </span>
-        </div>
-        <div>
-            <img src="images/red-phone-icon.png" width="60" alt="Телефон">
-            <span>
-                <strong>+375 (33) 628-86-72</strong>
-            </span>
+    <div class="container-fluid" style="background-color: #2c2c2c; color: #fff; padding: 30px 0;">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-sm-4">
+                    <img src="images/logo-placeholder.png" width="80" alt="Лого">
+                    <div>
+                        <strong>Частная пасека<br>ЗПОИС23</strong>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <i class="fa fa-envelope fa-2x"></i>
+                    <div>
+                        Адрес электронной почты:<br>
+                        <a href="mailto:chastnayapaseka3pois23@gmail.com" style="color: #ffc107;">chastnayapaseka3pois23@gmail.com</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <i class="fa fa-phone fa-2x"></i>
+                    <div>
+                        <strong>+375 (33) 628-86-72</strong>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
