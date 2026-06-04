@@ -5,19 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Каталог</title>
     <link rel="icon" type="image/png" href="images/logo-placeholder.png">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Alegreya+SC&family=Alegreya+Sans+SC&family=Alegreya+Sans&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Alegreya Sans', serif;
         }
  
-        /* Убираем подчёркивание у всех ссылок */
         a {
             text-decoration: none !important;
         }
  
-        /* Убираем синий outline у бургера и поля поиска при фокусе */
         .navbar-toggler:focus,
         .navbar-toggler:active {
             box-shadow: none;
@@ -28,20 +26,17 @@
             border-color: #ced4da;
         }
  
-        /* Крошки мельче */
         .breadcrumb {
             font-size: 0.78rem;
             margin-bottom: 0.2rem;
         }
- 
-        /* Заголовок крупнее и с красивым шрифтом */
+
         .page-title {
             font-family: 'Alegreya SC', serif;
             font-size: 1.8rem;
             font-weight: 700;
         }
  
-        /* Бегущая строка — только анимация, Bootstrap не умеет */
         .ticker-bar {
             overflow: hidden;
             white-space: nowrap;
@@ -56,137 +51,130 @@
         }
     </style>
 </head>
+
 <body>
  
-<header>
- 
-    <!-- ДЕСКТОП: уровень 1 — липкое меню (скрыто на мобильном) -->
-    <nav class="navbar navbar-expand-lg sticky-top bg-light border-bottom d-none d-lg-flex">
-        <div class="container-fluid px-4">
-            <div class="navbar-nav me-auto flex-row">
-                <a class="nav-link px-3" href="landing.html">Главная</a>
-                <a class="nav-link px-3 active" href="catalog.html">Каталог</a>
-                <a class="nav-link px-3" href="landing.html#warranty">Гарантия</a>
-                <a class="nav-link px-3" href="landing.html#reviews">Отзывы</a>
-                <a class="nav-link px-3" href="#contacts">Контакты</a>
-                <a class="nav-link px-3" href="#how-to-choose-honey">Как выбрать мед?</a>
+    <header>
+        <!-- ДЕСКТОП: уровень 1 -->
+        <nav class="navbar navbar-expand-lg sticky-top bg-light border-bottom d-none d-lg-flex">
+            <div class="container-fluid px-4">
+                <div class="navbar-nav me-auto flex-row">
+                    <a class="nav-link px-3" href="landing.html">Главная</a>
+                    <a class="nav-link px-3 active" href="catalog.html">Каталог</a>
+                    <a class="nav-link px-3" href="landing.html#warranty">Гарантия</a>
+                    <a class="nav-link px-3" href="landing.html#reviews">Отзывы</a>
+                    <a class="nav-link px-3" href="#contacts">Контакты</a>
+                    <a class="nav-link px-3" href="#how-to-choose-honey">Как выбрать мед?</a>
+                </div>
             </div>
-        </div>
-    </nav>
- 
-    <!-- ДЕСКТОП: уровень 2 — логотип, поиск, телефон, корзина (скрыто на мобильном) -->
-    <div class="d-none d-lg-block border-bottom py-2">
-        <div class="container-fluid px-4">
-            <div class="row align-items-center g-3">
- 
-                <div class="col-auto">
-                    <a href="landing.html" class="d-flex align-items-center gap-2 text-dark">
-                        <img src="images/logo-placeholder.png" alt="лого" width="55">
-                        <div>
-                            <div class="fw-bold">ЧАСТНАЯ ПАСИКА</div>
-                            <div class="text-warning">ЗПОИС23</div>
-                        </div>
-                    </a>
-                </div>
- 
-                <div class="col-4">
-                    <input type="text" class="form-control rounded-pill" placeholder="Поиск...">
-                </div>
- 
-                <div class="col-auto d-flex align-items-center gap-2">
-                    <img src="images/phone-icon.png" alt="телефон" width="36">
-                    <div>
-                        <div class="fw-bold">+375 (33) 628-86-72</div>
-                        <small class="text-muted">Принимаем звонки с 8 до 16</small>
-                    </div>
-                </div>
- 
-                <div class="col-auto ms-auto">
-                    <a href="#" class="d-flex align-items-center gap-2 text-dark bg-light rounded px-2 py-1">
-                        <div class="position-relative">
-                            <img src="images/Market-icon.png" alt="корзина" width="36">
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">1</span>
-                        </div>
-                        <div>
-                            <div class="small fw-bold">В КОРЗИНУ</div>
-                            <div class="small text-muted">ПОДЕЛИТЬСЯ</div>
-                        </div>
-                    </a>
-                </div>
- 
-            </div>
-        </div>
-    </div>
- 
-    <!-- МОБИЛЬНЫЙ: строка 1 — логотип + корзина (скрыто на десктопе) -->
-    <div class="d-lg-none border-bottom py-2 px-3">
-        <div class="d-flex justify-content-between align-items-center">
-            <a href="landing.html" class="d-flex align-items-center gap-2 text-dark">
-                <img src="images/logo-placeholder.png" alt="лого" width="45">
-                <div>
-                    <div class="fw-bold">ЧАСТНАЯ ПАСИКА</div>
-                    <div class="text-warning small">ЗПОИС23</div>
-                </div>
-            </a>
-            <a href="#" class="text-dark">
-                <img src="images/Market-icon.png" alt="корзина" width="32">
-            </a>
-        </div>
-    </div>
- 
-    <!-- МОБИЛЬНЫЙ: строка 2 — бургер + поиск + телефон в одну строку -->
-    <div class="d-lg-none bg-light border-bottom py-2" style="padding-left: 6px; padding-right: 12px;">
-        <div class="d-flex align-items-center">
- 
-            <button class="navbar-toggler shadow-none p-1 me-2" type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#mobileMenu"
-                    aria-controls="mobileMenu"
-                    aria-expanded="false">
-                ☰
-            </button>
- 
-            <input type="text" class="form-control form-control-sm flex-grow-1 me-2 rounded-pill" placeholder="Поиск...">
- 
-            <a href="tel:+375336288672">
-                <img src="images/phone-icon.png" alt="телефон" width="28">
-            </a>
- 
-        </div>
- 
-        <!-- Меню раскрывается под строкой -->
-        <div class="collapse" id="mobileMenu">
-            <ul class="navbar-nav mt-2">
-                <li class="nav-item"><a class="nav-link" href="landing.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link active" href="catalog.html">Каталог</a></li>
-                <li class="nav-item"><a class="nav-link" href="landing.html#warranty">Гарантия</a></li>
-                <li class="nav-item"><a class="nav-link" href="landing.html#reviews">Отзывы</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
-                <li class="nav-item"><a class="nav-link" href="#how-to-choose-honey">Как выбрать мед?</a></li>
-            </ul>
-        </div>
-    </div>
- 
-    <!-- Жёлтая полоска: breadcrumb + заголовок -->
-    <div style="background: linear-gradient(90deg, #f5b800, #ffcc00); padding: 18px 20px 18px 50px;">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mb-1">
-                <li class="breadcrumb-item"><a href="landing.html" class="text-dark">Главная</a></li>
-                <li class="breadcrumb-item"><a href="catalog.html" class="text-dark">Каталог</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Пчелиный мёд</li>
-            </ol>
         </nav>
-        <h1 class="page-title mb-0">НАТУРАЛЬНЫЙ МЁД ОТ ПЧЕЛОВОДА</h1>
-    </div>
- 
-</header>
-
-
-
-
-
-
-
+    
+        <!-- ДЕСКТОП: уровень 2 -->
+        <div class="d-none d-lg-block border-bottom py-2">
+            <div class="container-fluid px-4">
+                <div class="row align-items-center g-3">
+    
+                    <div class="col-auto">
+                        <a href="landing.html" class="d-flex align-items-center gap-2 text-dark">
+                            <img src="images/logo-placeholder.png" alt="лого" width="55">
+                            <div>
+                                <div class="fw-bold">ЧАСТНАЯ ПАСИКА</div>
+                                <div class="text-warning">ЗПОИС23</div>
+                            </div>
+                        </a>
+                    </div>
+    
+                    <div class="col-4">
+                        <input type="text" class="form-control rounded-pill" placeholder="Поиск...">
+                    </div>
+    
+                    <div class="col-auto d-flex align-items-center gap-2">
+                        <img src="images/phone-icon.png" alt="телефон" width="36">
+                        <div>
+                            <div class="fw-bold">+375 (33) 628-86-72</div>
+                            <small class="text-muted">Принимаем звонки с 8 до 16</small>
+                        </div>
+                    </div>
+    
+                    <div class="col-auto ms-auto">
+                        <a href="#" class="d-flex align-items-center gap-2 text-dark bg-light rounded px-2 py-1">
+                            <div class="position-relative">
+                                <img src="images/Market-icon.png" alt="корзина" width="36">
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">1</span>
+                            </div>
+                            <div>
+                                <div class="small fw-bold">В КОРЗИНУ</div>
+                                <div class="small text-muted">ПОДЕЛИТЬСЯ</div>
+                            </div>
+                        </a>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    
+        <!-- МОБИЛЬНЫЙ: уровень 1 -->
+        <div class="d-lg-none border-bottom py-2 px-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="landing.html" class="d-flex align-items-center gap-2 text-dark">
+                    <img src="images/logo-placeholder.png" alt="лого" width="45">
+                    <div>
+                        <div class="fw-bold">ЧАСТНАЯ ПАСИКА</div>
+                        <div class="text-warning small">ЗПОИС23</div>
+                    </div>
+                </a>
+                <a href="#" class="text-dark">
+                    <img src="images/Market-icon.png" alt="корзина" width="32">
+                </a>
+            </div>
+        </div>
+    
+        <!-- МОБИЛЬНЫЙ: уровень 2 -->
+        <div class="d-lg-none bg-light border-bottom py-2" style="padding-left: 6px; padding-right: 12px;">
+            <div class="d-flex align-items-center">
+    
+                <button class="navbar-toggler shadow-none p-1 me-2" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mobileMenu"
+                        aria-controls="mobileMenu"
+                        aria-expanded="false">
+                    ☰
+                </button>
+    
+                <input type="text" class="form-control form-control-sm flex-grow-1 me-2 rounded-pill" placeholder="Поиск...">
+    
+                <a href="tel:+375336288672">
+                    <img src="images/phone-icon.png" alt="телефон" width="28">
+                </a>
+    
+            </div>
+    
+            <!-- Меню раскрывается под строкой -->
+            <div class="collapse" id="mobileMenu">
+                <ul class="navbar-nav mt-2">
+                    <li class="nav-item"><a class="nav-link" href="landing.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="catalog.html">Каталог</a></li>
+                    <li class="nav-item"><a class="nav-link" href="landing.html#warranty">Гарантия</a></li>
+                    <li class="nav-item"><a class="nav-link" href="landing.html#reviews">Отзывы</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#how-to-choose-honey">Как выбрать мед?</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <!-- breadcrumb + заголовок -->
+        <div style="background: linear-gradient(90deg, #f5b800, #ffcc00); padding: 18px 20px 18px 50px;">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-1">
+                    <li class="breadcrumb-item"><a href="landing.html" class="text-dark">Главная</a></li>
+                    <li class="breadcrumb-item"><a href="catalog.html" class="text-dark">Каталог</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Пчелиный мёд</li>
+                </ol>
+            </nav>
+            <h1 class="page-title mb-0">НАТУРАЛЬНЫЙ МЁД ОТ ПЧЕЛОВОДА</h1>
+        </div>
+    
+    </header>
 
     <br>
 
