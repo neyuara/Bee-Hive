@@ -23,7 +23,8 @@
         }
         .form-control:focus {
             box-shadow: none;
-            border-color: #ced4da;
+            /* Цвет границы инпута при фокусе тоже сделаем мягким золотистым */
+            border-color: #ffcc00;
         }
  
         .breadcrumb {
@@ -55,8 +56,7 @@
 <body>
  
     <header>
-        <!-- ДЕСКТОП: уровень 1 -->
-        <nav class="navbar navbar-expand-lg sticky-top bg-light border-bottom d-none d-lg-flex">
+        <nav class="navbar navbar-expand-lg sticky-top bg-light border-bottom border-warning d-none d-lg-flex">
             <div class="container-fluid px-4">
                 <div class="navbar-nav me-auto flex-row">
                     <a class="nav-link px-3" href="landing.html">Главная</a>
@@ -69,8 +69,7 @@
             </div>
         </nav>
     
-        <!-- ДЕСКТОП: уровень 2 -->
-        <div class="d-none d-lg-block border-bottom py-2">
+        <div class="d-none d-lg-block border-bottom border-warning py-2">
             <div class="container-fluid px-4">
                 <div class="row align-items-center g-3">
     
@@ -85,7 +84,7 @@
                     </div>
     
                     <div class="col-4">
-                        <input type="text" class="form-control rounded-pill" placeholder="Поиск...">
+                        <input type="text" class="form-control rounded-pill border-warning" placeholder="Поиск...">
                     </div>
     
                     <div class="col-auto d-flex align-items-center gap-2">
@@ -97,7 +96,7 @@
                     </div>
     
                     <div class="col-auto ms-auto">
-                        <a href="#" class="d-flex align-items-center gap-2 text-dark bg-light rounded px-2 py-1">
+                        <a href="#" class="d-flex align-items-center gap-2 text-dark bg-light border border-warning rounded px-2 py-1">
                             <div class="position-relative">
                                 <img src="images/Market-icon.png" alt="корзина" width="36">
                                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">1</span>
@@ -113,8 +112,7 @@
             </div>
         </div>
     
-        <!-- МОБИЛЬНЫЙ: уровень 1 -->
-        <div class="d-lg-none border-bottom py-2 px-3">
+        <div class="d-lg-none border-bottom border-warning py-2 px-3">
             <div class="d-flex justify-content-between align-items-center">
                 <a href="landing.html" class="d-flex align-items-center gap-2 text-dark">
                     <img src="images/logo-placeholder.png" alt="лого" width="45">
@@ -129,8 +127,7 @@
             </div>
         </div>
     
-        <!-- МОБИЛЬНЫЙ: уровень 2 -->
-        <div class="d-lg-none bg-light border-bottom py-2" style="padding-left: 6px; padding-right: 12px;">
+        <div class="d-lg-none bg-light border-bottom border-warning py-2" style="padding-left: 6px; padding-right: 12px;">
             <div class="d-flex align-items-center">
     
                 <button class="navbar-toggler shadow-none p-1 me-2" type="button"
@@ -141,7 +138,7 @@
                     ☰
                 </button>
     
-                <input type="text" class="form-control form-control-sm flex-grow-1 me-2 rounded-pill" placeholder="Поиск...">
+                <input type="text" class="form-control form-control-sm flex-grow-1 me-2 rounded-pill border-warning" placeholder="Поиск...">
     
                 <a href="tel:+375336288672">
                     <img src="images/phone-icon.png" alt="телефон" width="28">
@@ -149,7 +146,6 @@
     
             </div>
     
-            <!-- Меню раскрывается под строкой -->
             <div class="collapse" id="mobileMenu">
                 <ul class="navbar-nav mt-2">
                     <li class="nav-item"><a class="nav-link" href="landing.html">Главная</a></li>
@@ -162,7 +158,6 @@
             </div>
         </div>
     
-        <!-- breadcrumb + заголовок -->
         <div style="background: linear-gradient(90deg, #f5b800, #ffcc00); padding: 18px 20px 18px 50px;">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-1">
@@ -178,365 +173,252 @@
 
     <br>
 
-    <main>
-        <div>
-
-            <!-- Левая колонка: меню + виджет -->
-            <div>
-
-                <!-- Вертикальное боковое меню -->
-                <div>
-                    <ul>
-                        <li><a href="#">Пчелиный мед</a></li>
-                        <li><a href="#">Пчелиный воск</a></li>
-                        <li><a href="#">Улья</a></li>
-                        <li><a href="#">Рамки для ульев</a></li>
-                        <li><a href="#">Прополис</a></li>
-                    </ul>
-                </div>
-
-                <!-- Виджет хит -->
-                <div>
-
-                    <div>
-                        <div>
-                            <span></span>
-                            <span>Хит продаж</span>
-                        </div>
-                        <div>
-                            <img src="images/dribinsky-med.png" alt="Хит продаж">
-                            <div>Дрибинский мед</div>
-                            <div>0.1 литр</div>
-                            <div>
-                                <span>9 <span>BYN</span></span>
-                                <button>
-                                    <img src="images/Market-icon.png" width="28" height="28">
+<main class="container-fluid px-4">
+    <div class="row">
+ 
+        <div class="col-lg-2 d-none d-lg-block sidebar-menu">
+ 
+            <ul class="list-group mb-3 custom-list-group">
+                <li class="list-group-item active bg-warning border-warning text-dark fw-bold">Пчелиный мед</li>
+                <li class="list-group-item border-warning"><a href="#" class="text-decoration-none text-reset">Пчелиный воск</a></li>
+                <li class="list-group-item border-warning"><a href="#" class="text-decoration-none text-reset">Улья</a></li>
+                <li class="list-group-item border-warning"><a href="#" class="text-decoration-none text-reset">Рамки для ульев</a></li>
+                <li class="list-group-item border-warning"><a href="#" class="text-decoration-none text-reset">Прополис</a></li>
+            </ul>
+ 
+            <div id="sidebarCarousel" class="carousel slide carousel-dark mt-2 border border-warning rounded" data-bs-ride="carousel">
+ 
+                <div class="carousel-inner">
+ 
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <div class="p-2 text-center">
+                            <div class="d-flex align-items-center gap-2 mb-2 justify-content-start">
+                                <span class="border border-warning rounded-circle" style="width:18px;height:18px;display:inline-block;"></span>
+                                <span class="fw-bold small text-dark">Хит продаж</span>
+                            </div>
+                            <img src="images/dribinsky-med.png" alt="Дрибинский мед" class="img-fluid mb-2" style="max-height:120px; object-fit:contain;">
+                            <div class="fw-bold">Дрибинский мед</div>
+                            <div class="small" style="color:#c8860a;">0.1 литр</div>
+                            <div class="d-flex align-items-center justify-content-between mt-2">
+                                <span style="font-size:1.4rem; font-weight:bold;">9 <small class="fs-6 fw-normal">BYN</small></span>
+                                <button class="btn btn-warning btn-sm">
+                                    <img src="images/Market-icon.png" width="22" height="22">
                                 </button>
                             </div>
                         </div>
                     </div>
-
-                    <div>
-                        <div>
-                            <span></span>
-                            <span>Спецпредложение</span>
-                        </div>
-                        <div>
-                            <img src="images/special offer.png" alt="Спецпредложение">
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Горизонтальные категории -->
-            <div>
-                <a href="#">Пчелиный мед</a>
-                <a href="#">Пчелиный воск</a>
-                <a href="#">Улья</a>
-                <a href="#">Прополис</a>
-                <a href="#">Рамки для ульев</a>
-            </div>
-
-    
-            <div>
-
-                <div>
-
-                    <div>
-                        <img src="images/honey_jar.png" alt="Мед">
-                        <div>Гречишный мед</div>
-                        <div>
-                            <div>
-                                <span>11</span>
-                                <span>BYN</span>
-                                <span>/0.5л</span>
+ 
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <div class="p-2 text-center">
+                            <div class="d-flex align-items-center gap-2 mb-2 justify-content-start">
+                                <span class="border border-warning rounded-circle" style="width:18px;height:18px;display:inline-block;"></span>
+                                <span class="fw-bold small text-dark">Популярное</span>
                             </div>
-                            <button onclick="window.location.href='show_item.html'">
-                                <img src="images/Market-icon.png" width="32" height="32">
-                                <span>В корзину</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div>
-                        <img src="images/honey_jar.png" alt="Мед">
-                        <div>Гречишный мед</div>
-                        <div>
-                            <div>
-                                <span>21</span>
-                                <span>BYN</span>
-                                <span>/ 1л</span>
-                            </div>
-                            <button onclick="window.location.href='show_item.html'">
-                                <img src="images/Market-icon.png" width="32" height="32">
-                                <span>В корзину</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div>
-                        <img src="images/honey_jar.png" alt="Мед">
-                        <div>Гречишный мед</div>
-                        <div>
-                            <div>
-                                <span>39</span>
-                                <span>BYN</span>
-                                <span>/ 2л</span>
-                            </div>
-                            <button onclick="window.location.href='show_item.html'">
-                                <img src="images/Market-icon.png" width="32" height="32">
-                                <span>В корзину</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div>
-                        <img src="images/honey_jar.png" alt="Мед">
-                        <div>Гречишный мед</div>
-                        <div>
-                            <div>
-                                <span>47</span>
-                                <span>BYN</span>
-                                <span>/ 3л</span>
-                            </div>
-                            <button onclick="window.location.href='show_item.html'">
-                                <img src="images/Market-icon.png" width="32" height="32">
-                                <span>В корзину</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div>
-                        <img src="images/flower-honey.png" alt="Мед">
-                        <div>Цветочный мед</div>
-                        <div>
-                            <div>
-                                <span>12</span>
-                                <span>BYN</span>
-                                <span>/0.5л</span>
-                            </div>
-                            <button onclick="window.location.href='show_item.html'">
-                                <img src="images/Market-icon.png" width="32" height="32">
-                                <span>В корзину</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div>
-                        <img src="images/flower-honey.png" alt="Мед">
-                        <div>Цветочный мед</div>
-                        <div>
-                            <div>
-                                <span>23</span>
-                                <span>BYN</span>
-                                <span>/ 1л</span>
-                            </div>
-                            <button onclick="window.location.href='show_item.html'">
-                                <img src="images/Market-icon.png" width="32" height="32">
-                                <span>В корзину</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div>
-                        <img src="images/flower-honey.png" alt="Мед">
-                        <div>Цветочный мед</div>
-                        <div>
-                            <div>
-                                <span>33</span>
-                                <span>BYN</span>
-                                <span>/ 2л</span>
-                            </div>
-                            <button onclick="window.location.href='show_item.html'">
-                                <img src="images/Market-icon.png" width="32" height="32">
-                                <span>В корзину</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div>
-                        <img src="images/flower-honey.png" alt="Мед">
-                        <div>Цветочный мед</div>
-                        <div>
-                            <div>
-                                <span>45</span>
-                                <span>BYN</span>
-                                <span>/ 3л</span>
-                            </div>
-                            <button onclick="window.location.href='show_item.html'">
-                                <img src="images/Market-icon.png" width="32" height="32">
-                                <span>В корзину</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div>
-                        <img src="images/dribinsky-med.png" alt="Мед">
-                        <div>Дрибинский мед</div>
-                        <div>
-                            <div>
-                                <span>9</span>
-                                <span>BYN</span>
-                                <span>/0.1л</span>
-                            </div>
-                            <button onclick="window.location.href='show_item.html'">
-                                <img src="images/Market-icon.png" width="32" height="32">
-                                <span>В корзину</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div>
-                        <img src="images/miheevsky-med.png" alt="Мед">
-                        <div>Михеевский мед</div>
-                        <div>
-                            <div>
-                                <span>7</span>
-                                <span>BYN</span>
-                                <span>/ 0.1л</span>
-                            </div>
-                            <button onclick="window.location.href='show_item.html'">
-                                <img src="images/Market-icon.png" width="32" height="32">
-                                <span>В корзину</span>
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Виджет хит/спецпредложение для мобильного -->
-                <div>
-
-                    <div>
-                        <div>
-                            <span></span>
-                            <span>Хит продаж</span>
-                        </div>
-                        <div>
-                            <img src="images/dribinsky-med.png" alt="Хит продаж">
-                            <div>Дрибинский мед</div>
-                            <div>0.1 литр</div>
-                            <div>
-                                <span>9 <span>BYN</span></span>
-                                <button>
-                                    <img src="images/Market-icon.png" width="28" height="28">
-                                    <span>В корзину</span>
+                            <img src="images/flower-honey.png" alt="Цветочный мед" class="img-fluid mb-2" style="max-height:120px; object-fit:contain;">
+                            <div class="fw-bold">Цветочный мед</div>
+                            <div class="small" style="color:#c8860a;">0.5 литра</div>
+                            <div class="d-flex align-items-center justify-content-between mt-2">
+                                <span style="font-size:1.4rem; font-weight:bold;">12 <small class="fs-6 fw-normal">BYN</small></span>
+                                <button class="btn btn-warning btn-sm">
+                                    <img src="images/Market-icon.png" width="22" height="22">
                                 </button>
                             </div>
                         </div>
                     </div>
-
-                    <div>
-                        <div>
-                            <span></span>
-                            <span>Спецпредложение</span>
-                        </div>
-                        <div>
-                            <img src="images/special offer.png" alt="Спецпредложение">
+ 
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <div class="p-2 text-center">
+                            <div class="d-flex align-items-center gap-2 mb-2 justify-content-start">
+                                <span class="border border-warning rounded-circle" style="width:18px;height:18px;display:inline-block;"></span>
+                                <span class="fw-bold small text-dark">Популярное</span>
+                            </div>
+                            <img src="images/honey_jar.png" alt="Гречишный мед" class="img-fluid mb-2" style="max-height:120px; object-fit:contain;">
+                            <div class="fw-bold">Гречишный мед</div>
+                            <div class="small" style="color:#c8860a;">0.5 литра</div>
+                            <div class="d-flex align-items-center justify-content-between mt-2">
+                                <span style="font-size:1.4rem; font-weight:bold;">11 <small class="fs-6 fw-normal">BYN</small></span>
+                                <button class="btn btn-warning btn-sm">
+                                    <img src="images/Market-icon.png" width="22" height="22">
+                                </button>
+                            </div>
                         </div>
                     </div>
-
+ 
                 </div>
-
+ 
+                <button class="carousel-control-prev" type="button" data-bs-target="#sidebarCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предыдущий</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#sidebarCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следующий</span>
+                </button>
+ 
             </div>
-
-            <div id="how-to-choose-honey">
-                <h2>Как выбрать мед?</h2>
-                <div>
-                    <p>Выбор <strong>настоящего мёда</strong> – это несложно, если знать, на что обратить внимание. Несколько ключевых критериев помогут отличить качественный продукт от подделки.</p>
-                    <p><strong>Консистенция</strong> – свежий мёд жидкий, однако со временем натурально кристаллизуется. Если мёд долго остается жидким, то вероятно, он был перегрет или разбавлен.</p>
-                    <p><strong>Аромат</strong> – качественный мёд обладает выраженным цветочным или разнотравным запахом. Слабый или искусственный аромат свидетельствует о фальсификации продукта.</p>
-                    <p><strong>Вкус</strong> – настоящий мёд оставляет легкое першение в горле. Это признак наличия природных ферментов и антиоксидантов. Приторно-сладкий вкус без послевкусия характерен для сахарного сиропа.</p>
-                    <p><strong>Растворимость</strong> – натуральный мёд растворяется в воде равномерно, не оставляя осадка.</p>
-                    <p>Вся продукция <strong>НАШЕЙ ПАСЕКИ</strong> соответствует каждому из перечисленных критериев. Вы можете убедиться в этом самостоятельно при первой же покупке.</p>
+ 
+            <div class="border border-warning rounded mt-2 p-2">
+                <div class="d-flex align-items-center gap-2 mb-2 justify-content-start flex-wrap">
+                    <span class="border border-warning rounded-circle flex-shrink-0" style="width:18px;height:18px;display:inline-block;"></span>
+                    <span class="fw-bold small text-dark">Спецпредложение</span>
                 </div>
+                <img src="images/special offer.png" alt="Спецпредложение" class="img-fluid mb-2 rounded w-100">
             </div>
-
-            <div id="how-to-store-honey">
-                <h2>Как правильно хранить мёд?</h2>
-                <div>
-                    <p>Натуральный мёд – это продукт с практически неограниченным сроком годности, но только при условии <strong>правильного хранения</strong>. Чтобы он не потерял свои целебные свойства, аромат и вкус, достаточно соблюдать несколько простых правил.</p>
-                    <p><strong>Температура</strong> – идеальный режим для мёда составляет от +4°C до +20°C. Не стоит хранить его возле плиты или на прямом солнечном свету, так как при сильном нагревании разрушаются полезные ферменты и витамины.</p>
-                    <p><strong>Тара</strong> – лучшим выбором будет стеклянная, керамическая или пищевая пластиковая емкость с плотно закрывающейся крышкой. Мёд мгновенно впитывает влагу из воздуха и посторонние запахи, поэтому оставлять его открытым нельзя.</p>
-                    <p><strong>Кристаллизация</strong> – если ваш мёд «засахарился», это абсолютно нормальный природный процесс, подтверждающий его натуральность. Чтобы вернуть ему жидкое состояние, просто аккуратно подогрейте баночку на водяной бане при температуре не выше 40°C.</p>
-                    <p>Мы фасуем продукцию <strong>НАШЕЙ ПАСЕКИ</strong> в безопасную, герметичную тару, которая гарантирует сохранение стопроцентной пользы мёда с момента сбора до вашего стола.</p>
-                </div>
-            </div>
-
-            <div id="honey-sorts">
-                <h2>Почему мёд отличается цветом и вкусом?</h2>
-                <div>
-                    <p>Многие покупатели удивляются, почему одна баночка мёда почти белая, а другая – темно-коричневая. Всё дело в <strong>медоносах</strong> – растениях, с которых наши пчелы собирали нектар. Каждый сорт мёда уникален по-своему.</p>
-                    <p><strong>Светлые сорта</strong> (акациевый, липовый, цветочный) обычно обладают нежным, тонким ароматом и мягким вкусом. Они легче усваиваются организмом, прекрасно подходят для детей и часто используются при простудных заболеваниях.</p>
-                    <p><strong>Тёмные сорта</strong> (гречишный, лесной, вересковый) отличаются легкой горчинкой, терпкостью и густым ароматом. Такой мёд бьет рекорды по содержанию железа и микроelements, отлично укрепляет иммунитет и поддерживает работу сердца.</p>
-                    <p>В ассортименте <strong>НАШЕЙ ПАСЕКИ</strong> представлены самые популярные и чистые сорта мёда. Вы всегда сможете выбрать именно тот вкус, который придется по душе вашей семье.</p>
-                </div>
-            </div>
-
-            <div id="honey-vs-sugar">
-                <h2>Мёд вместо сахара: польза для здоровья</h2>
-                <div>
-                    <p>Замена обычного рафинированного сахара на <strong>натуральный мёд</strong> – это первый и самый простой шаг к здоровому и правильному питанию. Мёд не просто подслащивает еду, он кардинально отличается от сахара своим влиянием на организм.</p>
-                    <p><strong>Сложный состав</strong> – в отличие от сахара, который является «пустым» углеводом, мёд содержит более 200 полезных веществ: аминокислоты, витамины группы B, витамин C, калий, магний и органические кислоты.</p>
-                    <p><strong>Гликемический индекс</strong> – углеводы в мёде (фруктоза и глюкоза) расщепляются и усваиваются организмом постепенно. Это обеспечивает стабильный прилив энергии без резких скачков сахара в крови и лишней нагрузки на поджелудочную железу.</p>
-                    <p>Добавляя ложечку мёда от <strong>НАШЕЙ ПАСЕКИ</strong> в утреннюю овсянку, творог или теплый чай, вы превращаете обычный перекус в настоящий эликсир здоровья и долголетия.</p>
-                </div>
-            </div>
-
+ 
         </div>
-    </main>
-
-    <div>
-        <div>
-            <div>
-                <p><i>По усам текло, а в рот не попало? <span>Купите качественную одежду у CatMood</span></i></p>
-                <div>★</div>
-                <p><i>По вопросам: <span>chastnayapaseka3pois23@gmail.com</span></i></p>
-                <div>★</div>
-                <p><i>Любите котов и мемы? <span>Зайдите в CatMood</span></i></p>
-                <div>★</div>
+ 
+        <div class="col-lg-10">
+ 
+            <div class="d-flex d-lg-none flex-wrap gap-2 mb-3">
+                <a href="#" class="btn btn-sm btn-warning">Пчелиный мед</a>
+                <a href="#" class="btn btn-sm btn-outline-warning text-dark">Пчелиный воск</a>
+                <a href="#" class="btn btn-sm btn-outline-warning text-dark">Улья</a>
+                <a href="#" class="btn btn-sm btn-outline-warning text-dark">Прополис</a>
+                <a href="#" class="btn btn-sm btn-outline-warning text-dark">Рамки для ульев</a>
             </div>
-            <div>
-                <p><i>По усам текло, а в рот не попало? <span>Купите качественную одежду у CatMood</span></i></p>
-                <div>★</div>
-                <p><i>По вопросам: <span>chastnayapaseka3pois23@gmail.com</span></i></p>
-                <div>★</div>
-                <p><i>Любите котов и мемы? <span>Зайдите в CatMood</span></i></p>
-                <div>★</div>
+ 
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 mb-4">
+ 
+                <div class="col">
+                    <div class="card h-100 text-center p-2 border-warning">
+                        <img src="images/honey_jar.png" alt="Мед" class="img-fluid">
+                        <div class="card-title fw-bold small mt-2">Гречишный мед</div>
+                        <div class="fs-5 fw-bold">11 <span>BYN /0.5л</span></div>
+                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    </div>
+                </div>
+ 
+                <div class="col">
+                    <div class="card h-100 text-center p-2 border-warning">
+                        <img src="images/honey_jar.png" alt="Мед" class="img-fluid">
+                        <div class="card-title fw-bold small mt-2">Гречишный мед</div>
+                        <div class="fs-5 fw-bold">21 <span>BYN / 1л</span></div>
+                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    </div>
+                </div>
+ 
+                <div class="col">
+                    <div class="card h-100 text-center p-2 border-warning">
+                        <img src="images/honey_jar.png" alt="Мед" class="img-fluid">
+                        <div class="card-title fw-bold small mt-2">Гречишный мед</div>
+                        <div class="fs-5 fw-bold">39 <span>BYN / 2л</span></div>
+                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    </div>
+                </div>
+ 
+                <div class="col">
+                    <div class="card h-100 text-center p-2 border-warning">
+                        <img src="images/honey_jar.png" alt="Мед" class="img-fluid">
+                        <div class="card-title fw-bold small mt-2">Гречишный мед</div>
+                        <div class="fs-5 fw-bold">47 <span>BYN / 3л</span></div>
+                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    </div>
+                </div>
+ 
+                <div class="col">
+                    <div class="card h-100 text-center p-2 border-warning">
+                        <img src="images/flower-honey.png" alt="Мед" class="img-fluid">
+                        <div class="card-title fw-bold small mt-2">Цветочный мед</div>
+                        <div class="fs-5 fw-bold">12 <span>BYN /0.5л</span></div>
+                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    </div>
+                </div>
+ 
+                <div class="col">
+                    <div class="card h-100 text-center p-2 border-warning">
+                        <img src="images/flower-honey.png" alt="Мед" class="img-fluid">
+                        <div class="card-title fw-bold small mt-2">Цветочный мед</div>
+                        <div class="fs-5 fw-bold">23 <span>BYN / 1л</span></div>
+                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    </div>
+                </div>
+ 
+                <div class="col">
+                    <div class="card h-100 text-center p-2 border-warning">
+                        <img src="images/flower-honey.png" alt="Мед" class="img-fluid">
+                        <div class="card-title fw-bold small mt-2">Цветочный мед</div>
+                        <div class="fs-5 fw-bold">33 <span>BYN / 2л</span></div>
+                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    </div>
+                </div>
+ 
+                <div class="col">
+                    <div class="card h-100 text-center p-2 border-warning">
+                        <img src="images/flower-honey.png" alt="Мед" class="img-fluid">
+                        <div class="card-title fw-bold small mt-2">Цветочный мед</div>
+                        <div class="fs-5 fw-bold">45 <span>BYN / 3л</span></div>
+                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    </div>
+                </div>
+ 
+                <div class="col">
+                    <div class="card h-100 text-center p-2 border-warning">
+                        <img src="images/dribinsky-med.png" alt="Мед" class="img-fluid">
+                        <div class="card-title fw-bold small mt-2">Дрибинский мед</div>
+                        <div class="fs-5 fw-bold">9 <span>BYN /0.1л</span></div>
+                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    </div>
+                </div>
+ 
+                <div class="col">
+                    <div class="card h-100 text-center p-2 border-warning">
+                        <img src="images/miheevsky-med.png" alt="Мед" class="img-fluid">
+                        <div class="card-title fw-bold small mt-2">Михеевский мед</div>
+                        <div class="fs-5 fw-bold">7 <span>BYN / 0.1л</span></div>
+                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    </div>
+                </div>
+ 
             </div>
+ 
+            <div class="p-3 border-start border-warning border-4 bg-light mb-3" id="how-to-choose-honey">
+                <h2>Как выбрать мед?</h2>
+                <p>Выбор <strong>настоящего мёда</strong> – это несложно, если знать, на что обратить внимание.</p>
+                <p><strong>Консистенция</strong> – свежий мёд жидкий, однако со временем натурально кристаллизуется. Если мёд долго остается жидким, то вероятно, он был перегрет или разбавлен.</p>
+                <p><strong>Аромат</strong> – качественный мёд обладает выраженным цветочным или разнотравным запахом. Слабый или искусственный аромат свидетельствует о фальсификации продукта.</p>
+                <p><strong>Вкус</strong> – настоящий мёд оставляет легкое першение в горле. Приторно-сладкий вкус без послевкусия характерен для сахарного сиропа.</p>
+                <p><strong>Растворимость</strong> – натуральный мёд растворяется в воде равномерно, не оставляя осадка.</p>
+            </div>
+ 
+            <div class="p-3 border-start border-warning border-4 bg-light mb-3" id="how-to-store-honey">
+                <h2>Как правильно хранить мёд?</h2>
+                <p>Натуральный мёд – продукт с практически неограниченным сроком годности при <strong>правильном хранении</strong>.</p>
+                <p><strong>Температура</strong> – идеальный режим от +4°C до +20°C.</p>
+                <p><strong>Тара</strong> – стеклянная или керамическая ёмкость с плотной крышкой.</p>
+                <p><strong>Кристаллизация</strong> – абсолютно нормальный процесс, подтверждающий натуральность мёда.</p>
+            </div>
+ 
         </div>
     </div>
-
-    <br>
-    
-    <footer>
-        <div>
-            <img src="images/honey-drops.png" width="100%" height="200" alt="Подтеки меда">
+</main>
+ 
+    <div class="bg-secondary text-white py-2 mt-4 ticker-bar">
+        <div class="ticker-inner">
+            По усам текло, а в рот не попало? &nbsp;★&nbsp; Купите качественную одежду у CatMood &nbsp;★&nbsp;
+            По вопросам: chastnayapaseka3pois23@gmail.com &nbsp;★&nbsp; Любите котов и мемы? Зайдите в CatMood &nbsp;★&nbsp;
         </div>
-        <div>
-            <div>
-                <img src="images/logo-placeholder.png" width="80" alt="Лого">
-                <span>
+    </div>
+ 
+    <footer id="contacts" class="pt-4 border-top border-warning">
+        <div class="container">
+            <div class="row justify-content-center align-items-center g-4">
+                <div class="col-auto text-center">
+                    <img src="images/logo-placeholder.png" width="60" alt="Лого"><br>
                     <strong>Частная пасека<br>ЗПОИС23</strong>
-                </span>
-            </div>
-            <div>
-                <img src="images/mail-icon.png" width="60" alt="Почта">
-                <span>
+                </div>
+                <div class="col-auto text-center">
+                    <img src="images/mail-icon.png" width="50" alt="Почта"><br>
                     Адрес электронной почты:<br>
                     <a href="mailto:chastnayapaseka3pois23@gmail.com">chastnayapaseka3pois23@gmail.com</a>
-                </span>
-            </div>
-            <div>
-                <img src="images/red-phone-icon.png" width="60" alt="Телефон">
-                <span>
+                </div>
+                <div class="col-auto text-center">
+                    <img src="images/red-phone-icon.png" width="50" alt="Телефон"><br>
                     <strong>+375 (33) 628-86-72</strong>
-                </span>
+                </div>
             </div>
         </div>
     </footer>
+ 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
