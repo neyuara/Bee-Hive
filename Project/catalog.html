@@ -691,21 +691,53 @@
         </div>
     </div>
  
-    <footer id="contacts" class="pt-4 border-top border-warning">
-        <div class="container">
-            <div class="row justify-content-center align-items-center g-4">
-                <div class="col-auto text-center">
-                    <img src="images/logo-placeholder.png" width="60" alt="Лого"><br>
-                    <strong>Частная пасека<br>ЗПОИС23</strong>
+    <!-- ─── ОБНОВЛЕННЫЙ БУТСТРАП-ФУТЕР (СЕРЫЙ ФОН) ─── -->
+    <footer class="mt-5">
+        <!-- Панель футера с фоном bg-light (серый, как у navbar) и аккуратной верхней линией -->
+        <div class="bg-light border-top border-warning border-3 py-5">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-md-3 g-4 align-items-center text-center">
+                    
+                    <!-- Колонка 1: Логотип и Название -->
+                    <div class="col d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex align-items-center gap-3 text-start">
+                            <img src="images/logo-placeholder.png" width="70" alt="Лого">
+                            <div class="text-dark">
+                                <strong class="fs-5 lh-sm d-block" style="font-family: 'Alegreya SC', serif;">ЧАСТНАЯ ПАСЕКА</strong>
+                                <span class="text-warning fw-bold small" style="letter-spacing: 1px;">ЗПОИС23</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Колонка 2: Электронная почта -->
+                    <div class="col d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex flex-column align-items-center">
+                            <img src="images/mail-icon.png" width="45" class="mb-2" alt="Почта">
+                            <span class="text-muted small mb-1">Адрес электронной почты:</span>
+                            <a href="mailto:chastnayapaseka3pois23@gmail.com" class="fw-bold text-dark border-bottom border-warning pb-1 text-decoration-none">
+                                chastnayapaseka3pois23@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Колонка 3: Номер телефона -->
+                    <div class="col d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex flex-column align-items-center">
+                            <img src="images/red-phone-icon.png" width="45" class="mb-2" alt="Телефон">
+                            <span class="text-muted small mb-1">Связаться с нами:</span>
+                            <a href="tel:+375336288672" class="fs-5 fw-bold text-dark text-decoration-none">
+                                +375 (33) 628-86-72
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col-auto text-center">
-                    <img src="images/mail-icon.png" width="50" alt="Почта"><br>
-                    Адрес электронной почты:<br>
-                    <a href="mailto:chastnayapaseka3pois23@gmail.com">chastnayapaseka3pois23@gmail.com</a>
-                </div>
-                <div class="col-auto text-center">
-                    <img src="images/red-phone-icon.png" width="50" alt="Телефон"><br>
-                    <strong>+375 (33) 628-86-72</strong>
+
+                <!-- Нижня строчка копирайта -->
+                <div class="row mt-4 pt-4 border-top border-dark-subtle border-opacity-25">
+                    <div class="col text-center">
+                        <small class="text-muted">&copy; 2026 Частная пасека ЗПОИС23. Все права защищены.</small>
+                    </div>
                 </div>
             </div>
         </div>
