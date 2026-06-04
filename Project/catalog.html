@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" href="images/logo-placeholder.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Alegreya+SC&family=Alegreya+Sans+SC&family=Alegreya+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Alegreya Sans', serif;
@@ -23,8 +24,7 @@
         }
         .form-control:focus {
             box-shadow: none;
-            /* Цвет границы инпута при фокусе тоже сделаем мягким золотистым */
-            border-color: #ffcc00;
+            border-color: #FFC107;
         }
  
         .breadcrumb {
@@ -49,6 +49,88 @@
         @keyframes ticker {
             from { transform: translateX(100vw); }
             to   { transform: translateX(-100%); }
+        }
+
+        /* Эффект при наведении для пунктов бокового меню */
+        .custom-list-group .list-group-item:not(.active) {
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        .custom-list-group .list-group-item:not(.active):hover {
+            background-color: #FFC107 !important;
+        }
+        .custom-list-group .list-group-item:not(.active):hover a {
+            color: #212529 !important;
+        }
+
+        /* Кастомные стили для переопределения стандартного Bootstrap-желтого на #FFC107 */
+        .border-warning {
+            border-color: #FFC107 !important;
+        }
+        .bg-warning {
+            background-color: #FFC107 !important;
+        }
+        .text-warning {
+            color: #FFC107 !important;
+        }
+        .btn-warning {
+            background-color: #FFC107 !important;
+            border-color: #FFC107 !important;
+            color: #3E2723 !important;
+        }
+        .btn-warning:hover {
+            background-color: #e0a800 !important;
+            border-color: #d39e00 !important;
+        }
+        .btn-outline-warning {
+            color: #FFC107 !important;
+            border-color: #FFC107 !important;
+        }
+        .btn-outline-warning:hover {
+            background-color: #FFC107 !important;
+            border-color: #FFC107 !important;
+            color: #212529 !important;
+        }
+        .border-start.border-warning {
+            border-left-color: #FFC107 !important;
+        }
+
+        /* Стили для горизонтальных кнопок категорий в мобильной версии */
+        .mobile-category-buttons .btn {
+            color: #3E2723 !important;
+            border-radius: 12px;
+        }
+        .mobile-category-buttons .btn-outline-warning:hover {
+            color: #3E2723 !important;
+        }
+
+        /* ─── СТИЛИЗАЦИЯ ШРИФТОВ И ЦЕН ВНУТРИ КАРТОЧЕК ─── */
+        .custom-card-title {
+            font-family: 'Alegreya SC', sans-serif;
+            font-size: 1.25rem;
+            color: #31302E;
+        }
+
+        .custom-price-value {
+            font-family: 'Alexandria', sans-serif;
+            font-size: 1.8rem;
+            color: #3E2723;
+            line-height: 1;
+        }
+
+        .custom-price-currency {
+            font-family: 'Alegreya', sans-serif;
+            font-size: 1.1rem;
+            color: #3E2723;
+        }
+
+        .custom-price-amount {
+            font-family: 'Alexandria', sans-serif;
+            color: #CD9E13;
+        }
+
+        /* Анимация нажатия на кнопку корзины */
+        .btn-cart-icon:active {
+            transform: scale(0.92);
         }
     </style>
 </head>
@@ -178,15 +260,17 @@
  
         <div class="col-lg-2 d-none d-lg-block sidebar-menu">
  
-            <ul class="list-group mb-3 custom-list-group">
-                <li class="list-group-item active bg-warning border-warning text-dark fw-bold">Пчелиный мед</li>
-                <li class="list-group-item border-warning"><a href="#" class="text-decoration-none text-reset">Пчелиный воск</a></li>
-                <li class="list-group-item border-warning"><a href="#" class="text-decoration-none text-reset">Улья</a></li>
-                <li class="list-group-item border-warning"><a href="#" class="text-decoration-none text-reset">Рамки для ульев</a></li>
-                <li class="list-group-item border-warning"><a href="#" class="text-decoration-none text-reset">Прополис</a></li>
+            <!-- Установлена толщина рамки border-2 -->
+            <ul class="list-group mb-3 custom-list-group border border-warning border-2 rounded-3 overflow-hidden">
+                <li class="list-group-item active bg-warning border-warning text-dark fw-bold border-0">Пчелиный мед</li>
+                <li class="list-group-item border-warning border-start-0 border-end-0"><a href="#" class="text-decoration-none text-reset d-block">Пчелиный воск</a></li>
+                <li class="list-group-item border-warning border-start-0 border-end-0"><a href="#" class="text-decoration-none text-reset d-block">Улья</a></li>
+                <li class="list-group-item border-warning border-start-0 border-end-0"><a href="#" class="text-decoration-none text-reset d-block">Рамки для ульев</a></li>
+                <li class="list-group-item border-warning border-start-0 border-end-0 border-bottom-0"><a href="#" class="text-decoration-none text-reset d-block">Прополис</a></li>
             </ul>
  
-            <div id="sidebarCarousel" class="carousel slide carousel-dark mt-2 border border-warning rounded" data-bs-ride="carousel">
+            <!-- Установлена толщина рамки border-2 -->
+            <div id="sidebarCarousel" class="carousel slide carousel-dark mt-2 border border-warning border-2 rounded-3" data-bs-ride="carousel">
  
                 <div class="carousel-inner">
  
@@ -199,9 +283,11 @@
                             <img src="images/dribinsky-med.png" alt="Дрибинский мед" class="img-fluid mb-2" style="max-height:120px; object-fit:contain;">
                             <div class="fw-bold">Дрибинский мед</div>
                             <div class="small" style="color:#c8860a;">0.1 литр</div>
+                            <!-- Элементы выровнены строго по центру строки (align-items-center) -->
                             <div class="d-flex align-items-center justify-content-between mt-2">
-                                <span style="font-size:1.4rem; font-weight:bold;">9 <small class="fs-6 fw-normal">BYN</small></span>
-                                <button class="btn btn-warning btn-sm">
+                                <span style="font-size:1.4rem; font-weight:bold; line-height:1;">9 <small class="fs-6 fw-normal">BYN</small></span>
+                                <!-- Радиус углов rounded-3 соответствует кнопкам каталога -->
+                                <button class="btn btn-warning btn-sm p-2 rounded-3 btn-cart-icon">
                                     <img src="images/Market-icon.png" width="22" height="22">
                                 </button>
                             </div>
@@ -218,8 +304,8 @@
                             <div class="fw-bold">Цветочный мед</div>
                             <div class="small" style="color:#c8860a;">0.5 литра</div>
                             <div class="d-flex align-items-center justify-content-between mt-2">
-                                <span style="font-size:1.4rem; font-weight:bold;">12 <small class="fs-6 fw-normal">BYN</small></span>
-                                <button class="btn btn-warning btn-sm">
+                                <span style="font-size:1.4rem; font-weight:bold; line-height:1;">12 <small class="fs-6 fw-normal">BYN</small></span>
+                                <button class="btn btn-warning btn-sm p-2 rounded-3 btn-cart-icon">
                                     <img src="images/Market-icon.png" width="22" height="22">
                                 </button>
                             </div>
@@ -236,8 +322,8 @@
                             <div class="fw-bold">Гречишный мед</div>
                             <div class="small" style="color:#c8860a;">0.5 литра</div>
                             <div class="d-flex align-items-center justify-content-between mt-2">
-                                <span style="font-size:1.4rem; font-weight:bold;">11 <small class="fs-6 fw-normal">BYN</small></span>
-                                <button class="btn btn-warning btn-sm">
+                                <span style="font-size:1.4rem; font-weight:bold; line-height:1;">11 <small class="fs-6 fw-normal">BYN</small></span>
+                                <button class="btn btn-warning btn-sm p-2 rounded-3 btn-cart-icon">
                                     <img src="images/Market-icon.png" width="22" height="22">
                                 </button>
                             </div>
@@ -257,7 +343,8 @@
  
             </div>
  
-            <div class="border border-warning rounded mt-2 p-2">
+            <!-- Установлена толщина рамки border-2 -->
+            <div class="border border-warning border-2 rounded-3 mt-2 p-2">
                 <div class="d-flex align-items-center gap-2 mb-2 justify-content-start flex-wrap">
                     <span class="border border-warning rounded-circle flex-shrink-0" style="width:18px;height:18px;display:inline-block;"></span>
                     <span class="fw-bold small text-dark">Спецпредложение</span>
@@ -269,103 +356,215 @@
  
         <div class="col-lg-10">
  
-            <div class="d-flex d-lg-none flex-wrap gap-2 mb-3">
-                <a href="#" class="btn btn-sm btn-warning">Пчелиный мед</a>
-                <a href="#" class="btn btn-sm btn-outline-warning text-dark">Пчелиный воск</a>
-                <a href="#" class="btn btn-sm btn-outline-warning text-dark">Улья</a>
-                <a href="#" class="btn btn-sm btn-outline-warning text-dark">Прополис</a>
-                <a href="#" class="btn btn-sm btn-outline-warning text-dark">Рамки для ульев</a>
+            <div class="flex-wrap gap-2 mb-3 mobile-category-buttons d-flex d-lg-none">
+                <a href="#" class="btn btn-sm btn-warning fw-bold">Пчелиный мед</a>
+                <a href="#" class="btn btn-sm btn-outline-warning">Пчелиный воск</a>
+                <a href="#" class="btn btn-sm btn-outline-warning">Улья</a>
+                <a href="#" class="btn btn-sm btn-outline-warning">Прополис</a>
+                <a href="#" class="btn btn-sm btn-outline-warning">Рамки для ульев</a>
             </div>
  
+            <!-- Сетка карточек: row-cols-lg-4 увеличивает размер карточек, сохраняя их пропорции -->
             <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 mb-4">
  
+                <!-- Карточка 1 -->
                 <div class="col">
-                    <div class="card h-100 text-center p-2 border-warning">
-                        <img src="images/honey_jar.png" alt="Мед" class="img-fluid">
-                        <div class="card-title fw-bold small mt-2">Гречишный мед</div>
-                        <div class="fs-5 fw-bold">11 <span>BYN /0.5л</span></div>
-                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    <div class="card h-100 p-3 bg-white border-warning border-2 rounded-4">
+                        <img src="images/honey_jar.png" class="card-img-top img-fluid mx-auto" alt="Мед" style="max-height: 170px; object-fit: contain;">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between mt-3">
+                            <h5 class="card-title text-center fw-bold mb-3 custom-card-title">Гречишный мед</h5>
+                            <div class="d-flex align-items-center justify-content-between w-100 gap-2 mt-auto">
+                                <div class="d-flex align-items-baseline">
+                                    <span class="fw-bold custom-price-value">11</span>
+                                    <span class="ms-1 custom-price-currency">BYN</span>
+                                    <span class="ms-1 small custom-price-amount">/0.5л</span>
+                                </div>
+                                <!-- Большая кнопка покупки (px-3 py-2) -->
+                                <button class="btn btn-warning d-flex align-items-center justify-content-center px-3 py-2 rounded-3 btn-cart-icon" onclick="window.location.href='show_item.html'">
+                                    <img src="images/Market-icon.png" width="22" height="22" alt="В корзину">
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
  
+                <!-- Карточка 2 -->
                 <div class="col">
-                    <div class="card h-100 text-center p-2 border-warning">
-                        <img src="images/honey_jar.png" alt="Мед" class="img-fluid">
-                        <div class="card-title fw-bold small mt-2">Гречишный мед</div>
-                        <div class="fs-5 fw-bold">21 <span>BYN / 1л</span></div>
-                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    <div class="card h-100 p-3 bg-white border-warning border-2 rounded-4">
+                        <img src="images/honey_jar.png" class="card-img-top img-fluid mx-auto" alt="Мед" style="max-height: 170px; object-fit: contain;">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between mt-3">
+                            <h5 class="card-title text-center fw-bold mb-3 custom-card-title">Гречишный мед</h5>
+                            <div class="d-flex align-items-center justify-content-between w-100 gap-2 mt-auto">
+                                <div class="d-flex align-items-baseline">
+                                    <span class="fw-bold custom-price-value">21</span>
+                                    <span class="ms-1 custom-price-currency">BYN</span>
+                                    <span class="ms-1 small custom-price-amount">/ 1л</span>
+                                </div>
+                                <button class="btn btn-warning d-flex align-items-center justify-content-center px-3 py-2 rounded-3 btn-cart-icon" onclick="window.location.href='show_item.html'">
+                                    <img src="images/Market-icon.png" width="22" height="22" alt="В корзину">
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
  
+                <!-- Карточка 3 -->
                 <div class="col">
-                    <div class="card h-100 text-center p-2 border-warning">
-                        <img src="images/honey_jar.png" alt="Мед" class="img-fluid">
-                        <div class="card-title fw-bold small mt-2">Гречишный мед</div>
-                        <div class="fs-5 fw-bold">39 <span>BYN / 2л</span></div>
-                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    <div class="card h-100 p-3 bg-white border-warning border-2 rounded-4">
+                        <img src="images/honey_jar.png" class="card-img-top img-fluid mx-auto" alt="Мед" style="max-height: 170px; object-fit: contain;">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between mt-3">
+                            <h5 class="card-title text-center fw-bold mb-3 custom-card-title">Гречишный мед</h5>
+                            <div class="d-flex align-items-center justify-content-between w-100 gap-2 mt-auto">
+                                <div class="d-flex align-items-baseline">
+                                    <span class="fw-bold custom-price-value">39</span>
+                                    <span class="ms-1 custom-price-currency">BYN</span>
+                                    <span class="ms-1 small custom-price-amount">/ 2л</span>
+                                </div>
+                                <button class="btn btn-warning d-flex align-items-center justify-content-center px-3 py-2 rounded-3 btn-cart-icon" onclick="window.location.href='show_item.html'">
+                                    <img src="images/Market-icon.png" width="22" height="22" alt="В корзину">
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
  
+                <!-- Карточка 4 -->
                 <div class="col">
-                    <div class="card h-100 text-center p-2 border-warning">
-                        <img src="images/honey_jar.png" alt="Мед" class="img-fluid">
-                        <div class="card-title fw-bold small mt-2">Гречишный мед</div>
-                        <div class="fs-5 fw-bold">47 <span>BYN / 3л</span></div>
-                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    <div class="card h-100 p-3 bg-white border-warning border-2 rounded-4">
+                        <img src="images/honey_jar.png" class="card-img-top img-fluid mx-auto" alt="Мед" style="max-height: 170px; object-fit: contain;">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between mt-3">
+                            <h5 class="card-title text-center fw-bold mb-3 custom-card-title">Гречишный мед</h5>
+                            <div class="d-flex align-items-center justify-content-between w-100 gap-2 mt-auto">
+                                <div class="d-flex align-items-baseline">
+                                    <span class="fw-bold custom-price-value">47</span>
+                                    <span class="ms-1 custom-price-currency">BYN</span>
+                                    <span class="ms-1 small custom-price-amount">/ 3л</span>
+                                </div>
+                                <button class="btn btn-warning d-flex align-items-center justify-content-center px-3 py-2 rounded-3 btn-cart-icon" onclick="window.location.href='show_item.html'">
+                                    <img src="images/Market-icon.png" width="22" height="22" alt="В корзину">
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
  
+                <!-- Карточка 5 -->
                 <div class="col">
-                    <div class="card h-100 text-center p-2 border-warning">
-                        <img src="images/flower-honey.png" alt="Мед" class="img-fluid">
-                        <div class="card-title fw-bold small mt-2">Цветочный мед</div>
-                        <div class="fs-5 fw-bold">12 <span>BYN /0.5л</span></div>
-                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    <div class="card h-100 p-3 bg-white border-warning border-2 rounded-4">
+                        <img src="images/flower-honey.png" class="card-img-top img-fluid mx-auto" alt="Мед" style="max-height: 170px; object-fit: contain;">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between mt-3">
+                            <h5 class="card-title text-center fw-bold mb-3 custom-card-title">Цветочный мед</h5>
+                            <div class="d-flex align-items-center justify-content-between w-100 gap-2 mt-auto">
+                                <div class="d-flex align-items-baseline">
+                                    <span class="fw-bold custom-price-value">12</span>
+                                    <span class="ms-1 custom-price-currency">BYN</span>
+                                    <span class="ms-1 small custom-price-amount">/0.5л</span>
+                                </div>
+                                <button class="btn btn-warning d-flex align-items-center justify-content-center px-3 py-2 rounded-3 btn-cart-icon" onclick="window.location.href='show_item.html'">
+                                    <img src="images/Market-icon.png" width="22" height="22" alt="В корзину">
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
  
+                <!-- Карточка 6 -->
                 <div class="col">
-                    <div class="card h-100 text-center p-2 border-warning">
-                        <img src="images/flower-honey.png" alt="Мед" class="img-fluid">
-                        <div class="card-title fw-bold small mt-2">Цветочный мед</div>
-                        <div class="fs-5 fw-bold">23 <span>BYN / 1л</span></div>
-                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    <div class="card h-100 p-3 bg-white border-warning border-2 rounded-4">
+                        <img src="images/flower-honey.png" class="card-img-top img-fluid mx-auto" alt="Мед" style="max-height: 170px; object-fit: contain;">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between mt-3">
+                            <h5 class="card-title text-center fw-bold mb-3 custom-card-title">Цветочный мед</h5>
+                            <div class="d-flex align-items-center justify-content-between w-100 gap-2 mt-auto">
+                                <div class="d-flex align-items-baseline">
+                                    <span class="fw-bold custom-price-value">23</span>
+                                    <span class="ms-1 custom-price-currency">BYN</span>
+                                    <span class="ms-1 small custom-price-amount">/ 1л</span>
+                                </div>
+                                <button class="btn btn-warning d-flex align-items-center justify-content-center px-3 py-2 rounded-3 btn-cart-icon" onclick="window.location.href='show_item.html'">
+                                    <img src="images/Market-icon.png" width="22" height="22" alt="В корзину">
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
  
+                <!-- Карточка 7 -->
                 <div class="col">
-                    <div class="card h-100 text-center p-2 border-warning">
-                        <img src="images/flower-honey.png" alt="Мед" class="img-fluid">
-                        <div class="card-title fw-bold small mt-2">Цветочный мед</div>
-                        <div class="fs-5 fw-bold">33 <span>BYN / 2л</span></div>
-                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    <div class="card h-100 p-3 bg-white border-warning border-2 rounded-4">
+                        <img src="images/flower-honey.png" class="card-img-top img-fluid mx-auto" alt="Мед" style="max-height: 170px; object-fit: contain;">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between mt-3">
+                            <h5 class="card-title text-center fw-bold mb-3 custom-card-title">Цветочный мед</h5>
+                            <div class="d-flex align-items-center justify-content-between w-100 gap-2 mt-auto">
+                                <div class="d-flex align-items-baseline">
+                                    <span class="fw-bold custom-price-value">33</span>
+                                    <span class="ms-1 custom-price-currency">BYN</span>
+                                    <span class="ms-1 small custom-price-amount">/ 2л</span>
+                                </div>
+                                <button class="btn btn-warning d-flex align-items-center justify-content-center px-3 py-2 rounded-3 btn-cart-icon" onclick="window.location.href='show_item.html'">
+                                    <img src="images/Market-icon.png" width="22" height="22" alt="В корзину">
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
  
+                <!-- Карточка 8 -->
                 <div class="col">
-                    <div class="card h-100 text-center p-2 border-warning">
-                        <img src="images/flower-honey.png" alt="Мед" class="img-fluid">
-                        <div class="card-title fw-bold small mt-2">Цветочный мед</div>
-                        <div class="fs-5 fw-bold">45 <span>BYN / 3л</span></div>
-                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    <div class="card h-100 p-3 bg-white border-warning border-2 rounded-4">
+                        <img src="images/flower-honey.png" class="card-img-top img-fluid mx-auto" alt="Мед" style="max-height: 170px; object-fit: contain;">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between mt-3">
+                            <h5 class="card-title text-center fw-bold mb-3 custom-card-title">Цветочный мед</h5>
+                            <div class="d-flex align-items-center justify-content-between w-100 gap-2 mt-auto">
+                                <div class="d-flex align-items-baseline">
+                                    <span class="fw-bold custom-price-value">45</span>
+                                    <span class="ms-1 custom-price-currency">BYN</span>
+                                    <span class="ms-1 small custom-price-amount">/ 3л</span>
+                                </div>
+                                <button class="btn btn-warning d-flex align-items-center justify-content-center px-3 py-2 rounded-3 btn-cart-icon" onclick="window.location.href='show_item.html'">
+                                    <img src="images/Market-icon.png" width="22" height="22" alt="В корзину">
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
  
+                <!-- Карточка 9 -->
                 <div class="col">
-                    <div class="card h-100 text-center p-2 border-warning">
-                        <img src="images/dribinsky-med.png" alt="Мед" class="img-fluid">
-                        <div class="card-title fw-bold small mt-2">Дрибинский мед</div>
-                        <div class="fs-5 fw-bold">9 <span>BYN /0.1л</span></div>
-                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    <div class="card h-100 p-3 bg-white border-warning border-2 rounded-4">
+                        <img src="images/dribinsky-med.png" class="card-img-top img-fluid mx-auto" alt="Мед" style="max-height: 170px; object-fit: contain;">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between mt-3">
+                            <h5 class="card-title text-center fw-bold mb-3 custom-card-title">Дрибинский мед</h5>
+                            <div class="d-flex align-items-center justify-content-between w-100 gap-2 mt-auto">
+                                <div class="d-flex align-items-baseline">
+                                    <span class="fw-bold custom-price-value">9</span>
+                                    <span class="ms-1 custom-price-currency">BYN</span>
+                                    <span class="ms-1 small custom-price-amount">/0.1л</span>
+                                </div>
+                                <button class="btn btn-warning d-flex align-items-center justify-content-center px-3 py-2 rounded-3 btn-cart-icon" onclick="window.location.href='show_item.html'">
+                                    <img src="images/Market-icon.png" width="22" height="22" alt="В корзину">
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
  
+                <!-- Карточка 10 -->
                 <div class="col">
-                    <div class="card h-100 text-center p-2 border-warning">
-                        <img src="images/miheevsky-med.png" alt="Мед" class="img-fluid">
-                        <div class="card-title fw-bold small mt-2">Михеевский мед</div>
-                        <div class="fs-5 fw-bold">7 <span>BYN / 0.1л</span></div>
-                        <button onclick="window.location.href='show_item.html'" class="btn btn-sm btn-warning mt-2 w-100">В корзину</button>
+                    <div class="card h-100 p-3 bg-white border-warning border-2 rounded-4">
+                        <img src="images/miheevsky-med.png" class="card-img-top img-fluid mx-auto" alt="Мед" style="max-height: 170px; object-fit: contain;">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between mt-3">
+                            <h5 class="card-title text-center fw-bold mb-3 custom-card-title">Михеевский мед</h5>
+                            <div class="d-flex align-items-center justify-content-between w-100 gap-2 mt-auto">
+                                <div class="d-flex align-items-baseline">
+                                    <span class="fw-bold custom-price-value">7</span>
+                                    <span class="ms-1 custom-price-currency">BYN</span>
+                                    <span class="ms-1 small custom-price-amount">/ 0.1л</span>
+                                </div>
+                                <button class="btn btn-warning d-flex align-items-center justify-content-center px-3 py-2 rounded-3 btn-cart-icon" onclick="window.location.href='show_item.html'">
+                                    <img src="images/Market-icon.png" width="22" height="22" alt="В корзину">
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
  
