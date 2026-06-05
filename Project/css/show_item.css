@@ -1,334 +1,392 @@
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px 24px 60px;
+/* ══════════════════════════════════════════════
+   ПЕРЕМЕННЫЕ И БАЗОВЫЕ СТИЛИ
+══════════════════════════════════════════════ */
+:root {
+    --honey:        #d97706;
+    --honey-light:  #f5b800;
+    --honey-bg:     #fff9ee;
+    --honey-border: #f5d38f;
+    --cream:        #f8f1e3;
+    --grey-light:   #E1E1E1;
 }
 
-/*  ЕДИНЫЙ СТИЛЬ КНОПОК  */
-.btn {
+* { font-family: 'Alegreya Sans', sans-serif; }
+* a { text-decoration: none; }
+html, body { margin: 0; padding: 0; }
+
+/* ══════════════════════════════════════════════
+   NAVBAR — верхняя полоска
+══════════════════════════════════════════════ */
+.navbar-top {
+    background-color: var(--cream);
+}
+.navbar-top .nav-link {
+    font-size: 15px;
+    color: #333 !important;
+    padding: 8px 12px !important;
+}
+.navbar-top .nav-link:hover { color: var(--honey) !important; }
+
+/* ══════════════════════════════════════════════
+   NAVBAR — нижняя полоска
+══════════════════════════════════════════════ */
+.navbar-bottom {
+    background: #fff;
+    border-bottom-color: #ecddb5 !important;
+}
+
+/* Лого */
+.logo-text strong {
+    font-family: 'Alegreya SC', serif;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.2;
+}
+.logo-text span {
+    font-size: 13px;
+    color: var(--honey);
+    font-weight: 800;
+}
+
+/* ══════════════════════════════════════════════
+   МОБИЛЬНАЯ ПОЛОСКА — nb-* блоки
+   Лого и телефон — в одну строку,
+   корзина — переносится на всю ширину
+══════════════════════════════════════════════ */
+.nb-logo  { flex-shrink: 0; }
+.nb-phone { flex: 1 1 auto; justify-content: flex-end; }
+.nb-cart  { width: 100%; justify-content: center; }
+
+/* Поиск */
+.navbar-search {
+    background: var(--grey-light);
+    border: none;
+    border-radius: 30px;
+    padding: 8px 18px;
+    font-size: 14px;
+    outline: none;
+}
+.navbar-search:focus {
+    background: #fff;
+    box-shadow: 0 0 0 2px var(--honey-light);
+}
+
+/* Корзина */
+.cart-block {
+    background: var(--grey-light);
+    padding: 8px 14px;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+.cart-quantity {
+    background: var(--honey);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+.cart-link {
+    color: #333;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+.cart-link:hover { color: var(--honey); }
+
+/* ══════════════════════════════════════════════
+   ЖЁЛТАЯ ПОЛОСА
+══════════════════════════════════════════════ */
+.header-bar {
+    background: linear-gradient(90deg, #f5b800, #ffcc00);
+    padding: 16px 0;
+}
+.header-bar .breadcrumbs {
+    font-size: 13px;
+    color: #6b4a00;
+    margin-bottom: 4px;
+}
+.header-title {
+    font-family: 'Alegreya SC', serif;
+    font-size: clamp(16px, 4vw, 26px); /* плавный размер вместо медиа-запроса */
+    font-weight: 700;
+    color: #333;
+}
+
+/* ══════════════════════════════════════════════
+   ОБЩАЯ КАРТОЧКА (медовый стиль)
+══════════════════════════════════════════════ */
+.honey-box {
+    background: var(--honey-bg);
+    border: 3px solid var(--honey-border);
+    border-radius: 22px;
+    padding: 22px;
+}
+
+/* ══════════════════════════════════════════════
+   КНОПКИ
+══════════════════════════════════════════════ */
+.btn-honey {
+    background: var(--honey);
+    color: #fff;
+    border: 2px solid var(--honey);
     border-radius: 30px;
     font-family: 'Alegreya SC', serif;
     font-weight: 700;
-    font-size: 16px;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 24px;
-    border: 2px solid transparent;
-    cursor: pointer;  /* добавь */
+    padding: 10px 22px;
+    cursor: pointer;
 }
+.btn-honey:hover { background: #b85e00; border-color: #b85e00; color: #fff; }
 
-
-/* Основная кнопка (оранжевая) */
-.btn-primary {
-    background: #d97706;
-    color: white;
-    border-color: #d97706;
-}
-
-
-/* Кнопка с обводкой */
-.btn-outline {
+.btn-honey-outline {
     background: transparent;
-    color: #d97706;
-    border-color: #e8c46d;
+    color: var(--honey);
+    border: 2px solid var(--honey-border);
+    border-radius: 30px;
+    font-family: 'Alegreya SC', serif;
+    font-weight: 700;
+    padding: 10px 22px;
+    cursor: pointer;
 }
+.btn-honey-outline:hover { background: var(--honey-bg); color: var(--honey); }
 
-/*  БЛОК ТОВАРА  */
-.product-section {
-    display: grid;
-    grid-template-columns: 42% 28% 1fr;
-    gap: 24px;
-    margin-bottom: 40px;
-    align-items: stretch;
-}
+/* ══════════════════════════════════════════════
+   БЛОК ТОВАРА
+══════════════════════════════════════════════ */
+.price-title { font-size: 20px; font-weight: 700; color: #333; margin-bottom: 8px; }
+.price-label { color: #999; font-size: 14px; margin: 0; }
+.price-value { font-size: 26px; font-weight: 700; color: #333; margin: 0 0 14px; }
 
-.product-image-wrap {
-    background: #fff9ee;
-    border: 3px solid #f5d38f;
-    border-radius: 22px;
-    padding: 20px;
-}
-
-.product-image-wrap img {
-    width: 100%;
-    height: auto;
-    display: block;
-    max-height: 520px;
-    object-fit: contain;
-    border-radius: 12px;
-}
-
-.product-buy {
-    background: #fff9ee;
-    border: 3px solid #f5d38f;
-    border-radius: 22px;
-    padding: 28px 24px;
-    text-align: center;
-}
-.product-buy .btn-share {
-    margin-top: auto;  /* прижимает кнопку "Поделиться" вниз */
-}
-/*  КАТЕГОРИИ  */
-.product-categories {
-    background: #fff9ee;
-    border: 3px solid #f5d38f;
-    border-radius: 22px;
-    padding: 26px 22px;
-    height: auto;
-}
-
+/* Категории */
 .product-categories h3 {
     font-family: 'Alegreya SC', serif;
-    font-size: 15px;
+    font-size: 13px;
     color: #999;
-    margin: 0 0 20px 0;
     text-transform: uppercase;
+    margin-bottom: 16px;
 }
-.product-buy .btn-cart,
-.product-buy .btn-share {
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
-    box-sizing: border-box;
-}
-.product-categories ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-
-}
-
 .product-categories li a {
-    display: flex;
-    align-items: center;
-    padding: 12px 16px;
+    padding: 10px 8px;
     color: #444;
-    font-size: 15.5px;
+    font-size: 15px;
+}
+.product-categories li a:hover,
+.product-categories li a.active { color: var(--honey); }
+.product-categories hr {
+    border: none;
+    background: var(--honey);
+    height: 2px;
+    width: 90%;
+    margin: 0;
 }
 
-
-/*  ПОХОЖИЕ ТОВАРЫ  */
-.related-section {
-    margin-top: 50px;
-    margin-bottom: 70px;
-}
-.related-section h2 {
-    margin-bottom: 24px;
-}
-.related-grid {
-    display: flex;
-    flex-direction: row;
-    gap: 26px;
-    width: 100%;
-    align-items: stretch;
-}
-.related-card {
-    background: #fff9ee;
-    border: 3px solid #f5d38f;
-    border-radius: 20px;
-    padding: 18px 16px;
-    text-align: center;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-.related-card img {
-    width: 100%;
-    flex: 1;
-    min-height: 150px;   /* минимальная высота чтобы не схлопнулось */
-    object-fit: cover;
-    border-radius: 14px;
-    border: 2px solid #f5d38f;
-    margin-bottom: 12px;
-}
-.card-name {
-    font-weight: 600;
-    margin: 8px 0 4px;
-    color: #333;
-}
-.card-price {
-    font-family: 'Alegreya SC', serif;
-    font-size: 19px;
-    font-weight: 700;
-    color: #d97706;
-    margin-bottom: 12px;
-}
-/*  КОНСУЛЬТАЦИЯ  */
-.consult-section {
-    display: flex;
-    gap: 50px;
-    background: #fff9ee;
-    border: 3px solid #f5d38f;
-    border-radius: 22px;
-    padding: 45px 40px;
-    align-items: center;
-}
-
-.consult-form-side {
-    flex: 1;
-    order: 0;   
-}
-
-.consult-image-side {
-    flex: 0 0 300px;
-    overflow: hidden;
-}
-
-.consult-image-side img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-}
-
-/*    */
+/* ══════════════════════════════════════════════
+   ТАБЫ
+══════════════════════════════════════════════ */
 .tabs-bar {
     background: #f0e6d0;
-    border: 2px solid #f5d38f;
+    border: 2px solid var(--honey-border);
     border-radius: 16px;
-    padding: 6px;
-    width: fit-content;
-    margin-bottom: 20px;
+    padding: 5px;
 }
-
 .tab-btn {
     background: none;
     border: none;
-    padding: 11px 28px;
+    padding: 10px 24px;
     border-radius: 12px;
     cursor: pointer;
     font-size: 15px;
 }
+.tab-btn.active { background: #fff; font-weight: 700; }
+.tab-content { padding: 28px; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.chars-table td { padding: 8px 16px; }
+.chars-table tr:nth-child(odd) { background: #fff3d6; }
 
-.tab-btn.active {
-    background: white;
+/* ══════════════════════════════════════════════
+   ЗАГОЛОВКИ СЕКЦИЙ
+══════════════════════════════════════════════ */
+.section-title {
+    font-family: 'Alegreya SC', serif;
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+/* ══════════════════════════════════════════════
+   ПОХОЖИЕ ТОВАРЫ
+══════════════════════════════════════════════ */
+.related-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 2px solid var(--honey-border);
+}
+.card-name  { font-weight: 600; color: #333; margin-bottom: 4px; }
+.card-price {
+    font-family: 'Alegreya SC', serif;
+    font-size: 18px;
     font-weight: 700;
+    color: var(--honey);
+    margin-bottom: 10px;
 }
 
-.tab-content {
-    background: #fff9ee;
-    border: 3px solid #f5d38f;
-    border-radius: 20px;
-    padding: 32px 30px;
-    margin-bottom: 50px;
-}
-
-/*  МЕЛКИЕ УЛУЧШЕНИЯ  */
-.price-value {
-    font-size: 27px;
-    font-weight: 700;
-    color: #333;
-}
-
-.qty-control {
-    padding: 5px;
-}
-/*  ПОЛЯ ВВОДА   */
+/* ══════════════════════════════════════════════
+   КОНСУЛЬТАЦИЯ
+══════════════════════════════════════════════ */
 .form-input {
     display: block;
-    width: 100%;
-    box-sizing: border-box;  
-    max-width: 340px;
-    padding: 14px 20px;
-    margin-bottom: 14px;
+    padding: 12px 20px;
+    margin-bottom: 12px;
     background: #fff;
-    border: 2px solid #e8c46d;
+    border: 2px solid var(--honey-border);
     border-radius: 30px;
-    font-family: 'Alegreya Sans', sans-serif;
     font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+}
+.form-input:focus { border-color: var(--honey); }
+
+/* ══════════════════════════════════════════════
+   КАРУСЕЛЬ
+══════════════════════════════════════════════ */
+.promo-carousel {
+    background: #FFF9E6;
+    border-top: 3px solid #F2A359;
+    border-bottom: 3px solid #F2A359;
+}
+.promo-carousel .carousel-inner { min-height: 90px; }
+.promo-text { font-size: 20px; color: #3E2723; margin: 0; }
+.promo-text span { color: #F2A359; }
+.promo-link { color: #F2A359; text-decoration: underline; }
+.promo-img  { height: 48px; }
+.carousel-indicators [data-bs-target] { background-color: #F2A359; }
+.carousel-control-prev-icon,
+.carousel-control-next-icon { filter: invert(1) sepia(1) saturate(3) hue-rotate(340deg); }
+
+/* ══════════════════════════════════════════════
+   ФУТЕР
+══════════════════════════════════════════════ */
+footer { border-top: 3px solid var(--honey-light); }
+.footer-drops { background: var(--cream); line-height: 0; }
+.footer-nav   { background: var(--cream); }
+
+/* ══════════════════════════════════════════════
+   JQUERY UI — перекраска под медовый стиль
+══════════════════════════════════════════════ */
+
+/* Tabs */
+#product-tabs.ui-tabs {
+    background: var(--honey-bg);
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+#product-tabs .ui-tabs-nav {
+    background: #f0e6d0;
+    border: none;
+    border-bottom: 2px solid var(--honey-border);
+    border-radius: 0;
+    padding: 5px 5px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+#product-tabs .ui-tabs-nav li {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    border: none;
+    background: none;
+    border-radius: 12px 12px 0 0;
+}
+#product-tabs .ui-tabs-nav li a {
+    display: block;
+    padding: 10px 8px;
+    font-size: 15px;
+    color: #444;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+#product-tabs .ui-tabs-nav li.ui-tabs-active {
+    background: #fff;
+    border: none;
+    margin-bottom: -1px;
+}
+#product-tabs .ui-tabs-nav li.ui-tabs-active a {
+    font-weight: 700;
+    color: var(--honey);
+}
+#product-tabs .ui-tabs-panel {
+    padding: 22px;
+    background: var(--honey-bg);
+    border: none;
+}
+
+/* Accordion (FAQ) */
+#faq-accordion.ui-accordion {
+    font-family: 'Alegreya Sans', sans-serif;
+}
+#faq-accordion .ui-accordion-header {
+    background: var(--honey-bg);
+    border: none;
+    border-bottom: 2px solid var(--honey-border);
+    border-radius: 0 !important;
     color: #333;
-    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px 20px;
+    cursor: pointer;
+    transition: background .2s;
+}
+#faq-accordion .ui-accordion-header:hover,
+#faq-accordion .ui-accordion-header.ui-state-active {
+    background: #fff3d6;
+    color: var(--honey);
+    border-color: var(--honey-border);
+}
+#faq-accordion .ui-accordion-header .ui-icon {
+    color: var(--honey);
+}
+#faq-accordion .ui-accordion-content {
+    background: #fff;
+    border: none;
+    border-bottom: 2px solid var(--honey-border);
+    padding: 16px 20px;
+    font-size: 15px;
+    color: #444;
 }
 
-
-/* ===================== АДАПТИВ ===================== */
-
-/* ===== ПЛАНШЕТ (до 900px) ===== */
-@media (max-width: 900px) {
-
-    main {
-        padding: 30px 20px 60px;
-    }
-
-    /* Товар: картинка + покупка рядом, категории под ними */
-    .product-section {
-        grid-template-columns: 1fr 1fr;
-    }
-    .product-categories {
-        grid-column: 1 / -1; /* на всю ширину */
-        height: auto;
-    }
-    /* Категории горизонтально  */
-    .product-categories ul {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .product-categories li {
-        border-bottom: none;
-        border-right: 1px solid #CCC2C2;
-    }
-
-    /* Похожие — по два в ряд */
-    .related-grid {
-        flex-wrap: wrap;
-    }
-    .related-card {
-        flex: 1 1 calc(50% - 13px);
-    }
-
-    /* Консультация — картинка уменьшается */
-    .consult-section {
-        gap: 30px;
-        padding: 30px 24px;
-    }
-    .consult-image-side {
-        flex: 0 0 240px;
-    }
+/* Datepicker */
+.ui-datepicker {
+    font-family: 'Alegreya Sans', sans-serif;
+    border: 2px solid var(--honey-border);
+    border-radius: 12px;
 }
-
-/* ===== МОБИЛЬНЫЙ (до 600px) ===== */
-@media (max-width: 400px) {
-
-    main {
-        padding: 16px 12px 40px;
-    }
-
-    /* Всё в одну колонку */
-    .product-section {
-        grid-template-columns: 1fr;
-    }
-    .product-categories {
-        grid-column: auto;
-    }
-
-    /* Табы растягиваются */
-    .tabs-bar {
-        width: 100%;
-        display: flex;
-    }
-    .tab-btn {
-        flex: 1;
-        font-size: 13px;
-        padding: 10px 8px;
-    }
-
-    /* Похожие — по одному */
-    .related-card {
-        flex: 1 1 100%;
-    }
-
-    /* Консультация вертикально */
-    .consult-section {
-        flex-direction: column;
-        padding: 24px 16px;
-    }
-.consult-image-side {
-    flex: 0 0 300px;
-    overflow: hidden;
+.ui-datepicker .ui-datepicker-header {
+    background: var(--honey);
+    border: none;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
 }
-    .form-input {
-        max-width: 100%;
-    }
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+    top: 6px;
+    cursor: pointer;
+}
+.ui-datepicker td .ui-state-default { border: none; background: none; }
+.ui-datepicker td .ui-state-hover   { background: #fff3d6; border-radius: 6px; }
+.ui-datepicker td .ui-state-active  { background: var(--honey); color: #fff; border-radius: 6px; }
+.ui-datepicker .ui-datepicker-buttonpane button {
+    background: var(--honey);
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    padding: 4px 14px;
+    cursor: pointer;
 }
