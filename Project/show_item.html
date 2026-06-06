@@ -5,124 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сайт конкретного мёда</title>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@400;700&family=Alegreya+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/show_item.css">
-    <link rel="stylesheet" href="css/base-layout.css">
     <link rel="icon" type="image/png" href="images/logo-placeholder.png">
+    <meta name="description" content="Натуральный мёд с частной пасеки ЗПОИС23. Гречишный, липовый и другие сорта мёда напрямую от пчеловода в Беларуси.">
 </head>
 <body>
+
+<!-- ══════════════ HEADER ══════════════ -->
 <header>
-    <!-- Десктоп: верхнее меню -->
-    <div class="top-menu">
-        <nav>
-            <ul>
-                <li><a href="landing.html">Главная</a></li>
-                <li><a href="catalog.html">Каталог</a></li>
-                <li><a href="landing.html#warranty">Гарантия</a></li>
-                <li><a href="landing.html#reviews">Отзывы</a></li>
-                <li><a href="#contacts">Контакты</a></li>
-                <li><a href="catalog.html#how-to-choose-honey">Как выбрать мед?</a></li>
-            </ul>
-        </nav>
-    </div>
 
-    <!-- Десктоп: основная часть -->
-    <table class="main-header">
-        <tr>
-            <td class="logo-block">
-                <img src="images/logo-placeholder.png" alt="лого" width="65">
-                <div class="logo-text">
-                    <strong>ЧАСТНАЯ ПАСИКА</strong>
-                    <span>ЗПОИС23</span>
-                </div>
-            </td>
-            <td class="search-block">
-                <div class="search-wrap">
-                    <input type="text" placeholder="Поиск...">
-                </div>
-            </td>
-            <td class="phone-block">
-                <table>
-                    <tr>
-                        <td><img src="images/phone-icon.png"></td>
-                        <td>
-                            <strong>+375 (33) 628-86-72</strong><br>
-                            <small>Принимаем звонки с 8 до 16</small>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-            <td class="cart-block">
-                <img src="images/Market-icon.png" alt="корзина">
-                <div class="cart-quantity">1</div>
-                <div class="cart-links">
-                    <a href="#">В КОРЗИНУ</a>
-                    <a href="#">ПОДЕЛИТЬСЯ</a>
-                </div>
-            </td>
-        </tr>
-    </table>
+    <!-- Верхняя полоска: навигация -->
+    <nav class="navbar navbar-expand-lg navbar-top py-1">
+        <div class="container">
+            <button class="navbar-toggler border-0" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#topNav"
+                    aria-expanded="false" aria-label="Открыть меню">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="topNav">
+                <ul class="navbar-nav mx-auto gap-1">
+                    <li class="nav-item"><a class="nav-link" href="landing.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+                    <li class="nav-item"><a class="nav-link" href="landing.html#warranty">Гарантия</a></li>
+                    <li class="nav-item"><a class="nav-link" href="landing.html#reviews">Отзывы</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalog.html#how-to-choose-honey">Как выбрать мёд?</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Мобильная шапка -->
-    <div class="mobile-header">
-        <div class="mobile-top">
-            <div class="logo-block">
-                <img src="images/logo-placeholder.png" alt="лого" width="45">
-                <div class="logo-text">
-                    <strong>ЧАСТНАЯ ПАСИКА</strong>
-                    <span>ЗПОИС23</span>
+    <!-- Нижняя полоска -->
+    <div class="navbar-bottom border-bottom">
+        <div class="container py-2">
+
+            <!-- Десктоп (lg+) -->
+            <div class="d-none d-lg-flex align-items-center justify-content-between gap-3">
+                <a href="landing.html" class="d-flex align-items-center gap-2 text-decoration-none flex-shrink-0">
+                    <img src="images/logo-placeholder.png" alt="лого" width="45" height="45">
+                    <div class="logo-text">
+                        <strong class="d-block lh-sm">ЧАСТНАЯ ПАСЕКА</strong>
+                        <span>ЗПОИС23</span>
+                    </div>
+                </a>
+                <input type="text" class="navbar-search flex-grow-1" placeholder="Поиск...">
+                <div class="flex-shrink-0 text-end">
+                    <strong class="d-block lh-sm" style="font-size:15px;color:#333">+375 (33) 628-86-72</strong>
+                    <small class="text-muted">Принимаем звонки с 8 до 16</small>
+                </div>
+                <div class="cart-block d-flex align-items-center gap-2 flex-shrink-0">
+                    <img src="images/Market-icon.png" alt="корзина" width="34" height="34">
+                    <div class="cart-quantity">1</div>
+                    <div class="d-flex flex-column lh-1">
+                        <a href="#" id="cartLink" class="cart-link">В КОРЗИНУ</a>
+                        <a href="#" id="shareLink" class="cart-link mt-1">ПОДЕЛИТЬСЯ</a>
+                    </div>
                 </div>
             </div>
-            <img src="images/Market-icon.png" alt="корзина" class="mobile-cart-icon">
-        </div>
-        <hr class="mobile-divider">
-        <div class="mobile-bottom">
-            <button class="burger">☰</button>
-            <input type="text" class="mobile-search" placeholder="Поиск...">
-            <img src="images/phone-icon.png" class="mobile-phone-icon" alt="Телефон">
+
+            <!-- Мобайл/планшет (< lg): flex-wrap, управляем через nb-* классы -->
+            <div class="d-flex d-lg-none flex-wrap gap-2">
+
+                <!-- Лого — всегда первый, не растягивается -->
+                <a href="landing.html" class="d-flex align-items-center gap-2 text-decoration-none nb-logo">
+                    <img src="images/logo-placeholder.png" alt="лого" width="40" height="40">
+                    <div class="logo-text">
+                        <strong class="d-block lh-sm">ЧАСТНАЯ ПАСЕКА</strong>
+                        <span>ЗПОИС23</span>
+                    </div>
+                </a>
+<!-- Телефон — справа от лого на xs, вся ширина на очень маленьких -->
+                <a href="tel:+375336288672" class="d-flex align-items-center gap-2 text-decoration-none nb-phone">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#d97706" viewBox="0 0 16 16">
+                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                    </svg>
+                    <div>
+                        <strong class="d-block lh-sm" style="font-size:13px;color:#333;white-space:nowrap">+375 (33) 628-86-72</strong>
+                        <small class="text-muted" style="font-size:11px">с 8 до 16</small>
+                    </div>
+                </a>
+
+                <!-- Корзина — переносится на всю ширину -->
+                <div class="cart-block d-flex align-items-center gap-2 nb-cart">
+                    <img src="images/Market-icon.png" alt="корзина" width="34" height="34">
+                    <div class="cart-quantity">1</div>
+                    <div class="d-flex flex-column lh-1">
+                        <a href="#" class="cart-link">В КОРЗИНУ</a>
+                        <a href="#" class="cart-link mt-1">ПОДЕЛИТЬСЯ</a>
+                    </div>
+                </div>
+
+                <!-- Поиск — всегда последний, вся ширина -->
+                <input type="text" class="navbar-search w-100" placeholder="Поиск...">
+
+            </div>
+
         </div>
     </div>
 
-    <!-- Общая жёлтая полоса -->
+    <!-- Жёлтая полоса -->
     <div class="header-bar">
-        <div class="breadcrumbs">Главная → Каталог → Пчелиный мёд</div>
-        <h1>НАТУРАЛЬНЫЙ МЁД ОТ ПЧЕЛОВОДА</h1>
+        <div class="container">
+            <div class="breadcrumbs">Главная → Каталог → Пчелиный мёд</div>
+            <h1 class="header-title mb-0">НАТУРАЛЬНЫЙ МЁД ОТ ПЧЕЛОВОДА</h1>
+        </div>
     </div>
+
 </header>
+<!-- ══════════════ MAIN ══════════════ -->
+<main class="container py-4">
 
-<main>
-    <section class="product-section">
-        <div class="related-card img">
-            <img src="images/catalog/Honey_honeycomb.jpg" alt="Банка мёда">
-        </div>
-        <div class="product-buy">
-            <p class="price-value" >Соты в мёдах или мёд в сотах</p>
-            <p class="price-label">Цена</p>
-            <p class="price-value">1700 руб / 3 кг</p>
-            <div class="qty-control">
-                <button class="btn-outline" style="     border-radius: 5px">−</button>
-                <span>1</span>
-                <button class="btn-primary" style="border-radius: 5px">+</button>
+    <!-- ── Блок товара ── -->
+    <section class="row g-3 mb-4">
+
+        <!-- Фото -->
+        <div class="col-12 col-lg-5">
+            <div class="honey-box h-100">
+                <img src="images/catalog/Honey_honeycomb.jpg" alt="Банка мёда" width="500" height="420"
+                     class="img-fluid rounded-3 w-100" style="object-fit:cover; max-height:420px;">
             </div>
-            <button class="btn btn-primary btn-cart">В корзину</button>
-             <a href="https://vk.com/share.php?url=https://yoursite.ru/show_item.html&title=Натуральный%20мёд%20от%20пчеловода%20-%201700%20руб%20за%203%20л" target="_blank" class="btn btn-outline btn-share">Поделиться</a>
-      
-        </div>  
-        <div class="product-categories">
-            <h3>Категории</h3>
-            <ul>
-                <li class="active"><a href="#">Пчелиный мёд</a></li><br><hr style="border: none; background-color: #d97706; height: 3px; width: 90%;">
-
-                <li><a href="#">Пчелиный воск</a></li><br><hr style="border: none; background-color: #d97706; height: 3px; width: 90%;">
-                
-                <li><a href="#">Улья</a></li><br><hr style="border: none; background-color: #d97706; height: 3px; width: 90%;">
-
-                <li><a href="#">Рамки для ульев</a></li><br><hr style="border: none; background-color: #d97706; height: 3px; width: 90%;">
-
-                <li><a href="#">Прополис</a></li>
-            </ul>
         </div>
+
+        <!-- Покупка -->
+        <div class="col-12 col-lg-4">
+            <div class="honey-box h-100 text-center d-flex flex-column">
+                <p class="price-title">Соты в мёдах или мёд в сотах</p>
+                <p class="price-label">Цена</p>
+                <p class="price-value">1700 руб / 3 кг</p>
+
+                <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
+                    <button class="btn btn-honey-outline px-3" id="qty-minus">−</button>
+                    <span class="fs-4 fw-bold" id="qty-value">1</span>
+                    <button class="btn btn-honey px-3" id="qty-plus">+</button>
+                </div>
+
+                <button class="btn btn-honey w-100 mb-2">В корзину</button>
+                <a href="https://vk.com/share.php?url=https://yoursite.ru/show_item.html"
+                   target="_blank" class="btn btn-honey-outline w-100">Поделиться</a>
+            </div>
+        </div>
+
+       
+<!-- Категории -->
+<div class="col-12 col-lg-3">
+    <div class="honey-box h-100 product-categories">
+        <h2 class="section-title mb-3"> <!-- Изменили h3 → h2 -->
+            <img src="images/point.png" width="24" height="24" alt="Разделитель"> 
+            Категории
+        </h2>
+        <ul class="d-flex flex-wrap flex-lg-column gap-lg-0 list-unstyled p-0 m-0">
+            <li><a href="#" class="d-block active">Пчелиный мёд</a><hr></li>
+            <li><a href="#" class="d-block">Пчелиный воск</a><hr></li>
+            <li><a href="#" class="d-block">Улья</a><hr></li>
+            <li><a href="#" class="d-block">Рамки для ульев</a><hr></li>
+            <li><a href="#" class="d-block">Прополис</a></li>
+        </ul>
+    </div>
+</div>
+
     </section>
 
+    <!-- ── Табы (визуальные, как в 0 версии) ── -->
     <div class="tabs-bar">
         <button class="tab-btn active">Описание</button>
         <button class="tab-btn">Характеристики</button>
@@ -132,7 +176,7 @@
     <div class="tab-content">
         <div class="tab-panel active">
             <h3>Текст описания</h3>
-            <p>ДАнные соты были добыты из пчел из мадрида,</p>
+            <p>Данные соты были добыты из ульев частной пасеки. Натуральный продукт без добавок.</p>
         </div>
         <div class="tab-panel">
             <h3>Характеристики</h3>
@@ -146,111 +190,204 @@
         </div>
         <div class="tab-panel">
             <h3>Отзывы покупателей</h3>
-            <p>Сергей П. - "Очень вкусно вай мама моя женщина."<p>
-        </div>
-    </div>
-<div class="map-section">
-    <h2><img src="images/point.png"> Наша пасека на карте</h2>
-    <div align = "center">
-        <script type="text/javascript" charset="utf-8" async
-            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A17efa16e6b8e44e4e2fc7febe5a5d5d11af5bc6e2d7fc3f32920bd06f407242c&height=400&lang=ru_RU&scroll=true">
-        </script>
-    </div>
-</div>
-    <div class="related-section">
-        <h2><img src="images/point.png"> Похожие товары</h2>
-        <div class="related-grid">
-            <div class="related-card">
-                <img src="images/catalog/frame_dadan.png" alt="Гречишный мёд 2 л.">
-                <div class="card-name">Рамка дадан, 1шт</div>
-                <div class="card-price">1200 руб</div>
-                <button class="btn btn-outline btn-detail">Подробнее</button>
-                <button class="btn btn-primary btn-cart-sm">В корзину</button>
-            </div>
-            <div class="related-card">
-                <img src="images/catalog/wax_bleached.jpg">
-                <div class="card-name">Воск отбеленный, 1 кг.</div>
-                <div class="card-price">700 руб</div>
-                <button class="btn btn-outline btn-detail">Подробнее</button>
-                <button class="btn btn-primary btn-cart-sm">В корзину</button>
-            </div>
-            <div class="related-card">
-                <img src="images/catalog/Honey_liquid.jpg" alt="Гречишный мёд 0,5 л.">
-                <div class="card-name">Гречишный мёд 0,5 л.</div>
-                <div class="card-price">350 руб</div>
-                <button class="btn btn-outline btn-detail">Подробнее</button>
-                <button class="btn btn-primary btn-cart-sm">В корзину</button>
-            </div>
+            <p>Сергей П. — «Очень вкусно, рекомендую!»</p>
         </div>
     </div>
 
-
-    <section class="consult-section">
-        <div class="consult-form-side">
-            <h2><img src="images/point.png"> Бесплатная консультация</h2>
-            <p>Отправьте запрос — и мы вам позвоним</p>
-            <input type="text" class="form-input" placeholder="Имя">
-            <input type="tel" class="form-input" placeholder="Телефон">            
-            <button class="btn btn-primary">Подробнее</button>
-        </div>
-        <div class="consult-image-side">
-            <img src="images/The beekeeper.png" alt="Пчеловод">
-        </div>
-    </section>
+<!-- ── Карта ── -->
+<div class="mb-5">
+    <h2 class="section-title">
+        <img src="images/point.png" width="24" height="24" alt="Разделитель"> 
+        Наша пасека на карте
+    </h2>
     
-
-
-
-</main>
-</main>
-
-<div class="promo-ticker">
-    <div class="promo-ticker__wrapper">
-        <div class="promo-ticker__line">
-            <p class="promo-ticker__text">купили мёд? <span>Смажьте им братские булочки<img src ="images/Brothers_buns.jpg" class="promo-ticker__image"></span></p>
-            <div class="promo-ticker__star">★</div>
-            <p class="promo-ticker__text">По вопросам: <span>chastnayapaseka3pois23@gmail.com</span></p>
-            <div class="promo-ticker__star">★</div>
-            <p class="promo-ticker__text">Зашли к нам <span>Зайдите в Братские булочки</span><img src ="images/Brothers_buns.jpg" class="promo-ticker__image"></p>
-            <div class="promo-ticker__star">★</div>
-        </div>
-        <div class="promo-ticker__line">
-            <p class="promo-ticker__text">купили мёд? <span>Смажьте им братские булочки<img src ="images/Brothers_buns.jpg" class="promo-ticker__image"></span></p>
-            <div class="promo-ticker__star">★</div>
-            <p class="promo-ticker__text">По вопросам: <span>chastnayapaseka3pois23@gmail.com</span></p>
-            <div class="promo-ticker__star">★</div>
-            <p class="promo-ticker__text">Зашли к нам <span>Зайдите в Братские булочки<img src ="images/Brothers_buns.jpg" class="promo-ticker__image"></span></p>
-            <div class="promo-ticker__star">★</div>
-        </div>
+    <div class="text-center">
+        
+        <iframe 
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A17efa16e6b8e44e4e2fc7febe5a5d5d11af5bc6e2d7fc3f32920bd06f407242c&amp;source=constructor"
+            width="100%" 
+            height="400" 
+            frameborder="0" 
+            title="Карта расположения нашей пасеки в Республике Беларусь"
+            allowfullscreen>
+        </iframe>
+        
+        <p class="mt-3 text-muted small">
+            <a href="https://yandex.ru/maps/..." target="_blank" rel="noopener">
+                Открыть в Яндекс.Картах →
+            </a>
+        </p>
     </div>
 </div>
 
+    <!-- ── Похожие товары ── -->
+    <div class="mb-5">
+        <h2 class="section-title"><img src="images/point.png" width="24" height="24" alt="разделитель"> Похожие товары</h2>
+        <div class="row g-3">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="honey-box related-card h-100 d-flex flex-column text-center">
+                    <img src="images/catalog/frame_dadan.png" alt="Рамка дадан" class="related-img mb-2">
+                    <div class="card-name">Рамка дадан, 1шт</div>
+                    <div class="card-price">1200 руб</div>
+                    <div class="d-flex gap-2 mt-auto">
+                        <button class="btn btn-honey-outline btn-sm flex-fill">Подробнее</button>
+                        <button class="btn btn-honey btn-sm flex-fill">В корзину</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="honey-box related-card h-100 d-flex flex-column text-center">
+                    <img src="images/catalog/wax_bleached.jpg" alt="Воск отбеленный" class="related-img mb-2">
+                    <div class="card-name">Воск отбеленный, 1 кг.</div>
+                    <div class="card-price">700 руб</div>
+                    <div class="d-flex gap-2 mt-auto">
+                        <button class="btn btn-honey-outline btn-sm flex-fill">Подробнее</button>
+                        <button class="btn btn-honey btn-sm flex-fill">В корзину</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="honey-box related-card h-100 d-flex flex-column text-center">
+                    <img src="images/catalog/Honey_liquid.jpg" alt="Гречишный мёд" class="related-img mb-2">
+                    <div class="card-name">Гречишный мёд 0,5 л.</div>
+                    <div class="card-price">350 руб</div>
+                    <div class="d-flex gap-2 mt-auto">
+                        <button class="btn btn-honey-outline btn-sm flex-fill">Подробнее</button>
+                        <button class="btn btn-honey btn-sm flex-fill">В корзину</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+<!-- ── Консультация ── -->
+<section class="honey-box mb-4">
+    <div class="row align-items-center g-4">
+        <div class="col-12 col-md-7">
+            <h2 class="section-title">
+                <img src="images/point.png" width="24" height="24" alt="Разделитель"> 
+                Бесплатная консультация
+            </h2>
+            <p>Отправьте запрос — и мы вам позвоним</p>
+            <input type="text" class="form-input w-100" placeholder="Имя">
+            <input type="tel" class="form-input w-100" placeholder="Телефон">
+            <button class="btn btn-honey mt-2">Отправить</button>
+        </div>
+        <div class="col-12 col-md-5">
+            <!-- Исправленное изображение -->
+            <img src="images/The beekeeper.png" 
+                 alt="Пчеловод" 
+                 width="600" 
+                 height="400"
+                 class="img-fluid rounded-4 w-100">
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- КАРУСЕЛЬ С РЕКЛАМОЙ -->
+<div class="promo-carousel border-top border-bottom py-3 overflow-hidden">
+    <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4500">
+        
+        <div class="carousel-inner">
+
+            <!-- Слайд 1 -->
+            <div class="carousel-item active">
+                <div class="container text-center px-3">
+                    <p class="promo-text mb-0 fw-medium">
+                        Купили мёд? <span>Смажьте им братские булочки!</span>
+                    </p>
+                    <img src="images/Brothers_buns.jpg" 
+                         alt="Братские булочки" 
+                         class="promo-img rounded mt-1">
+                </div>
+            </div>
+
+            <!-- Слайд 2 -->
+            <div class="carousel-item">
+                <div class="container text-center px-3">
+                    <p class="promo-text mb-0 fw-medium">
+                        По вопросам: 
+                        <a href="mailto:chastnayapaseka3pois23@gmail.com" class="promo-link">
+                            chastnayapaseka3pois23@gmail.com
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Слайд 3 -->
+            <div class="carousel-item">
+                <div class="container text-center px-3">
+                    <p class="promo-text mb-0 fw-medium">
+                        Зашли к нам? <span>Зайдите в Братские булочки!</span>
+                    </p>
+                    <img src="images/Brothers_buns.jpg" 
+                         alt="Братские булочки" 
+                         class="promo-img rounded mt-1">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Управляющие кнопки -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Следующий</span>
+        </button>
+
+    </div>
+</div>
+<div></div>
+<!-- ══════════════ ФУТЕР ══════════════ -->
 <footer>
     <div class="footer-drops">
-        <img src="images/honey-drops.png" width="100%" height="200" alt="Подтеки меда">
+        <img src="images/honey-drops.png" 
+     width="1200" 
+     height="213" 
+     alt="Подтеки меда" 
+     class="img-fluid w-100">
     </div>
     <div class="footer-nav">
-        <div class="footer-col">
-            <a href="landing.html"><img src="images/logo-placeholder.png" width="80" alt="Лого"></a>
-            <span class="logo-text">
-                <strong>Частная пасека<br>ЗПОИС23</strong>
-            </span>
-        </div>
-        <div class="footer-col">
-           <a href="mailto:chastnayapaseka3pois23@gmail.com"> <img src="images/mail-icon.png" width="60" alt="Почта"></a>
-            <span class="cart-links">
-                Адрес электронной почты:<br>
-                <a href="mailto:chastnayapaseka3pois23@gmail.com">chastnayapaseka3pois23@gmail.com</a>
-            </span>
-        </div>
-        <div class="footer-col">
-            <img src="images/red-phone-icon.png" width="60" alt="Телефон">
-            <span class="logo-text">
-                <strong>+375 (33) 628-86-72</strong>
-            </span>
+        <div class="container">
+            <div class="row text-center gy-4 py-4">
+                <div class="col-12 col-md-4 d-flex flex-column align-items-center gap-2">
+                    <a href="landing.html">
+                        <img src="images/logo-placeholder.png" width="80" height="80" alt="Лого">
+                    </a>
+                    <span class="logo-text">
+                        <strong>Частная пасека<br>ЗПОИС23</strong>
+                    </span>
+                </div>
+                <div class="col-12 col-md-4 d-flex flex-column align-items-center gap-2">
+                    <a href="mailto:chastnayapaseka3pois23@gmail.com">
+                        <img src="images/mail-icon.png" width="60" height="60" alt="Почта">
+                    </a>
+                    <span>
+                        Адрес электронной почты:<br>
+                        <a href="mailto:chastnayapaseka3pois23@gmail.com" class="text-decoration-none" style="color:var(--honey)">
+                            chastnayapaseka3pois23@gmail.com
+                        </a>
+                    </span>
+                </div>
+                <div class="col-12 col-md-4 d-flex flex-column align-items-center gap-2">
+                    <img src="images/red-phone-icon.png" width="60" height="60" alt="Телефон">
+                    <span class="logo-text">
+                        <strong>+375 (33) 628-86-72</strong>
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
+
